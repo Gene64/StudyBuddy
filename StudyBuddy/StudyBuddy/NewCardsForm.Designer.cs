@@ -32,7 +32,7 @@
             this.cardGroupNameTextBox = new System.Windows.Forms.TextBox();
             this.questionNumbersComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.nextButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -50,6 +50,7 @@
             this.cardGroupNameTextBox.Name = "cardGroupNameTextBox";
             this.cardGroupNameTextBox.Size = new System.Drawing.Size(121, 20);
             this.cardGroupNameTextBox.TabIndex = 1;
+            this.cardGroupNameTextBox.TextChanged += new System.EventHandler(this.cardGroupNameTextBox_TextChanged);
             // 
             // questionNumbersComboBox
             // 
@@ -80,21 +81,22 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Number of Questions";
             // 
-            // button1
+            // nextButton
             // 
-            this.button1.Location = new System.Drawing.Point(105, 226);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Next";
-            this.button1.UseVisualStyleBackColor = true;
+            this.nextButton.Enabled = false;
+            this.nextButton.Location = new System.Drawing.Point(105, 226);
+            this.nextButton.Name = "nextButton";
+            this.nextButton.Size = new System.Drawing.Size(75, 23);
+            this.nextButton.TabIndex = 4;
+            this.nextButton.Text = "Next";
+            this.nextButton.UseVisualStyleBackColor = true;
             // 
             // NewCardsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.nextButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.questionNumbersComboBox);
             this.Controls.Add(this.cardGroupNameTextBox);
@@ -117,6 +119,6 @@
         private System.Windows.Forms.TextBox cardGroupNameTextBox;
         private System.Windows.Forms.ComboBox questionNumbersComboBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button nextButton;
     }
 }

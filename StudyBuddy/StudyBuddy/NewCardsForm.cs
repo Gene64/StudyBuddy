@@ -21,5 +21,17 @@ namespace StudyBuddy
         {
             questionNumbersComboBox.SelectedIndex = 0;
         }
+
+        private void cardGroupNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (cardGroupNameTextBox.Text == "")
+            {
+                nextButton.Enabled = false;
+            }
+            else
+            {
+                nextButton.Enabled = true;
+            }
+        }
     }
 }
