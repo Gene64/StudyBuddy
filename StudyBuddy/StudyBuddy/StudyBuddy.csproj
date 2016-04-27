@@ -58,6 +58,12 @@
     <Compile Include="NewCardsForm.Designer.cs">
       <DependentUpon>NewCardsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewQuestionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewQuestionsForm.Designer.cs">
+      <DependentUpon>NewQuestionsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="LoadInForm.resx">
@@ -65,6 +71,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewCardsForm.resx">
       <DependentUpon>NewCardsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewQuestionsForm.resx">
+      <DependentUpon>NewQuestionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
