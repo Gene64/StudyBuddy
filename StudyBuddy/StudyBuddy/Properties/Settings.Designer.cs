@@ -26,24 +26,24 @@ namespace StudyBuddy.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Name1 {
+        public string index1Name {
             get {
-                return ((string)(this["Name1"]));
+                return ((string)(this["index1Name"]));
             }
             set {
-                this["Name1"] = value;
+                this["index1Name"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int Questions1 {
+        public int index1QuestionNumber {
             get {
-                return ((int)(this["Questions1"]));
+                return ((int)(this["index1QuestionNumber"]));
             }
             set {
-                this["Questions1"] = value;
+                this["index1QuestionNumber"] = value;
             }
         }
         
@@ -56,6 +56,30 @@ namespace StudyBuddy.Properties {
             }
             set {
                 this["backButtonPressed"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string index1Question1 {
+            get {
+                return ((string)(this["index1Question1"]));
+            }
+            set {
+                this["index1Question1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string index1Answer1 {
+            get {
+                return ((string)(this["index1Answer1"]));
+            }
+            set {
+                this["index1Answer1"] = value;
             }
         }
     }

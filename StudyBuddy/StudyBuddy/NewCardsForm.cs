@@ -21,8 +21,8 @@ namespace StudyBuddy
         {
             if (Properties.Settings.Default.backButtonPressed)
             {
-                cardGroupNameTextBox.Text = Properties.Settings.Default.Name1;
-                questionNumbersComboBox.Text = Properties.Settings.Default.Questions1.ToString();
+                cardGroupNameTextBox.Text = Properties.Settings.Default.index1Name;
+                questionNumbersComboBox.Text = Properties.Settings.Default.index1QuestionNumber.ToString();
             }
             else
             {
@@ -44,8 +44,8 @@ namespace StudyBuddy
 
         private void nextButton_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.Name1 = cardGroupNameTextBox.Text;
-            Properties.Settings.Default.Questions1 = questionNumbersComboBox.SelectedIndex + 1; // Since the index starts at 0, we just add 1 to match the text.
+            Properties.Settings.Default.index1Name = cardGroupNameTextBox.Text;
+            Properties.Settings.Default.index1QuestionNumber = questionNumbersComboBox.SelectedIndex + 1; // Since the index starts at 0, we just add 1 to match the text.
             Properties.Settings.Default.Save();
 
             Dispose();

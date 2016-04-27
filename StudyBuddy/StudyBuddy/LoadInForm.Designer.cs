@@ -31,9 +31,9 @@
             this.WelcomeLabel = new System.Windows.Forms.Label();
             this.DirectionsLabel = new System.Windows.Forms.Label();
             this.createButton = new System.Windows.Forms.Button();
-            this.loadButton = new System.Windows.Forms.Button();
-            this.deleteButton = new System.Windows.Forms.Button();
+            this.editButton = new System.Windows.Forms.Button();
             this.descriptionLabel = new System.Windows.Forms.Label();
+            this.practiceButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // WelcomeLabel
@@ -60,7 +60,7 @@
             // 
             // createButton
             // 
-            this.createButton.Location = new System.Drawing.Point(85, 97);
+            this.createButton.Location = new System.Drawing.Point(163, 133);
             this.createButton.Name = "createButton";
             this.createButton.Size = new System.Drawing.Size(115, 30);
             this.createButton.TabIndex = 2;
@@ -70,27 +70,16 @@
             this.createButton.MouseLeave += new System.EventHandler(this.createButton_MouseLeave);
             this.createButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.createButton_MouseMove);
             // 
-            // loadButton
+            // editButton
             // 
-            this.loadButton.Location = new System.Drawing.Point(9, 133);
-            this.loadButton.Name = "loadButton";
-            this.loadButton.Size = new System.Drawing.Size(115, 30);
-            this.loadButton.TabIndex = 3;
-            this.loadButton.Text = "Load Study Cards";
-            this.loadButton.UseVisualStyleBackColor = true;
-            this.loadButton.MouseLeave += new System.EventHandler(this.loadButton_MouseLeave);
-            this.loadButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.loadButton_MouseMove);
-            // 
-            // deleteButton
-            // 
-            this.deleteButton.Location = new System.Drawing.Point(163, 133);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(115, 30);
-            this.deleteButton.TabIndex = 4;
-            this.deleteButton.Text = "Delete Study Cards";
-            this.deleteButton.UseVisualStyleBackColor = true;
-            this.deleteButton.MouseLeave += new System.EventHandler(this.deleteButton_MouseLeave);
-            this.deleteButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.deleteButton_MouseMove);
+            this.editButton.Location = new System.Drawing.Point(9, 133);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(115, 30);
+            this.editButton.TabIndex = 3;
+            this.editButton.Text = "Edit Study Cards";
+            this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.MouseLeave += new System.EventHandler(this.loadButton_MouseLeave);
+            this.editButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.loadButton_MouseMove);
             // 
             // descriptionLabel
             // 
@@ -102,14 +91,24 @@
             this.descriptionLabel.Text = "Button Description Label";
             this.descriptionLabel.Visible = false;
             // 
+            // practiceButton
+            // 
+            this.practiceButton.Location = new System.Drawing.Point(89, 97);
+            this.practiceButton.Name = "practiceButton";
+            this.practiceButton.Size = new System.Drawing.Size(115, 30);
+            this.practiceButton.TabIndex = 6;
+            this.practiceButton.Text = "Practice Study Cards";
+            this.practiceButton.UseVisualStyleBackColor = true;
+            this.practiceButton.Click += new System.EventHandler(this.useButton_Click);
+            // 
             // LoadInForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.practiceButton);
             this.Controls.Add(this.descriptionLabel);
-            this.Controls.Add(this.deleteButton);
-            this.Controls.Add(this.loadButton);
+            this.Controls.Add(this.editButton);
             this.Controls.Add(this.createButton);
             this.Controls.Add(this.DirectionsLabel);
             this.Controls.Add(this.WelcomeLabel);
@@ -129,8 +128,8 @@
         private System.Windows.Forms.Label WelcomeLabel;
         private System.Windows.Forms.Label DirectionsLabel;
         private System.Windows.Forms.Button createButton;
-        private System.Windows.Forms.Button loadButton;
-        private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Label descriptionLabel;
+        private System.Windows.Forms.Button practiceButton;
     }
 }

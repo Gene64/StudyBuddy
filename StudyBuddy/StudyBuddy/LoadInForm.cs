@@ -70,5 +70,10 @@ namespace StudyBuddy
             NewCardsForm ncf = new NewCardsForm();
             ncf.ShowDialog();
         }
+
+        private void useButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
