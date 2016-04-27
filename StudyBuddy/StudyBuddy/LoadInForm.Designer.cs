@@ -66,6 +66,7 @@
             this.createButton.TabIndex = 2;
             this.createButton.Text = "Create Study Cards";
             this.createButton.UseVisualStyleBackColor = true;
+            this.createButton.MouseLeave += new System.EventHandler(this.createButton_MouseLeave);
             this.createButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.createButton_MouseMove);
             // 
             // loadButton
@@ -76,6 +77,7 @@
             this.loadButton.TabIndex = 3;
             this.loadButton.Text = "Load Study Cards";
             this.loadButton.UseVisualStyleBackColor = true;
+            this.loadButton.MouseLeave += new System.EventHandler(this.loadButton_MouseLeave);
             this.loadButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.loadButton_MouseMove);
             // 
             // deleteButton
@@ -86,6 +88,7 @@
             this.deleteButton.TabIndex = 4;
             this.deleteButton.Text = "Delete Study Cards";
             this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.MouseLeave += new System.EventHandler(this.deleteButton_MouseLeave);
             this.deleteButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.deleteButton_MouseMove);
             // 
             // descriptionLabel

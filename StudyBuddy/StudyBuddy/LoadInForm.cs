@@ -40,6 +40,22 @@ namespace StudyBuddy
             centerDescriptionLabel();
         }
 
+        // The description label turns invisible when the user isn't hovering over any of the buttons.
+        private void createButton_MouseLeave(object sender, EventArgs e)
+        {
+            descriptionLabel.Visible = false;
+        }
+
+        private void loadButton_MouseLeave(object sender, EventArgs e)
+        {
+            descriptionLabel.Visible = false;
+        }
+
+        private void deleteButton_MouseLeave(object sender, EventArgs e)
+        {
+            descriptionLabel.Visible = false;
+        }
+
         /*
         This gets the descriptionLabel width and subtracts it from the applications width, then divides by two.
         It sets the left side of the label to that amount, which will be equivalent to the right side.
@@ -49,5 +65,6 @@ namespace StudyBuddy
             descriptionLabel.Left = (ClientSize.Width - descriptionLabel.Size.Width) / 2;
         }
 
+        
     }
 }
