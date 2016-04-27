@@ -37,8 +37,7 @@ namespace StudyBuddy
         private void nextButton_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.Name1 = cardGroupNameTextBox.Text;
-            int numVal = int.Parse(questionNumbersComboBox.Text); // We needed to change the text string to a valid integer.
-            Properties.Settings.Default.Questions1 = numVal;
+            Properties.Settings.Default.Questions1 = questionNumbersComboBox.SelectedIndex + 1;
             Properties.Settings.Default.Save();
             Dispose();
         }
