@@ -65,6 +65,10 @@ namespace StudyBuddy
             descriptionLabel.Left = (ClientSize.Width - descriptionLabel.Size.Width) / 2;
         }
 
-        
+        private void createButton_Click(object sender, EventArgs e)
+        {
+            NewCardsForm ncf = new NewCardsForm();
+            ncf.ShowDialog();
+        }
     }
 }

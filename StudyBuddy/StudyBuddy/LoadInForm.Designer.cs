@@ -66,6 +66,7 @@
             this.createButton.TabIndex = 2;
             this.createButton.Text = "Create Study Cards";
             this.createButton.UseVisualStyleBackColor = true;
+            this.createButton.Click += new System.EventHandler(this.createButton_Click);
             this.createButton.MouseLeave += new System.EventHandler(this.createButton_MouseLeave);
             this.createButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.createButton_MouseMove);
             // 
