@@ -1,6 +1,6 @@
 ﻿namespace StudyBuddy
 {
-    partial class LoadInForm
+    partial class MainMenuForm
     {
         /// <summary>
         /// Required designer variable.
@@ -78,8 +78,8 @@
             this.editButton.TabIndex = 3;
             this.editButton.Text = "Edit Study Cards";
             this.editButton.UseVisualStyleBackColor = true;
-            this.editButton.MouseLeave += new System.EventHandler(this.loadButton_MouseLeave);
-            this.editButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.loadButton_MouseMove);
+            this.editButton.MouseLeave += new System.EventHandler(this.editButton_MouseLeave);
+            this.editButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.editButton_MouseMove);
             // 
             // descriptionLabel
             // 
@@ -99,7 +99,9 @@
             this.practiceButton.TabIndex = 6;
             this.practiceButton.Text = "Practice Study Cards";
             this.practiceButton.UseVisualStyleBackColor = true;
-            this.practiceButton.Click += new System.EventHandler(this.useButton_Click);
+            this.practiceButton.Click += new System.EventHandler(this.practiceButton_Click);
+            this.practiceButton.MouseLeave += new System.EventHandler(this.practiceButton_MouseLeave);
+            this.practiceButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.practiceButton_MouseMove);
             // 
             // LoadInForm
             // 

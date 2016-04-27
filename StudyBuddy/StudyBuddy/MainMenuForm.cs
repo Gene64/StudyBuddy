@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace StudyBuddy
 {
-    public partial class LoadInForm : Form
+    public partial class MainMenuForm : Form
     {
-        public LoadInForm()
+        public MainMenuForm()
         {
             InitializeComponent();
         }
@@ -26,17 +26,17 @@ namespace StudyBuddy
             centerDescriptionLabel();
         }
 
-        private void loadButton_MouseMove(object sender, MouseEventArgs e)
+        private void editButton_MouseMove(object sender, MouseEventArgs e)
         {
             descriptionLabel.Visible = true;
             descriptionLabel.Text = "Load previously saved study cards to continue studying.";
             centerDescriptionLabel();
         }
 
-        private void deleteButton_MouseMove(object sender, MouseEventArgs e)
+        private void practiceButton_MouseMove(object sender, MouseEventArgs e)
         {
             descriptionLabel.Visible = true;
-            descriptionLabel.Text = "Delete saved study cards that you have already mastered.";
+            descriptionLabel.Text = "Practice your saved flash cards to master the topic.";
             centerDescriptionLabel();
         }
 
@@ -46,12 +46,12 @@ namespace StudyBuddy
             descriptionLabel.Visible = false;
         }
 
-        private void loadButton_MouseLeave(object sender, EventArgs e)
+        private void editButton_MouseLeave(object sender, EventArgs e)
         {
             descriptionLabel.Visible = false;
         }
 
-        private void deleteButton_MouseLeave(object sender, EventArgs e)
+        private void practiceButton_MouseLeave(object sender, EventArgs e)
         {
             descriptionLabel.Visible = false;
         }
@@ -71,9 +71,9 @@ namespace StudyBuddy
             ncf.ShowDialog();
         }
 
-        private void useButton_Click(object sender, EventArgs e)
+        private void practiceButton_Click(object sender, EventArgs e)
         {
-
+            // TODO: Add practice form.
         }
     }
 }

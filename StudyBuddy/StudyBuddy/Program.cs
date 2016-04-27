@@ -16,7 +16,7 @@ namespace StudyBuddy
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoadInForm());
+            Application.Run(new MainMenuForm());
         }
     }
 }
