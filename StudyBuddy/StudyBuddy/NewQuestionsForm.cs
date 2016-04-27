@@ -16,5 +16,14 @@ namespace StudyBuddy
         {
             InitializeComponent();
         }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.backButtonPressed = true;
+            Properties.Settings.Default.Save();
+            Dispose();
+            NewCardsForm ncf = new NewCardsForm();
+            ncf.ShowDialog();
+        }
     }
 }

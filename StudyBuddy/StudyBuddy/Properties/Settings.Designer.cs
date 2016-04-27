@@ -46,5 +46,17 @@ namespace StudyBuddy.Properties {
                 this["Questions1"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool backButtonPressed {
+            get {
+                return ((bool)(this["backButtonPressed"]));
+            }
+            set {
+                this["backButtonPressed"] = value;
+            }
+        }
     }
 }

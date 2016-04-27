@@ -19,7 +19,15 @@ namespace StudyBuddy
 
         private void NewCardsForm_Load(object sender, EventArgs e)
         {
-            questionNumbersComboBox.SelectedIndex = 0;
+            if (Properties.Settings.Default.backButtonPressed)
+            {
+                cardGroupNameTextBox.Text = Properties.Settings.Default.Name1;
+                questionNumbersComboBox.Text = Properties.Settings.Default.Questions1.ToString();
+            }
+            else
+            {
+                questionNumbersComboBox.SelectedIndex = 0;
+            }
         }
 
         private void cardGroupNameTextBox_TextChanged(object sender, EventArgs e)
@@ -39,7 +47,16 @@ namespace StudyBuddy
             Properties.Settings.Default.Name1 = cardGroupNameTextBox.Text;
             Properties.Settings.Default.Questions1 = questionNumbersComboBox.SelectedIndex + 1; // Since the index starts at 0, we just add 1 to match the text.
             Properties.Settings.Default.Save();
+
             Dispose();
+            NewQuestionsForm nqf = new NewQuestionsForm();
+            nqf.ShowDialog();
+        }
+
+        private void NewCardsForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.backButtonPressed = false;
+            Properties.Settings.Default.Save();
         }
     }
 }

@@ -28,19 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.backButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // backButton
+            // 
+            this.backButton.Location = new System.Drawing.Point(291, 476);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(75, 23);
+            this.backButton.TabIndex = 0;
+            this.backButton.Text = "Back";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // NewQuestionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(659, 511);
+            this.Controls.Add(this.backButton);
             this.Name = "NewQuestionsForm";
-            this.Text = "NewQuestionsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "New Questions";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Button backButton;
     }
 }

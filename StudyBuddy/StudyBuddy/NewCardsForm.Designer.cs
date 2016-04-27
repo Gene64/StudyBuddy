@@ -108,6 +108,7 @@
             this.Name = "NewCardsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "New Cards Creation";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NewCardsForm_FormClosing);
             this.Load += new System.EventHandler(this.NewCardsForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
