@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace StudyBuddy
 {
-    public partial class Form1 : Form
+    public partial class LoadInForm : Form
     {
-        public Form1()
+        public LoadInForm()
         {
             InitializeComponent();
         }
