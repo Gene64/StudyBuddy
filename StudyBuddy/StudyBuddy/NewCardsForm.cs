@@ -16,5 +16,10 @@ namespace StudyBuddy
         {
             InitializeComponent();
         }
+
+        private void NewCardsForm_Load(object sender, EventArgs e)
+        {
+            questionNumbersComboBox.SelectedIndex = 0;
+        }
     }
 }
