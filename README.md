@@ -1,2 +1,2 @@
-# StudyBuddy
-Study Buddy
+# Study Buddy
+Welcome to the Study Buddy open source code repository!
