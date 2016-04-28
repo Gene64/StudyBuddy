@@ -34,13 +34,15 @@
             this.question1TextBox = new System.Windows.Forms.TextBox();
             this.answer1TextBox = new System.Windows.Forms.TextBox();
             this.applyButton = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.currentQuestionLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // backButton
             // 
-            this.backButton.Location = new System.Drawing.Point(251, 476);
+            this.backButton.Location = new System.Drawing.Point(12, 224);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(75, 23);
+            this.backButton.Size = new System.Drawing.Size(82, 25);
             this.backButton.TabIndex = 0;
             this.backButton.Text = "Back";
             this.backButton.UseVisualStyleBackColor = true;
@@ -49,7 +51,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(9, 81);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 13);
             this.label1.TabIndex = 1;
@@ -58,7 +60,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 41);
+            this.label2.Location = new System.Drawing.Point(9, 143);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 2;
@@ -66,33 +68,56 @@
             // 
             // question1TextBox
             // 
-            this.question1TextBox.Location = new System.Drawing.Point(83, 2);
+            this.question1TextBox.Location = new System.Drawing.Point(12, 97);
             this.question1TextBox.Name = "question1TextBox";
-            this.question1TextBox.Size = new System.Drawing.Size(217, 20);
+            this.question1TextBox.Size = new System.Drawing.Size(260, 20);
             this.question1TextBox.TabIndex = 3;
             // 
             // answer1TextBox
             // 
-            this.answer1TextBox.Location = new System.Drawing.Point(76, 38);
+            this.answer1TextBox.Location = new System.Drawing.Point(12, 159);
             this.answer1TextBox.Name = "answer1TextBox";
-            this.answer1TextBox.Size = new System.Drawing.Size(224, 20);
+            this.answer1TextBox.Size = new System.Drawing.Size(260, 20);
             this.answer1TextBox.TabIndex = 4;
             // 
             // applyButton
             // 
-            this.applyButton.Location = new System.Drawing.Point(332, 476);
+            this.applyButton.Location = new System.Drawing.Point(190, 224);
             this.applyButton.Name = "applyButton";
-            this.applyButton.Size = new System.Drawing.Size(75, 23);
+            this.applyButton.Size = new System.Drawing.Size(82, 25);
             this.applyButton.TabIndex = 5;
-            this.applyButton.Text = "Apply";
+            this.applyButton.Text = "Next Question";
             this.applyButton.UseVisualStyleBackColor = true;
             this.applyButton.Click += new System.EventHandler(this.applyButton_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(13, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(258, 32);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Fill out the questions and answers to\nadd them.";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // currentQuestionLabel
+            // 
+            this.currentQuestionLabel.AutoSize = true;
+            this.currentQuestionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentQuestionLabel.Location = new System.Drawing.Point(77, 50);
+            this.currentQuestionLabel.Name = "currentQuestionLabel";
+            this.currentQuestionLabel.Size = new System.Drawing.Size(130, 16);
+            this.currentQuestionLabel.TabIndex = 7;
+            this.currentQuestionLabel.Text = "Current Question: 0/1";
             // 
             // NewQuestionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(659, 511);
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.currentQuestionLabel);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.applyButton);
             this.Controls.Add(this.answer1TextBox);
             this.Controls.Add(this.question1TextBox);
@@ -102,6 +127,7 @@
             this.Name = "NewQuestionsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "New Questions";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NewQuestionsForm_FormClosing);
             this.Load += new System.EventHandler(this.NewQuestionsForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -116,5 +142,7 @@
         private System.Windows.Forms.TextBox question1TextBox;
         private System.Windows.Forms.TextBox answer1TextBox;
         private System.Windows.Forms.Button applyButton;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label currentQuestionLabel;
     }
 }

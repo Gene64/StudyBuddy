@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace StudyBuddy
 {
@@ -16,6 +18,8 @@ namespace StudyBuddy
         {
             InitializeComponent();
         }
+
+        XmlDocument xmlDoc = new XmlDocument();
 
         private void backButton_Click(object sender, EventArgs e)
         {
@@ -28,15 +32,32 @@ namespace StudyBuddy
 
         private void NewQuestionsForm_Load(object sender, EventArgs e)
         {
-            Text = Properties.Settings.Default.index1Name + " Question Adder";
+            xmlDoc.Load(Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml"); // Loads the XML
+            Text = xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/TestInfo/TestName").InnerText; // Sets page title to test title
         }
 
         private void applyButton_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.index1Question1 = question1TextBox.Text;
-            Properties.Settings.Default.index1Answer1 = answer1TextBox.Text;
-            Properties.Settings.Default.Save();
+            xmlDoc.Load(Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml"); // Loads the XML
+            xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/QuestionInfo/Question1").InnerText = question1TextBox.Text;
+            xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/QuestionInfo/Answer1").InnerText = answer1TextBox.Text;
+            xmlDoc.Save(Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml"); // Saves changes to the XML
             Dispose();
+        }
+
+        private void addQuestionInfoXml()
+        {
+            xmlDoc.Load(Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml"); // Loads the XML
+            xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/QuestionInfo/Question1").InnerText = question1TextBox.Text;
+            xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/QuestionInfo/Answer1").InnerText = answer1TextBox.Text;
+            xmlDoc.Save(Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml"); // Saves changes to the XML
+            Dispose();
+        }
+
+        private void NewQuestionsForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.currentSelectedQuiz = "";
+            Properties.Settings.Default.Save();
         }
     }
 }

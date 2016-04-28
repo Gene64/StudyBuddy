@@ -103,7 +103,7 @@
             this.practiceButton.MouseLeave += new System.EventHandler(this.practiceButton_MouseLeave);
             this.practiceButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.practiceButton_MouseMove);
             // 
-            // LoadInForm
+            // MainMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -117,9 +117,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "LoadInForm";
+            this.Name = "MainMenuForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Study Buddy";
+            this.Load += new System.EventHandler(this.MainMenuForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

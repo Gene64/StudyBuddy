@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.cardGroupNameTextBox = new System.Windows.Forms.TextBox();
+            this.quizNameTextBox = new System.Windows.Forms.TextBox();
             this.questionNumbersComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.nextButton = new System.Windows.Forms.Button();
@@ -44,13 +44,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Card Group Name";
             // 
-            // cardGroupNameTextBox
+            // quizNameTextBox
             // 
-            this.cardGroupNameTextBox.Location = new System.Drawing.Point(82, 53);
-            this.cardGroupNameTextBox.Name = "cardGroupNameTextBox";
-            this.cardGroupNameTextBox.Size = new System.Drawing.Size(121, 20);
-            this.cardGroupNameTextBox.TabIndex = 1;
-            this.cardGroupNameTextBox.TextChanged += new System.EventHandler(this.cardGroupNameTextBox_TextChanged);
+            this.quizNameTextBox.Location = new System.Drawing.Point(82, 53);
+            this.quizNameTextBox.Name = "quizNameTextBox";
+            this.quizNameTextBox.Size = new System.Drawing.Size(121, 20);
+            this.quizNameTextBox.TabIndex = 1;
+            this.quizNameTextBox.TextChanged += new System.EventHandler(this.cardGroupNameTextBox_TextChanged);
             // 
             // questionNumbersComboBox
             // 
@@ -100,7 +100,7 @@
             this.Controls.Add(this.nextButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.questionNumbersComboBox);
-            this.Controls.Add(this.cardGroupNameTextBox);
+            this.Controls.Add(this.quizNameTextBox);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -118,7 +118,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox cardGroupNameTextBox;
+        private System.Windows.Forms.TextBox quizNameTextBox;
         private System.Windows.Forms.ComboBox questionNumbersComboBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button nextButton;

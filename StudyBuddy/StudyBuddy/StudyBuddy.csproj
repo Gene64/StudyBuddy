@@ -72,6 +72,15 @@
     <Compile Include="CardSelectionForm.Designer.cs">
       <DependentUpon>CardSelectionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudyForm.Designer.cs">
+      <DependentUpon>StudyForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CardSelectionForm.resx">
+      <DependentUpon>CardSelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainMenuForm.resx">
       <DependentUpon>MainMenuForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -90,6 +99,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="StudyForm.resx">
+      <DependentUpon>StudyForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -25,30 +25,6 @@ namespace StudyBuddy.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string index1Name {
-            get {
-                return ((string)(this["index1Name"]));
-            }
-            set {
-                this["index1Name"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int index1QuestionNumber {
-            get {
-                return ((int)(this["index1QuestionNumber"]));
-            }
-            set {
-                this["index1QuestionNumber"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool backButtonPressed {
             get {
@@ -62,24 +38,12 @@ namespace StudyBuddy.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string index1Question1 {
+        public string currentSelectedQuiz {
             get {
-                return ((string)(this["index1Question1"]));
+                return ((string)(this["currentSelectedQuiz"]));
             }
             set {
-                this["index1Question1"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string index1Answer1 {
-            get {
-                return ((string)(this["index1Answer1"]));
-            }
-            set {
-                this["index1Answer1"] = value;
+                this["currentSelectedQuiz"] = value;
             }
         }
     }

@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace StudyBuddy
 {
@@ -73,7 +75,24 @@ namespace StudyBuddy
 
         private void practiceButton_Click(object sender, EventArgs e)
         {
-            // TODO: Add practice form.
+            //if (Properties.Settings.Default.index1Question1 != "")
+            {
+                CardSelectionForm csf = new CardSelectionForm();
+                csf.ShowDialog();
+            }
+            //else
+            {
+                //MessageBox.Show("Sorry, but you don't have any saved study cards.", "No Saved Study Cards");
+            }
+        }
+
+        private void MainMenuForm_Load(object sender, EventArgs e)
+        {
+            if (!Directory.Exists(Application.StartupPath + @"\saved cards"))
+            {
+                Directory.CreateDirectory(Application.StartupPath + @"\saved cards");
+            }
+            Properties.Settings.Default.backButtonPressed = false;
         }
     }
 }
