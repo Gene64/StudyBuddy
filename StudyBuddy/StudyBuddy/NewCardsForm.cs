@@ -36,7 +36,7 @@ namespace StudyBuddy
 
         private void cardGroupNameTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (File.Exists(Application.StartupPath + @"\saved cards\" + quizNameTextBox.Text + @".xml"))
+            if (File.Exists(Application.StartupPath + @"\saved cards\" + quizNameTextBox.Text + @".xml") && quizNameTextBox.Text != Properties.Settings.Default.currentSelectedQuiz)
             {
                 nextButton.Enabled = false;
                 alreadyExistsLabel.Text = "The quiz '" + quizNameTextBox.Text + "' already exists.";
