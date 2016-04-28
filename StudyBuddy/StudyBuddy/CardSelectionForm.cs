@@ -18,17 +18,16 @@ namespace StudyBuddy
             if (Properties.Settings.Default.editMode)
             {
                 Text = "Study Quiz Editor";
-                directionsLabel.Text = "Pick one of your quizes from the box\n below to begin editing!";
                 startStudyingButton.Text = "Begin Editing";
                 userType = "edit";
             }
             else
             {
                 Text = "Study Quiz Selection";
-                directionsLabel.Text = "Pick one of your quizes from the box\nbelow to begin studying!";
                 startStudyingButton.Text = "Start Studying";
                 userType = "study";
             }
+            directionsLabel.Text = "Pick one of your quizes from the box\n below to begin " + userType + "ing!";
 
             string[] availableQuizDir = Directory.GetFiles(Application.StartupPath + @"\saved cards");
             
