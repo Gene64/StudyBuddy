@@ -48,7 +48,7 @@ namespace StudyBuddy
                 previousQuestionButton.Visible = true;
             xmlDoc.Load(Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml"); // Loads the XML
             xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/QuestionInfo/Question1").InnerText = questionTextBox.Text;
-            xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/QuestionInfo/Answer1").InnerText = answerTextBox.Text;
+            xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/AnswerInfo/Answer1").InnerText = answerTextBox.Text;
             xmlDoc.Save(Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml"); // Saves changes to the XML
 
             if (nextQuestionButton.Text == "Finish")
@@ -61,7 +61,7 @@ namespace StudyBuddy
         {
             xmlDoc.Load(Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml"); // Loads the XML
             xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/QuestionInfo/Question1").InnerText = questionTextBox.Text;
-            xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/QuestionInfo/Answer1").InnerText = answerTextBox.Text;
+            xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/AnswerInfo/Answer1").InnerText = answerTextBox.Text;
             xmlDoc.Save(Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml"); // Saves changes to the XML
             Dispose();
         }
@@ -88,6 +88,10 @@ namespace StudyBuddy
             currentQuestionLabel.Text = "Current Question: " + currentIndex+ "/" + totalQuestions;
             questionHeaderLabel.Text = "Question #" + currentIndex;
             answerHeaderLabel.Text = "Answer #" + currentIndex;
+
+            // TODO: Fix crashing here
+            //questionTextBox.Text = xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/TestInfo/QuestionInfo/Question" + currentIndex).InnerText;
+            //answerTextBox.Text = xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/TestInfo/AnswerInfo/Answer" + currentIndex).InnerText;
 
 
             int totalQuestionsInt = int.Parse(xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/TestInfo/NumberOfTestQuestions").InnerText);

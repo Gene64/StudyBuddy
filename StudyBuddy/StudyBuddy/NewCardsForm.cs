@@ -74,9 +74,12 @@ namespace StudyBuddy
                 xWriter.WriteStartElement("QuestionInfo"); // <QuestionInfo>
                 xWriter.WriteStartElement("Question1"); // <Question1>
                 xWriter.WriteEndElement(); // </QuestionInfo>
-                xWriter.WriteStartElement("Answer1");
-                xWriter.WriteEndElement(); // </Answer1>
                 xWriter.WriteEndElement(); // </quizNameTextBox.Text>
+                xWriter.WriteStartElement("AnswerInfo");
+                xWriter.WriteStartElement("Answer1");
+                xWriter.WriteEndElement();
+                xWriter.WriteEndElement(); // </Answer1>
+                
                 xWriter.Close();
             }
 
