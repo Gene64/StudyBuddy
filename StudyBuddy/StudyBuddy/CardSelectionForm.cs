@@ -21,7 +21,6 @@ namespace StudyBuddy
 
         private void CardSelectionForm_Load(object sender, EventArgs e)
         {
-            //XmlDocument xmlDoc = new XmlDocument();
             string[] availableQuizDir = Directory.GetFiles(Application.StartupPath + @"\saved cards");
             
             foreach (string availableQuizes in availableQuizDir)
@@ -30,9 +29,18 @@ namespace StudyBuddy
 
         private void topic1Button_Click(object sender, EventArgs e)
         {
-            Dispose();
-            StudyForm sf = new StudyForm();
-            sf.ShowDialog();
+            if (quizSelectionComboBox.Text != "")
+            {
+                Properties.Settings.Default.currentSelectedQuiz = quizSelectionComboBox.Text;
+                Properties.Settings.Default.Save();
+                Dispose();
+                StudyForm sf = new StudyForm();
+                sf.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please select a quiz to study.");
+            }
         }
     }
 }

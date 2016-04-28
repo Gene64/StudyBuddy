@@ -58,6 +58,7 @@
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.quizSelectionComboBox);
             this.Controls.Add(this.topic1Button);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CardSelectionForm";

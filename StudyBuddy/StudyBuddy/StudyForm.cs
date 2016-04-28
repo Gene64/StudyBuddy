@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace StudyBuddy
 {
@@ -17,24 +18,20 @@ namespace StudyBuddy
             InitializeComponent();
         }
 
+        XmlDocument xmlDoc = new XmlDocument();
+        int currentIndex = 1;
+
         private void StudyForm_Load(object sender, EventArgs e)
         {
-            //questionLabel.Text = Properties.Settings.Default.index1Question1;
+            xmlDoc.Load(Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml"); // Loads the XML
+            int totalQuestions = int.Parse(xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/TestInfo/NumberOfTestQuestions").InnerText); // Gets the number of questions.
+            questionLabel.Text = xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/QuestionInfo/Question1").InnerText; // Sets the question to the first question.
+            MessageBox.Show(questionLabel.Text);
         }
 
         private void nextQuestionButton_Click(object sender, EventArgs e)
         {
-            //if (questionLabel.Text == Properties.Settings.Default.index1Question1)
-            {
-                //if (answerTextBox.Text == Properties.Settings.Default.index1Question1)
-                {
-                    MessageBox.Show("Correct answer!");
-                }
-                //else
-                {
-                    MessageBox.Show("Sorry, wrong answer.");
-                }
-            }
+
         }
     }
 }
