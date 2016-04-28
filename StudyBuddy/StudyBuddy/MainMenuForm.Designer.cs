@@ -78,6 +78,7 @@
             this.editButton.TabIndex = 3;
             this.editButton.Text = "Edit Study Cards";
             this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             this.editButton.MouseLeave += new System.EventHandler(this.editButton_MouseLeave);
             this.editButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.editButton_MouseMove);
             // 

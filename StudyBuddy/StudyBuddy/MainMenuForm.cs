@@ -80,5 +80,10 @@ namespace StudyBuddy
             Properties.Settings.Default.backButtonPressed = false;
             Properties.Settings.Default.Save();
         }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Sorry, but this functionality isn't implemented yet.");
+        }
     }
 }
