@@ -15,7 +15,7 @@ namespace StudyBuddy
 
         private void NewCardsForm_Load(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.backButtonPressed)
+            if (Properties.Settings.Default.backButtonPressed || Properties.Settings.Default.editMode)
             {
                 XmlDocument xmlDoc = new XmlDocument();
                 xmlDoc.Load(Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml"); // Loads the XML

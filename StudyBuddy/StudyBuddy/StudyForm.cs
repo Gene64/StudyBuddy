@@ -20,6 +20,7 @@ namespace StudyBuddy
             xmlDoc.Load(Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml"); // Loads the XML
             totalQuestions = int.Parse(xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/TestInfo/NumberOfTestQuestions").InnerText); // Gets the number of questions.
             questionLabel.Text = xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/QuestionInfo/Question1").InnerText; // Sets the question to the first question.
+            centerQuestionLabel();
         }
 
         private void nextQuestionButton_Click(object sender, EventArgs e)
@@ -40,13 +41,20 @@ namespace StudyBuddy
             if (totalQuestions > currentIndex)
             {
                 currentIndex++;
-                questionLabel.Text = xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/QuestionInfo/Question" + currentIndex).InnerText; // Sets the question to the first question.
+                questionLabel.Text = xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/QuestionInfo/Question" + currentIndex).InnerText; // Sets the question to the next question.
+                answerTextBox.Text = "";
+                centerQuestionLabel();
             }
             else
             {
                 MessageBox.Show("Congratulations! You have finished studying for your quiz.");
                 Dispose();
             }
+        }
+
+        private void centerQuestionLabel()
+        {
+            currentQuestionLabel.Left = (ClientSize.Width - currentQuestionLabel.Size.Width) / 2;
         }
     }
 }

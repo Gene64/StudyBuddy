@@ -42,6 +42,7 @@
             this.questionLabel.Size = new System.Drawing.Size(71, 13);
             this.questionLabel.TabIndex = 0;
             this.questionLabel.Text = "First Question";
+            this.questionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // answerTextBox
             // 

@@ -61,12 +61,16 @@ namespace StudyBuddy
 
         private void createButton_Click(object sender, EventArgs e)
         {
+            Properties.Settings.Default.editMode = false;
+            Properties.Settings.Default.Save();
             NewCardsForm ncf = new NewCardsForm();
             ncf.ShowDialog();
         }
 
         private void practiceButton_Click(object sender, EventArgs e)
         {
+            Properties.Settings.Default.editMode = false;
+            Properties.Settings.Default.Save();
             CardSelectionForm csf = new CardSelectionForm();
             csf.ShowDialog();
         }
