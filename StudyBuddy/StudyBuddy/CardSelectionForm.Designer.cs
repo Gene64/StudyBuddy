@@ -30,6 +30,7 @@
         {
             this.topic1Button = new System.Windows.Forms.Button();
             this.quizSelectionComboBox = new System.Windows.Forms.ComboBox();
+            this.directionsLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // topic1Button
@@ -46,16 +47,28 @@
             // 
             this.quizSelectionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.quizSelectionComboBox.FormattingEnabled = true;
-            this.quizSelectionComboBox.Location = new System.Drawing.Point(82, 37);
+            this.quizSelectionComboBox.Location = new System.Drawing.Point(82, 44);
             this.quizSelectionComboBox.Name = "quizSelectionComboBox";
             this.quizSelectionComboBox.Size = new System.Drawing.Size(121, 21);
             this.quizSelectionComboBox.TabIndex = 2;
+            // 
+            // directionsLabel
+            // 
+            this.directionsLabel.AutoSize = true;
+            this.directionsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.directionsLabel.Location = new System.Drawing.Point(14, 9);
+            this.directionsLabel.Name = "directionsLabel";
+            this.directionsLabel.Size = new System.Drawing.Size(256, 32);
+            this.directionsLabel.TabIndex = 3;
+            this.directionsLabel.Text = "Pick one of your quizes from the box\nbelow to begin studying!";
+            this.directionsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CardSelectionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.directionsLabel);
             this.Controls.Add(this.quizSelectionComboBox);
             this.Controls.Add(this.topic1Button);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -63,14 +76,16 @@
             this.MinimizeBox = false;
             this.Name = "CardSelectionForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "StudyCardSelectionForm";
+            this.Text = "Study Quiz Selection";
             this.Load += new System.EventHandler(this.CardSelectionForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.Button topic1Button;
         private System.Windows.Forms.ComboBox quizSelectionComboBox;
+        private System.Windows.Forms.Label directionsLabel;
     }
 }
