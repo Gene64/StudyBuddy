@@ -20,7 +20,7 @@ namespace StudyBuddy
         }
 
         XmlDocument xmlDoc = new XmlDocument();
-        int currentQuestion = 1;
+        int currentIndex= 1;
 
         private void backButton_Click(object sender, EventArgs e)
         {
@@ -43,12 +43,12 @@ namespace StudyBuddy
 
         private void nextQuestionButton_Click(object sender, EventArgs e)
         {
-            currentQuestion++;
-            if (currentQuestion > 1)
+            currentIndex++;
+            if (currentIndex> 1)
                 previousQuestionButton.Visible = true;
             xmlDoc.Load(Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml"); // Loads the XML
-            xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/QuestionInfo/Question1").InnerText = question1TextBox.Text;
-            xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/QuestionInfo/Answer1").InnerText = answer1TextBox.Text;
+            xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/QuestionInfo/Question1").InnerText = questionTextBox.Text;
+            xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/QuestionInfo/Answer1").InnerText = answerTextBox.Text;
             xmlDoc.Save(Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml"); // Saves changes to the XML
 
             if (nextQuestionButton.Text == "Finish")
@@ -60,8 +60,8 @@ namespace StudyBuddy
         private void addQuestionInfoXml()
         {
             xmlDoc.Load(Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml"); // Loads the XML
-            xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/QuestionInfo/Question1").InnerText = question1TextBox.Text;
-            xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/QuestionInfo/Answer1").InnerText = answer1TextBox.Text;
+            xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/QuestionInfo/Question1").InnerText = questionTextBox.Text;
+            xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/QuestionInfo/Answer1").InnerText = answerTextBox.Text;
             xmlDoc.Save(Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml"); // Saves changes to the XML
             Dispose();
         }
@@ -74,8 +74,8 @@ namespace StudyBuddy
 
         private void previousQuestionButton_Click(object sender, EventArgs e)
         {
-            currentQuestion--;
-            if (currentQuestion == 1)
+            currentIndex--;
+            if (currentIndex== 1)
                 previousQuestionButton.Visible = false;
 
             updateCurrentQuestion();
@@ -85,10 +85,13 @@ namespace StudyBuddy
         {
             xmlDoc.Load(Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml"); // Loads the XML
             string totalQuestions = xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/TestInfo/NumberOfTestQuestions").InnerText;
-            currentQuestionLabel.Text = "Current Question: " + currentQuestion + "/" + totalQuestions;
+            currentQuestionLabel.Text = "Current Question: " + currentIndex+ "/" + totalQuestions;
+            questionHeaderLabel.Text = "Question #" + currentIndex;
+            answerHeaderLabel.Text = "Answer #" + currentIndex;
+
 
             int totalQuestionsInt = int.Parse(xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/TestInfo/NumberOfTestQuestions").InnerText);
-            if (currentQuestion == totalQuestionsInt)
+            if (currentIndex== totalQuestionsInt)
             {
                 nextQuestionButton.Text = "Finish";
             }
