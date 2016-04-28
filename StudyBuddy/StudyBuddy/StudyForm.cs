@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 
@@ -34,14 +27,12 @@ namespace StudyBuddy
             if (xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/AnswerInfo/Answer" + currentIndex).InnerText != answerTextBox.Text)
             {
                 MessageBox.Show("Sorry, but the answer that you've entered is incorrect.", "Wrong Answer");
-            }  
+            }
             else
             {
                 MessageBox.Show("Hooray, the answer that you've entered is correct.", "Correct Answer");
                 nextQuestion();
             }
-                
-
         }
 
         private void nextQuestion()
@@ -56,7 +47,6 @@ namespace StudyBuddy
                 MessageBox.Show("Congratulations! You have finished studying for your quiz.");
                 Dispose();
             }
-            
         }
     }
 }

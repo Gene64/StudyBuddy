@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 
@@ -81,7 +73,6 @@ namespace StudyBuddy
 
             if (nextQuestionButton.Text == "Finish")
                 nextQuestionButton.Text = "Next Question";
-
             updateCurrentQuestion();
         }
 
@@ -99,9 +90,7 @@ namespace StudyBuddy
 
             int totalQuestionsInt = int.Parse(xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/TestInfo/NumberOfTestQuestions").InnerText);
             if (currentIndex == totalQuestionsInt)
-            {
                 nextQuestionButton.Text = "Finish";
-            }
         }
     }
 }
