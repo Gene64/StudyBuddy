@@ -31,6 +31,7 @@
             this.questionLabel = new System.Windows.Forms.Label();
             this.answerTextBox = new System.Windows.Forms.TextBox();
             this.nextQuestionButton = new System.Windows.Forms.Button();
+            this.currentQuestionLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // questionLabel
@@ -59,11 +60,22 @@
             this.nextQuestionButton.UseVisualStyleBackColor = true;
             this.nextQuestionButton.Click += new System.EventHandler(this.nextQuestionButton_Click);
             // 
+            // currentQuestionLabel
+            // 
+            this.currentQuestionLabel.AutoSize = true;
+            this.currentQuestionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentQuestionLabel.Location = new System.Drawing.Point(102, 15);
+            this.currentQuestionLabel.Name = "currentQuestionLabel";
+            this.currentQuestionLabel.Size = new System.Drawing.Size(81, 16);
+            this.currentQuestionLabel.TabIndex = 3;
+            this.currentQuestionLabel.Text = "Question 1";
+            // 
             // StudyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.currentQuestionLabel);
             this.Controls.Add(this.nextQuestionButton);
             this.Controls.Add(this.answerTextBox);
             this.Controls.Add(this.questionLabel);
@@ -84,5 +96,6 @@
         private System.Windows.Forms.Label questionLabel;
         private System.Windows.Forms.TextBox answerTextBox;
         private System.Windows.Forms.Button nextQuestionButton;
+        private System.Windows.Forms.Label currentQuestionLabel;
     }
 }
