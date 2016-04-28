@@ -75,15 +75,8 @@ namespace StudyBuddy
 
         private void practiceButton_Click(object sender, EventArgs e)
         {
-            //if (Properties.Settings.Default.index1Question1 != "")
-            {
-                CardSelectionForm csf = new CardSelectionForm();
-                csf.ShowDialog();
-            }
-            //else
-            {
-                //MessageBox.Show("Sorry, but you don't have any saved study cards.", "No Saved Study Cards");
-            }
+            CardSelectionForm csf = new CardSelectionForm();
+            csf.ShowDialog();
         }
 
         private void MainMenuForm_Load(object sender, EventArgs e)

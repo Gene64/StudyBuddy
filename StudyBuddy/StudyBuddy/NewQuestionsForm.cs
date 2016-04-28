@@ -69,7 +69,7 @@ namespace StudyBuddy
 
         private void NewQuestionsForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Properties.Settings.Default.currentSelectedQuiz = "";
+            Properties.Settings.Default.currentSelectedQuiz = null;
             Properties.Settings.Default.Save();
         }
 

@@ -201,6 +201,7 @@ namespace StudyBuddy
         private void NewCardsForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Properties.Settings.Default.backButtonPressed = false;
+            Properties.Settings.Default.currentSelectedQuiz = null;
             Properties.Settings.Default.Save();
         }
     }

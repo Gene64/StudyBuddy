@@ -44,6 +44,7 @@
             // 
             // quizSelectionComboBox
             // 
+            this.quizSelectionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.quizSelectionComboBox.FormattingEnabled = true;
             this.quizSelectionComboBox.Location = new System.Drawing.Point(82, 37);
             this.quizSelectionComboBox.Name = "quizSelectionComboBox";
