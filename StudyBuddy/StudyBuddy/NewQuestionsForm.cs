@@ -44,11 +44,11 @@ namespace StudyBuddy
         private void nextQuestionButton_Click(object sender, EventArgs e)
         {
             currentIndex++;
-            if (currentIndex> 1)
+            if (currentIndex > 1)
                 previousQuestionButton.Visible = true;
             xmlDoc.Load(Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml"); // Loads the XML
-            xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/QuestionInfo/Question1").InnerText = questionTextBox.Text;
-            xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/AnswerInfo/Answer1").InnerText = answerTextBox.Text;
+            xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/QuestionInfo/Question" + currentIndex).InnerText = questionTextBox.Text;
+            xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/AnswerInfo/Answer" + currentIndex).InnerText = answerTextBox.Text;
             xmlDoc.Save(Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml"); // Saves changes to the XML
 
             if (nextQuestionButton.Text == "Finish")
@@ -60,8 +60,8 @@ namespace StudyBuddy
         private void addQuestionInfoXml()
         {
             xmlDoc.Load(Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml"); // Loads the XML
-            xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/QuestionInfo/Question1").InnerText = questionTextBox.Text;
-            xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/AnswerInfo/Answer1").InnerText = answerTextBox.Text;
+            xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/QuestionInfo/Question" + currentIndex).InnerText = questionTextBox.Text;
+            xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/AnswerInfo/Answer" + currentIndex).InnerText = answerTextBox.Text;
             xmlDoc.Save(Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml"); // Saves changes to the XML
             Dispose();
         }
@@ -78,6 +78,9 @@ namespace StudyBuddy
             if (currentIndex== 1)
                 previousQuestionButton.Visible = false;
 
+            if (nextQuestionButton.Text == "Finish")
+                nextQuestionButton.Text = "Next Question";
+
             updateCurrentQuestion();
         }
 
@@ -89,9 +92,8 @@ namespace StudyBuddy
             questionHeaderLabel.Text = "Question #" + currentIndex;
             answerHeaderLabel.Text = "Answer #" + currentIndex;
 
-            // TODO: Fix crashing here
-            //questionTextBox.Text = xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/TestInfo/QuestionInfo/Question" + currentIndex).InnerText;
-            //answerTextBox.Text = xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/TestInfo/AnswerInfo/Answer" + currentIndex).InnerText;
+            questionTextBox.Text = xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/QuestionInfo/Question" + currentIndex).InnerText;
+            answerTextBox.Text = xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/AnswerInfo/Answer" + currentIndex).InnerText;
 
 
             int totalQuestionsInt = int.Parse(xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/TestInfo/NumberOfTestQuestions").InnerText);
