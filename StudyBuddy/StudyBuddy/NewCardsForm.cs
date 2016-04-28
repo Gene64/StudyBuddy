@@ -36,13 +36,20 @@ namespace StudyBuddy
 
         private void cardGroupNameTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (quizNameTextBox.Text == "") // TODO: Also check if name is already used.
+            if (File.Exists(Application.StartupPath + @"\saved cards\" + quizNameTextBox.Text + @".xml"))
+            {
+                nextButton.Enabled = false;
+                alreadyExistsLabel.Text = "The quiz '" + quizNameTextBox.Text + "' already exists.";
+                alreadyExistsLabel.Visible = true;
+            }
+            else if (quizNameTextBox.Text == "")
             {
                 nextButton.Enabled = false;
             }
             else
             {
                 nextButton.Enabled = true;
+                alreadyExistsLabel.Visible = false;
             }
         }
 

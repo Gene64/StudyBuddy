@@ -33,6 +33,7 @@
             this.questionNumbersComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.nextButton = new System.Windows.Forms.Button();
+            this.alreadyExistsLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -92,11 +93,22 @@
             this.nextButton.UseVisualStyleBackColor = true;
             this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
             // 
+            // alreadyExistsLabel
+            // 
+            this.alreadyExistsLabel.AutoSize = true;
+            this.alreadyExistsLabel.Location = new System.Drawing.Point(72, 190);
+            this.alreadyExistsLabel.Name = "alreadyExistsLabel";
+            this.alreadyExistsLabel.Size = new System.Drawing.Size(140, 13);
+            this.alreadyExistsLabel.TabIndex = 5;
+            this.alreadyExistsLabel.Text = "The test quiz already exists..";
+            this.alreadyExistsLabel.Visible = false;
+            // 
             // NewCardsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.alreadyExistsLabel);
             this.Controls.Add(this.nextButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.questionNumbersComboBox);
@@ -122,5 +134,6 @@
         private System.Windows.Forms.ComboBox questionNumbersComboBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button nextButton;
+        private System.Windows.Forms.Label alreadyExistsLabel;
     }
 }
