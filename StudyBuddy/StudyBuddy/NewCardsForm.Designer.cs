@@ -34,12 +34,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.nextButton = new System.Windows.Forms.Button();
             this.alreadyExistsLabel = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(113, 37);
+            this.label1.Location = new System.Drawing.Point(113, 69);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 0;
@@ -47,7 +48,7 @@
             // 
             // quizNameTextBox
             // 
-            this.quizNameTextBox.Location = new System.Drawing.Point(82, 53);
+            this.quizNameTextBox.Location = new System.Drawing.Point(82, 85);
             this.quizNameTextBox.Name = "quizNameTextBox";
             this.quizNameTextBox.Size = new System.Drawing.Size(121, 20);
             this.quizNameTextBox.TabIndex = 1;
@@ -68,7 +69,7 @@
             "8",
             "9",
             "10"});
-            this.questionNumbersComboBox.Location = new System.Drawing.Point(82, 118);
+            this.questionNumbersComboBox.Location = new System.Drawing.Point(82, 150);
             this.questionNumbersComboBox.Name = "questionNumbersComboBox";
             this.questionNumbersComboBox.Size = new System.Drawing.Size(121, 21);
             this.questionNumbersComboBox.TabIndex = 2;
@@ -76,7 +77,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(89, 102);
+            this.label2.Location = new System.Drawing.Point(89, 134);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 13);
             this.label2.TabIndex = 3;
@@ -96,18 +97,31 @@
             // alreadyExistsLabel
             // 
             this.alreadyExistsLabel.AutoSize = true;
-            this.alreadyExistsLabel.Location = new System.Drawing.Point(72, 190);
+            this.alreadyExistsLabel.ForeColor = System.Drawing.Color.Red;
+            this.alreadyExistsLabel.Location = new System.Drawing.Point(65, 190);
             this.alreadyExistsLabel.Name = "alreadyExistsLabel";
-            this.alreadyExistsLabel.Size = new System.Drawing.Size(137, 13);
+            this.alreadyExistsLabel.Size = new System.Drawing.Size(154, 13);
             this.alreadyExistsLabel.TabIndex = 5;
-            this.alreadyExistsLabel.Text = "The test quiz already exists.";
+            this.alreadyExistsLabel.Text = "Please enter a valid quiz name.";
             this.alreadyExistsLabel.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(5, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(274, 32);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Create a new quiz by filling out the information\nbelow to help you study.";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // NewCardsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.alreadyExistsLabel);
             this.Controls.Add(this.nextButton);
             this.Controls.Add(this.label2);
@@ -135,5 +149,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button nextButton;
         private System.Windows.Forms.Label alreadyExistsLabel;
+        private System.Windows.Forms.Label label3;
     }
 }

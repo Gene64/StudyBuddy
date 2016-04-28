@@ -83,7 +83,10 @@ namespace StudyBuddy
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Sorry, but this functionality isn't implemented yet.");
+            Properties.Settings.Default.editMode = true;
+            Properties.Settings.Default.Save();
+            CardSelectionForm csf = new CardSelectionForm();
+            csf.ShowDialog();
         }
     }
 }

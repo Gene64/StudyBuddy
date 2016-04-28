@@ -58,5 +58,17 @@ namespace StudyBuddy.Properties {
                 this["availableQuizes"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool editMode {
+            get {
+                return ((bool)(this["editMode"]));
+            }
+            set {
+                this["editMode"] = value;
+            }
+        }
     }
 }

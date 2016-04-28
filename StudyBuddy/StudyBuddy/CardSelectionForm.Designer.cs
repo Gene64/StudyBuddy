@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.topic1Button = new System.Windows.Forms.Button();
+            this.startStudyingButton = new System.Windows.Forms.Button();
             this.quizSelectionComboBox = new System.Windows.Forms.ComboBox();
             this.directionsLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // topic1Button
+            // startStudyingButton
             // 
-            this.topic1Button.Location = new System.Drawing.Point(97, 162);
-            this.topic1Button.Name = "topic1Button";
-            this.topic1Button.Size = new System.Drawing.Size(89, 23);
-            this.topic1Button.TabIndex = 1;
-            this.topic1Button.Text = "Start Studying";
-            this.topic1Button.UseVisualStyleBackColor = true;
-            this.topic1Button.Click += new System.EventHandler(this.topic1Button_Click);
+            this.startStudyingButton.Location = new System.Drawing.Point(97, 162);
+            this.startStudyingButton.Name = "startStudyingButton";
+            this.startStudyingButton.Size = new System.Drawing.Size(89, 23);
+            this.startStudyingButton.TabIndex = 1;
+            this.startStudyingButton.Text = "Start Studying";
+            this.startStudyingButton.UseVisualStyleBackColor = true;
+            this.startStudyingButton.Click += new System.EventHandler(this.topic1Button_Click);
             // 
             // quizSelectionComboBox
             // 
@@ -70,7 +70,7 @@
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.directionsLabel);
             this.Controls.Add(this.quizSelectionComboBox);
-            this.Controls.Add(this.topic1Button);
+            this.Controls.Add(this.startStudyingButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -84,7 +84,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button topic1Button;
+        private System.Windows.Forms.Button startStudyingButton;
         private System.Windows.Forms.ComboBox quizSelectionComboBox;
         private System.Windows.Forms.Label directionsLabel;
     }

@@ -39,6 +39,8 @@ namespace StudyBuddy
             else if (quizNameTextBox.Text == "")
             {
                 nextButton.Enabled = false;
+                alreadyExistsLabel.Text = "Please enter a valid quiz name.";
+                alreadyExistsLabel.Visible = true;
             }
             else
             {
