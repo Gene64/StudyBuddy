@@ -34,6 +34,7 @@ namespace StudyBuddy
         {
             xmlDoc.Load(Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml"); // Loads the XML
             Text = xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/TestInfo/TestName").InnerText; // Sets page title to test title
+            currentQuestionLabel.Text = "1/" + xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/TestInfo/NumberOfTestQuestions").InnerText;
         }
 
         private void applyButton_Click(object sender, EventArgs e)

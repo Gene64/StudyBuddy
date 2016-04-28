@@ -25,7 +25,7 @@ namespace StudyBuddy
             {
                 XmlDocument xmlDoc = new XmlDocument();
                 xmlDoc.Load(Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml"); // Loads the XML
-                quizNameTextBox.Text = xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/TestInfo/" + Properties.Settings.Default.currentSelectedQuiz).InnerText;
+                quizNameTextBox.Text = xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/TestInfo/TestName").InnerText;
                 questionNumbersComboBox.Text = xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/TestInfo/NumberOfTestQuestions").InnerText;
             }
             else
@@ -36,7 +36,7 @@ namespace StudyBuddy
 
         private void cardGroupNameTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (quizNameTextBox.Text == "")
+            if (quizNameTextBox.Text == "") // TODO: Also check if name is already used.
             {
                 nextButton.Enabled = false;
             }
