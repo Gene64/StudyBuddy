@@ -43,7 +43,6 @@ namespace StudyBuddy
 
         private void nextQuestionButton_Click(object sender, EventArgs e)
         {
-            currentIndex++;
             if (currentIndex > 1)
                 previousQuestionButton.Visible = true;
             xmlDoc.Load(Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml"); // Loads the XML
