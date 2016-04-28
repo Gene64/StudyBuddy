@@ -43,12 +43,13 @@ namespace StudyBuddy
 
         private void nextQuestionButton_Click(object sender, EventArgs e)
         {
-            if (currentIndex > 1)
+            if (currentIndex >= 1)
                 previousQuestionButton.Visible = true;
             xmlDoc.Load(Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml"); // Loads the XML
             xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/QuestionInfo/Question" + currentIndex).InnerText = questionTextBox.Text;
             xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/AnswerInfo/Answer" + currentIndex).InnerText = answerTextBox.Text;
             xmlDoc.Save(Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml"); // Saves changes to the XML
+            currentIndex++;
 
             if (nextQuestionButton.Text == "Finish")
                 Dispose();
