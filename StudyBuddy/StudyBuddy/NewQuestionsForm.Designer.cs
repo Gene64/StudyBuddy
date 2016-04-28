@@ -33,16 +33,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.question1TextBox = new System.Windows.Forms.TextBox();
             this.answer1TextBox = new System.Windows.Forms.TextBox();
-            this.applyButton = new System.Windows.Forms.Button();
+            this.nextQuestionButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.currentQuestionLabel = new System.Windows.Forms.Label();
+            this.previousQuestionButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // backButton
             // 
-            this.backButton.Location = new System.Drawing.Point(12, 224);
+            this.backButton.Location = new System.Drawing.Point(12, 214);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(82, 25);
+            this.backButton.Size = new System.Drawing.Size(70, 35);
             this.backButton.TabIndex = 0;
             this.backButton.Text = "Back";
             this.backButton.UseVisualStyleBackColor = true;
@@ -80,15 +81,15 @@
             this.answer1TextBox.Size = new System.Drawing.Size(260, 20);
             this.answer1TextBox.TabIndex = 4;
             // 
-            // applyButton
+            // nextQuestionButton
             // 
-            this.applyButton.Location = new System.Drawing.Point(190, 224);
-            this.applyButton.Name = "applyButton";
-            this.applyButton.Size = new System.Drawing.Size(82, 25);
-            this.applyButton.TabIndex = 5;
-            this.applyButton.Text = "Next Question";
-            this.applyButton.UseVisualStyleBackColor = true;
-            this.applyButton.Click += new System.EventHandler(this.applyButton_Click);
+            this.nextQuestionButton.Location = new System.Drawing.Point(202, 214);
+            this.nextQuestionButton.Name = "nextQuestionButton";
+            this.nextQuestionButton.Size = new System.Drawing.Size(70, 35);
+            this.nextQuestionButton.TabIndex = 5;
+            this.nextQuestionButton.Text = "Next Question";
+            this.nextQuestionButton.UseVisualStyleBackColor = true;
+            this.nextQuestionButton.Click += new System.EventHandler(this.nextQuestionButton_Click);
             // 
             // label3
             // 
@@ -111,19 +112,32 @@
             this.currentQuestionLabel.TabIndex = 7;
             this.currentQuestionLabel.Text = "Current Question: 0/1";
             // 
+            // previousQuestionButton
+            // 
+            this.previousQuestionButton.Location = new System.Drawing.Point(107, 214);
+            this.previousQuestionButton.Name = "previousQuestionButton";
+            this.previousQuestionButton.Size = new System.Drawing.Size(70, 35);
+            this.previousQuestionButton.TabIndex = 8;
+            this.previousQuestionButton.Text = "Previous Question";
+            this.previousQuestionButton.UseVisualStyleBackColor = true;
+            this.previousQuestionButton.Visible = false;
+            this.previousQuestionButton.Click += new System.EventHandler(this.previousQuestionButton_Click);
+            // 
             // NewQuestionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.previousQuestionButton);
             this.Controls.Add(this.currentQuestionLabel);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.applyButton);
+            this.Controls.Add(this.nextQuestionButton);
             this.Controls.Add(this.answer1TextBox);
             this.Controls.Add(this.question1TextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.backButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "NewQuestionsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "New Questions";
@@ -141,8 +155,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox question1TextBox;
         private System.Windows.Forms.TextBox answer1TextBox;
-        private System.Windows.Forms.Button applyButton;
+        private System.Windows.Forms.Button nextQuestionButton;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label currentQuestionLabel;
+        private System.Windows.Forms.Button previousQuestionButton;
     }
 }

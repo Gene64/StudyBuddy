@@ -39,11 +39,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(96, 37);
+            this.label1.Location = new System.Drawing.Point(113, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 13);
+            this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Card Group Name";
+            this.label1.Text = "Quiz Name";
             // 
             // quizNameTextBox
             // 
@@ -98,9 +98,9 @@
             this.alreadyExistsLabel.AutoSize = true;
             this.alreadyExistsLabel.Location = new System.Drawing.Point(72, 190);
             this.alreadyExistsLabel.Name = "alreadyExistsLabel";
-            this.alreadyExistsLabel.Size = new System.Drawing.Size(140, 13);
+            this.alreadyExistsLabel.Size = new System.Drawing.Size(137, 13);
             this.alreadyExistsLabel.TabIndex = 5;
-            this.alreadyExistsLabel.Text = "The test quiz already exists..";
+            this.alreadyExistsLabel.Text = "The test quiz already exists.";
             this.alreadyExistsLabel.Visible = false;
             // 
             // NewCardsForm

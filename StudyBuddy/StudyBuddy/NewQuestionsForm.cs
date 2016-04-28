@@ -20,6 +20,7 @@ namespace StudyBuddy
         }
 
         XmlDocument xmlDoc = new XmlDocument();
+        int currentQuestion = 1;
 
         private void backButton_Click(object sender, EventArgs e)
         {
@@ -34,16 +35,26 @@ namespace StudyBuddy
         {
             xmlDoc.Load(Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml"); // Loads the XML
             Text = xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/TestInfo/TestName").InnerText; // Sets page title to test title
+
             currentQuestionLabel.Text = "1/" + xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/TestInfo/NumberOfTestQuestions").InnerText;
+
+            updateCurrentQuestion();
         }
 
-        private void applyButton_Click(object sender, EventArgs e)
+        private void nextQuestionButton_Click(object sender, EventArgs e)
         {
+            currentQuestion++;
+            if (currentQuestion > 1)
+                previousQuestionButton.Visible = true;
             xmlDoc.Load(Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml"); // Loads the XML
             xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/QuestionInfo/Question1").InnerText = question1TextBox.Text;
             xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/QuestionInfo/Answer1").InnerText = answer1TextBox.Text;
             xmlDoc.Save(Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml"); // Saves changes to the XML
-            Dispose();
+
+            if (nextQuestionButton.Text == "Finish")
+                Dispose();
+
+            updateCurrentQuestion();
         }
 
         private void addQuestionInfoXml()
@@ -59,6 +70,28 @@ namespace StudyBuddy
         {
             Properties.Settings.Default.currentSelectedQuiz = "";
             Properties.Settings.Default.Save();
+        }
+
+        private void previousQuestionButton_Click(object sender, EventArgs e)
+        {
+            currentQuestion--;
+            if (currentQuestion == 1)
+                previousQuestionButton.Visible = false;
+
+            updateCurrentQuestion();
+        }
+
+        private void updateCurrentQuestion()
+        {
+            xmlDoc.Load(Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml"); // Loads the XML
+            string totalQuestions = xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/TestInfo/NumberOfTestQuestions").InnerText;
+            currentQuestionLabel.Text = "Current Question: " + currentQuestion + "/" + totalQuestions;
+
+            int totalQuestionsInt = int.Parse(xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/TestInfo/NumberOfTestQuestions").InnerText);
+            if (currentQuestion == totalQuestionsInt)
+            {
+                nextQuestionButton.Text = "Finish";
+            }
         }
     }
 }
