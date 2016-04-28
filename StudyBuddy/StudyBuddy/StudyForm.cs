@@ -26,12 +26,14 @@ namespace StudyBuddy
             xmlDoc.Load(Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml"); // Loads the XML
             int totalQuestions = int.Parse(xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/TestInfo/NumberOfTestQuestions").InnerText); // Gets the number of questions.
             questionLabel.Text = xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/QuestionInfo/Question1").InnerText; // Sets the question to the first question.
-            MessageBox.Show(questionLabel.Text);
         }
 
         private void nextQuestionButton_Click(object sender, EventArgs e)
         {
-
+            if (xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/AnswerInfo/Answer" + currentIndex).InnerText != answerTextBox.Text)
+                MessageBox.Show("Your answer is wrong.");
+            else
+                MessageBox.Show("Your answer is correct.");
         }
     }
 }
