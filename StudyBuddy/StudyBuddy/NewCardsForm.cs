@@ -130,9 +130,8 @@ namespace StudyBuddy
                                 }
                             }
                         }
-                        xWriter.WriteEndElement(); // </QuestionInfo>
                     }
-
+                    xWriter.WriteEndElement(); // </QuestionInfo>
                     // Write the answers.
                     xWriter.WriteStartElement("AnswerInfo");
                     xWriter.WriteStartElement("Answer1");

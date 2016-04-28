@@ -20,7 +20,7 @@ namespace StudyBuddy
         }
 
         XmlDocument xmlDoc = new XmlDocument();
-        int currentIndex= 1;
+        int currentIndex = 1;
 
         private void backButton_Click(object sender, EventArgs e)
         {
@@ -49,10 +49,11 @@ namespace StudyBuddy
             xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/QuestionInfo/Question" + currentIndex).InnerText = questionTextBox.Text;
             xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/AnswerInfo/Answer" + currentIndex).InnerText = answerTextBox.Text;
             xmlDoc.Save(Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml"); // Saves changes to the XML
-            currentIndex++;
 
             if (nextQuestionButton.Text == "Finish")
                 Dispose();
+            else
+                currentIndex++;
 
             updateCurrentQuestion();
         }
@@ -97,7 +98,7 @@ namespace StudyBuddy
 
 
             int totalQuestionsInt = int.Parse(xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/TestInfo/NumberOfTestQuestions").InnerText);
-            if (currentIndex== totalQuestionsInt)
+            if (currentIndex == totalQuestionsInt)
             {
                 nextQuestionButton.Text = "Finish";
             }
