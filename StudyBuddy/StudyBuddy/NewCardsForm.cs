@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Xml;
 
@@ -12,6 +13,8 @@ namespace StudyBuddy
         {
             InitializeComponent();
         }
+
+        string[] illegalStartingCharacters = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
         private void NewCardsForm_Load(object sender, EventArgs e)
         {
@@ -36,7 +39,7 @@ namespace StudyBuddy
                 alreadyExistsLabel.Text = "The quiz '" + quizNameTextBox.Text + "' already exists.";
                 alreadyExistsLabel.Visible = true;
             }
-            else if (quizNameTextBox.Text == "")
+            else if (quizNameTextBox.Text == "" || Regex.IsMatch(quizNameTextBox.Text, @"[!@#$%^&*()_+~`<>,.?/]") || quizNameTextBox.Text.StartsWith("illegalStartingCharacters")) // TODO: Check if it starts with a number, or if it has illegal characters.
             {
                 nextButton.Enabled = false;
                 alreadyExistsLabel.Text = "Please enter a valid quiz name.";
