@@ -16,21 +16,21 @@ namespace StudyBuddy
         private void createButton_MouseMove(object sender, MouseEventArgs e)
         {
             descriptionLabel.Visible = true;
-            descriptionLabel.Text = "Create study cards about a topic that you need to review.";
+            descriptionLabel.Text = "Create study cards about a topic that you\nneed to review.";
             centerDescriptionLabel();
         }
 
         private void editButton_MouseMove(object sender, MouseEventArgs e)
         {
             descriptionLabel.Visible = true;
-            descriptionLabel.Text = "Load previously saved study cards to continue studying.";
+            descriptionLabel.Text = "Load previously saved study cards to\ncontinue studying.";
             centerDescriptionLabel();
         }
 
         private void practiceButton_MouseMove(object sender, MouseEventArgs e)
         {
             descriptionLabel.Visible = true;
-            descriptionLabel.Text = "Practice your saved flash cards to master the topic.";
+            descriptionLabel.Text = "Practice your saved flash cards to master\nthe topic.";
             centerDescriptionLabel();
         }
 

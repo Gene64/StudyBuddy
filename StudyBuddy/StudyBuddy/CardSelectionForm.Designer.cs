@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CardSelectionForm));
             this.startStudyingButton = new System.Windows.Forms.Button();
             this.quizSelectionComboBox = new System.Windows.Forms.ComboBox();
             this.directionsLabel = new System.Windows.Forms.Label();
@@ -35,7 +36,7 @@
             // 
             // startStudyingButton
             // 
-            this.startStudyingButton.Location = new System.Drawing.Point(97, 162);
+            this.startStudyingButton.Location = new System.Drawing.Point(98, 226);
             this.startStudyingButton.Name = "startStudyingButton";
             this.startStudyingButton.Size = new System.Drawing.Size(89, 23);
             this.startStudyingButton.TabIndex = 1;
@@ -55,6 +56,7 @@
             // directionsLabel
             // 
             this.directionsLabel.AutoSize = true;
+            this.directionsLabel.BackColor = System.Drawing.Color.Transparent;
             this.directionsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.directionsLabel.Location = new System.Drawing.Point(14, 9);
             this.directionsLabel.Name = "directionsLabel";
@@ -67,11 +69,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::StudyBuddy.Properties.Resources.A;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.directionsLabel);
             this.Controls.Add(this.quizSelectionComboBox);
             this.Controls.Add(this.startStudyingButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CardSelectionForm";

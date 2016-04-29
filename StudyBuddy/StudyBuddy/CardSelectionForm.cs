@@ -27,7 +27,7 @@ namespace StudyBuddy
                 startStudyingButton.Text = "Start Studying";
                 userType = "study";
             }
-            directionsLabel.Text = "Pick one of your quizes from the box\n below to begin " + userType + "ing!";
+            directionsLabel.Text = "Pick one of your quizes from the box\nbelow to begin " + userType + "ing!";
 
             string[] availableQuizDir = Directory.GetFiles(Application.StartupPath + @"\saved cards");
             

@@ -13,6 +13,7 @@ namespace StudyBuddy
 
         XmlDocument xmlDoc = new XmlDocument();
         int currentIndex = 1;
+        string currentMode;
 
         private void backButton_Click(object sender, EventArgs e)
         {
@@ -26,7 +27,11 @@ namespace StudyBuddy
         private void NewQuestionsForm_Load(object sender, EventArgs e)
         {
             xmlDoc.Load(Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml"); // Loads the XML
-            Text = xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/TestInfo/TestName").InnerText; // Sets page title to test title
+            if (Properties.Settings.Default.editMode)
+                currentMode = "Editing ";
+            else
+                currentMode = "Creating ";
+            Text = currentMode + xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/TestInfo/TestName").InnerText; // Sets page title to test title
 
             currentQuestionLabel.Text = "1/" + xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/TestInfo/NumberOfTestQuestions").InnerText;
 

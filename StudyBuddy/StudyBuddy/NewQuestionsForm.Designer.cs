@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewQuestionsForm));
             this.backButton = new System.Windows.Forms.Button();
             this.questionHeaderLabel = new System.Windows.Forms.Label();
             this.answerHeaderLabel = new System.Windows.Forms.Label();
@@ -127,6 +128,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::StudyBuddy.Properties.Resources.A;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.previousQuestionButton);
             this.Controls.Add(this.currentQuestionLabel);
@@ -138,6 +140,7 @@
             this.Controls.Add(this.questionHeaderLabel);
             this.Controls.Add(this.backButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NewQuestionsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "New Questions";
