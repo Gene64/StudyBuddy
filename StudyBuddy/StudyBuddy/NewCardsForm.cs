@@ -23,8 +23,8 @@ namespace StudyBuddy
             {
                 XmlDocument xmlDoc = new XmlDocument();
                 xmlDoc.Load(currentQuizFile); // Loads the XML
-                quizNameTextBox.Text = xmlDoc.SelectSingleNode("/StudyBuddy/TestInfo/TestName").InnerText;
-                questionNumbersComboBox.Text = xmlDoc.SelectSingleNode("/StudyBuddy/TestInfo/NumberOfTestQuestions").InnerText;
+                quizNameTextBox.Text = xmlDoc.SelectSingleNode("StudyBuddy/TestInfo/TestName").InnerText;
+                questionNumbersComboBox.Text = xmlDoc.SelectSingleNode("StudyBuddy/TestInfo/NumberOfTestQuestions").InnerText;
             }
             else
             {

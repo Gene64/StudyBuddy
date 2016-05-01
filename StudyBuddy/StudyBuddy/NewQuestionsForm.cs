@@ -32,9 +32,9 @@ namespace StudyBuddy
                 currentMode = "Editing ";
             else
                 currentMode = "Creating ";
-            Text = currentMode + xmlDoc.SelectSingleNode("/StudyBuddy/TestInfo/TestName").InnerText; // Sets page title to test title
+            Text = currentMode + xmlDoc.SelectSingleNode("StudyBuddy/TestInfo/TestName").InnerText; // Sets page title to test title
 
-            currentQuestionLabel.Text = "1/" + xmlDoc.SelectSingleNode("/StudyBuddy/TestInfo/NumberOfTestQuestions").InnerText;
+            currentQuestionLabel.Text = "1/" + xmlDoc.SelectSingleNode("StudyBuddy/TestInfo/NumberOfTestQuestions").InnerText;
 
             updateCurrentQuestion();
         }
@@ -44,8 +44,8 @@ namespace StudyBuddy
             if (currentIndex >= 1)
                 previousQuestionButton.Visible = true;
             xmlDoc.Load(currentQuizFile); // Loads the XML
-            xmlDoc.SelectSingleNode("/StudyBuddy/QuestionInfo/Question" + currentIndex).InnerText = questionTextBox.Text;
-            xmlDoc.SelectSingleNode("/StudyBuddy/AnswerInfo/Answer" + currentIndex).InnerText = answerTextBox.Text;
+            xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question" + currentIndex).InnerText = questionTextBox.Text;
+            xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer" + currentIndex).InnerText = answerTextBox.Text;
             xmlDoc.Save(currentQuizFile); // Saves changes to the XML
 
             if (nextQuestionButton.Text == "Finish")
@@ -59,8 +59,8 @@ namespace StudyBuddy
         private void addQuestionInfoXml()
         {
             xmlDoc.Load(currentQuizFile); // Loads the XML
-            xmlDoc.SelectSingleNode("/StudyBuddy/QuestionInfo/Question" + currentIndex).InnerText = questionTextBox.Text;
-            xmlDoc.SelectSingleNode("/StudyBuddy/AnswerInfo/Answer" + currentIndex).InnerText = answerTextBox.Text;
+            xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question" + currentIndex).InnerText = questionTextBox.Text;
+            xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer" + currentIndex).InnerText = answerTextBox.Text;
             xmlDoc.Save(currentQuizFile); // Saves changes to the XML
             Dispose();
         }
@@ -85,16 +85,16 @@ namespace StudyBuddy
         private void updateCurrentQuestion()
         {
             xmlDoc.Load(currentQuizFile); // Loads the XML
-            string totalQuestions = xmlDoc.SelectSingleNode("/StudyBuddy/TestInfo/NumberOfTestQuestions").InnerText;
+            string totalQuestions = xmlDoc.SelectSingleNode("StudyBuddy/TestInfo/NumberOfTestQuestions").InnerText;
             currentQuestionLabel.Text = "Current Question: " + currentIndex+ "/" + totalQuestions;
             questionHeaderLabel.Text = "Question #" + currentIndex;
             answerHeaderLabel.Text = "Answer #" + currentIndex;
 
-            questionTextBox.Text = xmlDoc.SelectSingleNode("/StudyBuddy/QuestionInfo/Question" + currentIndex).InnerText;
-            answerTextBox.Text = xmlDoc.SelectSingleNode("/StudyBuddy/AnswerInfo/Answer" + currentIndex).InnerText;
+            questionTextBox.Text = xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question" + currentIndex).InnerText;
+            answerTextBox.Text = xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer" + currentIndex).InnerText;
 
 
-            int totalQuestionsInt = int.Parse(xmlDoc.SelectSingleNode("/StudyBuddy/TestInfo/NumberOfTestQuestions").InnerText);
+            int totalQuestionsInt = int.Parse(xmlDoc.SelectSingleNode("StudyBuddy/TestInfo/NumberOfTestQuestions").InnerText);
             if (currentIndex == totalQuestionsInt)
                 nextQuestionButton.Text = "Finish";
         }
