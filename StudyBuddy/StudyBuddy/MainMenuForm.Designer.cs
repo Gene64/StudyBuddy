@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenuForm));
             this.WelcomeLabel = new System.Windows.Forms.Label();
             this.createButton = new System.Windows.Forms.Button();
-            this.editButton = new System.Windows.Forms.Button();
             this.descriptionLabel = new System.Windows.Forms.Label();
             this.practiceButton = new System.Windows.Forms.Button();
             this.optionsButton = new System.Windows.Forms.Button();
@@ -51,27 +50,15 @@
             // 
             // createButton
             // 
-            this.createButton.Location = new System.Drawing.Point(12, 214);
+            this.createButton.Location = new System.Drawing.Point(102, 214);
             this.createButton.Name = "createButton";
-            this.createButton.Size = new System.Drawing.Size(61, 35);
+            this.createButton.Size = new System.Drawing.Size(80, 35);
             this.createButton.TabIndex = 2;
             this.createButton.Text = "Create Quiz";
             this.createButton.UseVisualStyleBackColor = true;
             this.createButton.Click += new System.EventHandler(this.createButton_Click);
             this.createButton.MouseLeave += new System.EventHandler(this.createButton_MouseLeave);
             this.createButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.createButton_MouseMove);
-            // 
-            // editButton
-            // 
-            this.editButton.Location = new System.Drawing.Point(146, 214);
-            this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(61, 35);
-            this.editButton.TabIndex = 3;
-            this.editButton.Text = "Edit Quiz";
-            this.editButton.UseVisualStyleBackColor = true;
-            this.editButton.Click += new System.EventHandler(this.editButton_Click);
-            this.editButton.MouseLeave += new System.EventHandler(this.editButton_MouseLeave);
-            this.editButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.editButton_MouseMove);
             // 
             // descriptionLabel
             // 
@@ -88,9 +75,9 @@
             // 
             // practiceButton
             // 
-            this.practiceButton.Location = new System.Drawing.Point(79, 214);
+            this.practiceButton.Location = new System.Drawing.Point(12, 214);
             this.practiceButton.Name = "practiceButton";
-            this.practiceButton.Size = new System.Drawing.Size(61, 35);
+            this.practiceButton.Size = new System.Drawing.Size(80, 35);
             this.practiceButton.TabIndex = 6;
             this.practiceButton.Text = "Practice Quiz";
             this.practiceButton.UseVisualStyleBackColor = true;
@@ -100,9 +87,9 @@
             // 
             // optionsButton
             // 
-            this.optionsButton.Location = new System.Drawing.Point(211, 214);
+            this.optionsButton.Location = new System.Drawing.Point(192, 214);
             this.optionsButton.Name = "optionsButton";
-            this.optionsButton.Size = new System.Drawing.Size(61, 35);
+            this.optionsButton.Size = new System.Drawing.Size(80, 35);
             this.optionsButton.TabIndex = 7;
             this.optionsButton.Text = "Options";
             this.optionsButton.UseVisualStyleBackColor = true;
@@ -119,7 +106,6 @@
             this.Controls.Add(this.optionsButton);
             this.Controls.Add(this.practiceButton);
             this.Controls.Add(this.descriptionLabel);
-            this.Controls.Add(this.editButton);
             this.Controls.Add(this.createButton);
             this.Controls.Add(this.WelcomeLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -139,7 +125,6 @@
 
         private System.Windows.Forms.Label WelcomeLabel;
         private System.Windows.Forms.Button createButton;
-        private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Label descriptionLabel;
         private System.Windows.Forms.Button practiceButton;
         private System.Windows.Forms.Button optionsButton;

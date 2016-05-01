@@ -50,5 +50,14 @@ namespace StudyBuddy
         {
             checkTimerCheckBox();
         }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            Dispose();
+            Properties.Settings.Default.editMode = true;
+            Properties.Settings.Default.Save();
+            CardSelectionForm csf = new CardSelectionForm();
+            csf.ShowDialog();
+        }
     }
 }

@@ -20,13 +20,6 @@ namespace StudyBuddy
             centerDescriptionLabel();
         }
 
-        private void editButton_MouseMove(object sender, MouseEventArgs e)
-        {
-            descriptionLabel.Visible = true;
-            descriptionLabel.Text = "Load previously saved study cards to\ncontinue studying.";
-            centerDescriptionLabel();
-        }
-
         private void practiceButton_MouseMove(object sender, MouseEventArgs e)
         {
             descriptionLabel.Visible = true;
@@ -43,11 +36,6 @@ namespace StudyBuddy
 
         // The description label turns invisible when the user isn't hovering over any of the buttons.
         private void createButton_MouseLeave(object sender, EventArgs e)
-        {
-            descriptionLabel.Visible = false;
-        }
-
-        private void editButton_MouseLeave(object sender, EventArgs e)
         {
             descriptionLabel.Visible = false;
         }
@@ -95,14 +83,6 @@ namespace StudyBuddy
             }
             Properties.Settings.Default.backButtonPressed = false;
             Properties.Settings.Default.Save();
-        }
-
-        private void editButton_Click(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.editMode = true;
-            Properties.Settings.Default.Save();
-            CardSelectionForm csf = new CardSelectionForm();
-            csf.ShowDialog();
         }
 
         private void optionsButton_Click(object sender, EventArgs e)

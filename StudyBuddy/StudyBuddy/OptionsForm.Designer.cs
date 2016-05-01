@@ -32,16 +32,17 @@
             this.timerCheckBox = new System.Windows.Forms.CheckBox();
             this.saveButton = new System.Windows.Forms.Button();
             this.timerVisibilityCheckBox = new System.Windows.Forms.CheckBox();
+            this.editButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // timerCheckBox
             // 
             this.timerCheckBox.AutoSize = true;
             this.timerCheckBox.BackColor = System.Drawing.Color.White;
-            this.timerCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timerCheckBox.Location = new System.Drawing.Point(12, 53);
+            this.timerCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timerCheckBox.Location = new System.Drawing.Point(12, 12);
             this.timerCheckBox.Name = "timerCheckBox";
-            this.timerCheckBox.Size = new System.Drawing.Size(108, 20);
+            this.timerCheckBox.Size = new System.Drawing.Size(100, 19);
             this.timerCheckBox.TabIndex = 0;
             this.timerCheckBox.Text = "Enable Timer";
             this.timerCheckBox.UseVisualStyleBackColor = false;
@@ -61,13 +62,23 @@
             // 
             this.timerVisibilityCheckBox.AutoSize = true;
             this.timerVisibilityCheckBox.BackColor = System.Drawing.Color.White;
-            this.timerVisibilityCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timerVisibilityCheckBox.Location = new System.Drawing.Point(25, 79);
+            this.timerVisibilityCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timerVisibilityCheckBox.Location = new System.Drawing.Point(12, 37);
             this.timerVisibilityCheckBox.Name = "timerVisibilityCheckBox";
-            this.timerVisibilityCheckBox.Size = new System.Drawing.Size(122, 20);
+            this.timerVisibilityCheckBox.Size = new System.Drawing.Size(146, 19);
             this.timerVisibilityCheckBox.TabIndex = 2;
-            this.timerVisibilityCheckBox.Text = "Enable Visibility";
+            this.timerVisibilityCheckBox.Text = "Enable Timer Visibility";
             this.timerVisibilityCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // editButton
+            // 
+            this.editButton.Location = new System.Drawing.Point(12, 62);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(80, 35);
+            this.editButton.TabIndex = 4;
+            this.editButton.Text = "Edit Quiz";
+            this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // OptionsForm
             // 
@@ -75,6 +86,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::StudyBuddy.Properties.Resources.A;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.editButton);
             this.Controls.Add(this.timerVisibilityCheckBox);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.timerCheckBox);
@@ -96,5 +108,6 @@
         private System.Windows.Forms.CheckBox timerCheckBox;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.CheckBox timerVisibilityCheckBox;
+        private System.Windows.Forms.Button editButton;
     }
 }
