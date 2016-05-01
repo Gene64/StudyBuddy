@@ -25,16 +25,14 @@ namespace QuadraticEquationSolver
             c = double.Parse(CValueTextBox.Text);
 
             // Solve the first side of equation.
-            double topSide = Math.Sqrt((Math.Pow(b, 2)) - (4 * a * c) / (2 * a));
-            double bottomSide = (2 * a);
-            double rightSide = (topSide) / (bottomSide);
+            double firstSide = (-b / (2 * a));
 
             // Solve the second side of the equation.
-            double leftSide = (-b / (2 * a));
-            
+            double secondSide = Math.Sqrt((Math.Pow(b, 2)) - (4 * a * c)) / (2 * a);
+
             // Add and subtract both sides of the equation with eachother to get both solutions.
-            solution1 = Math.Round((leftSide) - (rightSide), 3);
-            solution2 = Math.Round((leftSide) + (rightSide), 3);
+            solution1 = Math.Round((firstSide) - (secondSide), 3);
+            solution2 = Math.Round((firstSide) + (secondSide), 3);
 
             // Find out how many solutions there are and print it out to the label.
             if (solution1.ToString() == "NaN" && solution2.ToString() == "NaN")
