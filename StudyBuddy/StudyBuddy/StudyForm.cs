@@ -14,6 +14,9 @@ namespace StudyBuddy
         XmlDocument xmlDoc = new XmlDocument();
         int totalQuestions;
         int currentIndex = 1;
+        int wrongAnswers;
+        int rightAnswers;
+
         string currentQuizFile = Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml";
 
         private void StudyForm_Load(object sender, EventArgs e)
@@ -28,11 +31,11 @@ namespace StudyBuddy
         {
             if (xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer" + currentIndex).InnerText != answerTextBox.Text)
             {
-                MessageBox.Show("Sorry, but the answer that you've entered is incorrect.", "Wrong Answer");
+                wrongAnswers++;
             }
             else
             {
-                MessageBox.Show("Hooray, the answer that you've entered is correct.", "Correct Answer");
+                rightAnswers++;
                 nextQuestion();
             }
         }
@@ -42,13 +45,14 @@ namespace StudyBuddy
             if (totalQuestions > currentIndex)
             {
                 currentIndex++;
-                questionLabel.Text = xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/QuestionInfo/Question" + currentIndex).InnerText; // Sets the question to the next question.
+                questionLabel.Text = xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question" + currentIndex).InnerText; // Sets the question to the next question.
                 answerTextBox.Text = "";
                 centerQuestionLabel();
             }
             else
             {
-                MessageBox.Show("Congratulations! You have finished studying for your quiz.");
+                int percentScore = (rightAnswers / totalQuestions) * 100;
+                MessageBox.Show("Congratulations, you have finished this study session! You got " + rightAnswers + " correct and " + wrongAnswers + " wrong. Your final score is a " + percentScore + "%.");
                 Dispose();
             }
         }
