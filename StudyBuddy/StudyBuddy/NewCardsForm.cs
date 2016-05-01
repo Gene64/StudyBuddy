@@ -14,6 +14,7 @@ namespace StudyBuddy
             InitializeComponent();
         }
 
+        string currentQuizFile = Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml";
         string[] illegalStartingCharacters = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
         private void NewCardsForm_Load(object sender, EventArgs e)
@@ -21,9 +22,9 @@ namespace StudyBuddy
             if (Properties.Settings.Default.backButtonPressed || Properties.Settings.Default.editMode)
             {
                 XmlDocument xmlDoc = new XmlDocument();
-                xmlDoc.Load(Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml"); // Loads the XML
-                quizNameTextBox.Text = xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/TestInfo/TestName").InnerText;
-                questionNumbersComboBox.Text = xmlDoc.SelectSingleNode(Properties.Settings.Default.currentSelectedQuiz + "/TestInfo/NumberOfTestQuestions").InnerText;
+                xmlDoc.Load(currentQuizFile); // Loads the XML
+                quizNameTextBox.Text = xmlDoc.SelectSingleNode("/StudyBuddy/TestInfo/TestName").InnerText;
+                questionNumbersComboBox.Text = xmlDoc.SelectSingleNode("/StudyBuddy/TestInfo/NumberOfTestQuestions").InnerText;
             }
             else
             {
@@ -33,7 +34,7 @@ namespace StudyBuddy
 
         private void cardGroupNameTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (File.Exists(Application.StartupPath + @"\saved cards\" + quizNameTextBox.Text + @".xml") && quizNameTextBox.Text != Properties.Settings.Default.currentSelectedQuiz)
+            if (File.Exists(Application.StartupPath + @"\saved cards\" + quizNameTextBox.Text + ".xml") && quizNameTextBox.Text != Properties.Settings.Default.currentSelectedQuiz)
             {
                 nextButton.Enabled = false;
                 alreadyExistsLabel.Text = "The quiz '" + quizNameTextBox.Text + "' already exists.";
@@ -61,7 +62,7 @@ namespace StudyBuddy
             {
                 XmlTextWriter xWriter = new XmlTextWriter(Application.StartupPath + @"\saved cards\" + quizNameTextBox.Text + ".xml", Encoding.UTF8);
                 xWriter.Formatting = Formatting.Indented;
-                xWriter.WriteStartElement(quizNameTextBox.Text); // <quizNameTextBox.Test>
+                xWriter.WriteStartElement("StudyBuddy"); // <StudyBuddy>
                 xWriter.WriteStartElement("TestInfo"); // <TestInfo>
                 xWriter.WriteStartElement("TestName"); // <TestName>
                 xWriter.WriteString(quizNameTextBox.Text); // quizNameNameTextBox.Text
