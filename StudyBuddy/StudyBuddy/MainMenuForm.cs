@@ -92,5 +92,11 @@ namespace StudyBuddy
             CardSelectionForm csf = new CardSelectionForm();
             csf.ShowDialog();
         }
+
+        private void optionsButton_Click(object sender, EventArgs e)
+        {
+            OptionsForm options = new OptionsForm();
+            options.ShowDialog();
+        }
     }
 }

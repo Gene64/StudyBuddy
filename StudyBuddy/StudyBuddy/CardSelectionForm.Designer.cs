@@ -29,61 +29,61 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CardSelectionForm));
-            startStudyingButton = new System.Windows.Forms.Button();
-            quizSelectionComboBox = new System.Windows.Forms.ComboBox();
-            directionsLabel = new System.Windows.Forms.Label();
-            SuspendLayout();
+            this.startStudyingButton = new System.Windows.Forms.Button();
+            this.quizSelectionComboBox = new System.Windows.Forms.ComboBox();
+            this.directionsLabel = new System.Windows.Forms.Label();
+            this.SuspendLayout();
             // 
             // startStudyingButton
             // 
-            startStudyingButton.Location = new System.Drawing.Point(98, 226);
-            startStudyingButton.Name = "startStudyingButton";
-            startStudyingButton.Size = new System.Drawing.Size(89, 23);
-            startStudyingButton.TabIndex = 1;
-            startStudyingButton.Text = "Start Studying";
-            startStudyingButton.UseVisualStyleBackColor = true;
-            startStudyingButton.Click += new System.EventHandler(topic1Button_Click);
+            this.startStudyingButton.Location = new System.Drawing.Point(98, 226);
+            this.startStudyingButton.Name = "startStudyingButton";
+            this.startStudyingButton.Size = new System.Drawing.Size(89, 23);
+            this.startStudyingButton.TabIndex = 1;
+            this.startStudyingButton.Text = "Start Studying";
+            this.startStudyingButton.UseVisualStyleBackColor = true;
+            this.startStudyingButton.Click += new System.EventHandler(this.topic1Button_Click);
             // 
             // quizSelectionComboBox
             // 
-            quizSelectionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            quizSelectionComboBox.FormattingEnabled = true;
-            quizSelectionComboBox.Location = new System.Drawing.Point(82, 44);
-            quizSelectionComboBox.Name = "quizSelectionComboBox";
-            quizSelectionComboBox.Size = new System.Drawing.Size(121, 21);
-            quizSelectionComboBox.TabIndex = 2;
+            this.quizSelectionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.quizSelectionComboBox.FormattingEnabled = true;
+            this.quizSelectionComboBox.Location = new System.Drawing.Point(82, 44);
+            this.quizSelectionComboBox.Name = "quizSelectionComboBox";
+            this.quizSelectionComboBox.Size = new System.Drawing.Size(121, 21);
+            this.quizSelectionComboBox.TabIndex = 2;
             // 
             // directionsLabel
             // 
-            directionsLabel.AutoSize = true;
-            directionsLabel.BackColor = System.Drawing.Color.Transparent;
-            directionsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            directionsLabel.Location = new System.Drawing.Point(14, 9);
-            directionsLabel.Name = "directionsLabel";
-            directionsLabel.Size = new System.Drawing.Size(256, 32);
-            directionsLabel.TabIndex = 3;
-            directionsLabel.Text = "Pick one of your quizes from the box\nbelow to begin studying!";
-            directionsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.directionsLabel.AutoSize = true;
+            this.directionsLabel.BackColor = System.Drawing.Color.White;
+            this.directionsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.directionsLabel.Location = new System.Drawing.Point(14, 9);
+            this.directionsLabel.Name = "directionsLabel";
+            this.directionsLabel.Size = new System.Drawing.Size(256, 32);
+            this.directionsLabel.TabIndex = 3;
+            this.directionsLabel.Text = "Pick one of your quizes from the box\nbelow to begin studying!";
+            this.directionsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CardSelectionForm
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.A;
-            ClientSize = new System.Drawing.Size(284, 261);
-            Controls.Add(directionsLabel);
-            Controls.Add(quizSelectionComboBox);
-            Controls.Add(startStudyingButton);
-            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            Icon = ((System.Drawing.Icon)(resources.GetObject("$Icon")));
-            MaximizeBox = false;
-            MinimizeBox = false;
-            Name = "CardSelectionForm";
-            StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            Text = "Study Quiz Selection";
-            Load += new System.EventHandler(CardSelectionForm_Load);
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::StudyBuddy.Properties.Resources.A;
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.directionsLabel);
+            this.Controls.Add(this.quizSelectionComboBox);
+            this.Controls.Add(this.startStudyingButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "CardSelectionForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Study Quiz Selection";
+            this.Load += new System.EventHandler(this.CardSelectionForm_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

@@ -70,5 +70,17 @@ namespace StudyBuddy.Properties {
                 this["editMode"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool timerEnabled {
+            get {
+                return ((bool)(this["timerEnabled"]));
+            }
+            set {
+                this["timerEnabled"] = value;
+            }
+        }
     }
 }
