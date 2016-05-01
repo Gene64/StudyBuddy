@@ -74,7 +74,7 @@ namespace StudyBuddy
                 else if (totalMinutes > 0 && totalSeconds > 0)
                     timeResults = " It took you " + totalMinutes + " minutes and " + totalSeconds + " seconds to complete this study quiz.";
 
-                MessageBox.Show("Congratulations, you have finished this study session! You got " + rightAnswers + " correct and " + wrongAnswers + " wrong. Your final score is a " + percentScore + "%." + timeResults);
+                MessageBox.Show("Congratulations, you have finished this study session! You got " + rightAnswers + " correct and " + wrongAnswers + " wrong. Your final score is a " + percentScore + "%." + timeResults, "Study Quiz Finished");
                 Dispose();
             }
         }
@@ -96,10 +96,13 @@ namespace StudyBuddy
                 totalSeconds = 0;
             }
             
-            if (totalSeconds <= 9)
-                timerLabel.Text = totalMinutes + ":0" + totalSeconds;
-            else
-                timerLabel.Text = totalMinutes + ":" + totalSeconds;
+            if (Properties.Settings.Default.timerVisibilityEnabled)
+            {
+                if (totalSeconds <= 9)
+                    timerLabel.Text = totalMinutes + ":0" + totalSeconds;
+                else
+                    timerLabel.Text = totalMinutes + ":" + totalSeconds;
+            }
         }
     }
 }
