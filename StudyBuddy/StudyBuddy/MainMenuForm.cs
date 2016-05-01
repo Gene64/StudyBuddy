@@ -34,6 +34,13 @@ namespace StudyBuddy
             centerDescriptionLabel();
         }
 
+        private void optionsButton_MouseMove(object sender, MouseEventArgs e)
+        {
+            descriptionLabel.Visible = true;
+            descriptionLabel.Text = "Change Study Buddy's options to fit your\nlearning style.";
+            centerDescriptionLabel();
+        }
+
         // The description label turns invisible when the user isn't hovering over any of the buttons.
         private void createButton_MouseLeave(object sender, EventArgs e)
         {
@@ -46,6 +53,11 @@ namespace StudyBuddy
         }
 
         private void practiceButton_MouseLeave(object sender, EventArgs e)
+        {
+            descriptionLabel.Visible = false;
+        }
+
+        private void optionsButton_MouseLeave(object sender, EventArgs e)
         {
             descriptionLabel.Visible = false;
         }

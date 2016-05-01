@@ -107,6 +107,8 @@
             this.optionsButton.Text = "Options";
             this.optionsButton.UseVisualStyleBackColor = true;
             this.optionsButton.Click += new System.EventHandler(this.optionsButton_Click);
+            this.optionsButton.MouseLeave += new System.EventHandler(this.optionsButton_MouseLeave);
+            this.optionsButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.optionsButton_MouseMove);
             // 
             // MainMenuForm
             // 
