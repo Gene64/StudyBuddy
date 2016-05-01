@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudyForm));
             this.questionLabel = new System.Windows.Forms.Label();
             this.answerTextBox = new System.Windows.Forms.TextBox();
             this.nextQuestionButton = new System.Windows.Forms.Button();
             this.currentQuestionLabel = new System.Windows.Forms.Label();
+            this.questionTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // questionLabel
@@ -74,6 +76,11 @@
             this.currentQuestionLabel.TabIndex = 3;
             this.currentQuestionLabel.Text = "Question 1";
             // 
+            // questionTimer
+            // 
+            this.questionTimer.Interval = 1000;
+            this.questionTimer.Tick += new System.EventHandler(this.questionTimer_Tick);
+            // 
             // StudyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -103,5 +110,6 @@
         private System.Windows.Forms.TextBox answerTextBox;
         private System.Windows.Forms.Button nextQuestionButton;
         private System.Windows.Forms.Label currentQuestionLabel;
+        private System.Windows.Forms.Timer questionTimer;
     }
 }

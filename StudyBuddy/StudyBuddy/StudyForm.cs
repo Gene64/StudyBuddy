@@ -16,6 +16,7 @@ namespace StudyBuddy
         int currentIndex = 1;
         int wrongAnswers;
         int rightAnswers;
+        int totalSeconds;
 
         string currentQuizFile = Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml";
 
@@ -25,6 +26,9 @@ namespace StudyBuddy
             totalQuestions = int.Parse(xmlDoc.SelectSingleNode("StudyBuddy/TestInfo/NumberOfTestQuestions").InnerText); // Gets the number of questions.
             questionLabel.Text = xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question1").InnerText; // Sets the question to the first question.
             centerQuestionLabel();
+
+            if (Properties.Settings.Default.timerEnabled)
+                questionTimer.Enabled = true;
         }
 
         private void nextQuestionButton_Click(object sender, EventArgs e)
@@ -52,7 +56,7 @@ namespace StudyBuddy
             else
             {
                 int percentScore = (rightAnswers / totalQuestions) * 100;
-                MessageBox.Show("Congratulations, you have finished this study session! You got " + rightAnswers + " correct and " + wrongAnswers + " wrong. Your final score is a " + percentScore + "%.");
+                MessageBox.Show("Congratulations, you have finished this study session! You got " + rightAnswers + " correct and " + wrongAnswers + " wrong. Your final score is a " + percentScore + "% and it took you " + totalSeconds + " to complete this study quiz.");
                 Dispose();
             }
         }
@@ -60,6 +64,11 @@ namespace StudyBuddy
         private void centerQuestionLabel()
         {
             currentQuestionLabel.Left = (ClientSize.Width - currentQuestionLabel.Size.Width) / 2;
+        }
+
+        private void questionTimer_Tick(object sender, EventArgs e)
+        {
+            totalSeconds++;
         }
     }
 }
