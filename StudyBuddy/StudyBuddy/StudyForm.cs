@@ -81,7 +81,7 @@ namespace StudyBuddy
 
         private void centerQuestionLabel()
         {
-            currentQuestionLabel.Left = (ClientSize.Width - currentQuestionLabel.Size.Width) / 2;
+            questionLabel.Left = (ClientSize.Width - questionLabel.Size.Width) / 2;
         }
 
         private void questionTimer_Tick(object sender, EventArgs e)
