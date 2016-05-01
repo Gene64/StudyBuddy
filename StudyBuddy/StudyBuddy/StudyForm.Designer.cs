@@ -35,6 +35,7 @@
             this.nextQuestionButton = new System.Windows.Forms.Button();
             this.currentQuestionLabel = new System.Windows.Forms.Label();
             this.questionTimer = new System.Windows.Forms.Timer(this.components);
+            this.timerLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // questionLabel
@@ -81,12 +82,24 @@
             this.questionTimer.Interval = 1000;
             this.questionTimer.Tick += new System.EventHandler(this.questionTimer_Tick);
             // 
+            // timerLabel
+            // 
+            this.timerLabel.AutoSize = true;
+            this.timerLabel.BackColor = System.Drawing.Color.White;
+            this.timerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timerLabel.Location = new System.Drawing.Point(236, 9);
+            this.timerLabel.Name = "timerLabel";
+            this.timerLabel.Size = new System.Drawing.Size(36, 16);
+            this.timerLabel.TabIndex = 4;
+            this.timerLabel.Text = "0:00";
+            // 
             // StudyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::StudyBuddy.Properties.Resources.A;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.timerLabel);
             this.Controls.Add(this.currentQuestionLabel);
             this.Controls.Add(this.nextQuestionButton);
             this.Controls.Add(this.answerTextBox);
@@ -111,5 +124,6 @@
         private System.Windows.Forms.Button nextQuestionButton;
         private System.Windows.Forms.Label currentQuestionLabel;
         private System.Windows.Forms.Timer questionTimer;
+        private System.Windows.Forms.Label timerLabel;
     }
 }

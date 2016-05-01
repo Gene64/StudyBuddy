@@ -29,7 +29,14 @@ namespace StudyBuddy
             centerQuestionLabel();
 
             if (Properties.Settings.Default.timerEnabled)
+            {
                 questionTimer.Enabled = true;
+
+                if (Properties.Settings.Default.timerVisibilityEnabled)
+                    timerLabel.Visible = true;
+            }
+            else
+                timerLabel.Visible = false;
         }
 
         private void nextQuestionButton_Click(object sender, EventArgs e)
@@ -57,22 +64,17 @@ namespace StudyBuddy
             else
             {
                 int percentScore = (rightAnswers / totalQuestions) * 100;
+                string timeResults = null;
 
-                string totalTime;
-                if (totalSeconds >= 60) // Checks if the time has been a minute or more.
-                {
-                    double totalMinutesRemainder = (totalSeconds / 60);
-                    totalMinutes = Math.Round(totalMinutesRemainder, 0);
-                    totalSeconds = (totalMinutesRemainder - totalMinutes) * 60;
-                    totalTime = totalMinutes + " minutes and " + totalSeconds + " seconds";
-                }
-                else
-                {
-                    totalTime = totalSeconds + " seconds";
-                }
-                // TODO: Fix this so it actually works.
-                
-                MessageBox.Show("Congratulations, you have finished this study session! You got " + rightAnswers + " correct and " + wrongAnswers + " wrong. Your final score is a " + percentScore + "% and it took you " + totalTime + " to complete this study quiz.");
+                // Set the format of the time results
+                if (totalMinutes == 0 && totalSeconds > 0)
+                    timeResults = " It took you " + totalSeconds + " seconds to complete this study quiz.";
+                else if (totalMinutes > 0 && totalSeconds == 0)
+                    timeResults = " It took you " + totalMinutes + " minutes to complete this study quiz.";
+                else if (totalMinutes > 0 && totalSeconds > 0)
+                    timeResults = " It took you " + totalMinutes + " minutes and " + totalSeconds + " seconds to complete this study quiz.";
+
+                MessageBox.Show("Congratulations, you have finished this study session! You got " + rightAnswers + " correct and " + wrongAnswers + " wrong. Your final score is a " + percentScore + "%." + timeResults);
                 Dispose();
             }
         }
@@ -84,7 +86,20 @@ namespace StudyBuddy
 
         private void questionTimer_Tick(object sender, EventArgs e)
         {
-            totalSeconds++;
+            if (totalSeconds < 60)
+            {
+                totalSeconds++;
+            }
+            else if (totalSeconds == 60)
+            {
+                totalMinutes++;
+                totalSeconds = 0;
+            }
+            
+            if (totalSeconds <= 9)
+                timerLabel.Text = totalMinutes + ":0" + totalSeconds;
+            else
+                timerLabel.Text = totalMinutes + ":" + totalSeconds;
         }
     }
 }

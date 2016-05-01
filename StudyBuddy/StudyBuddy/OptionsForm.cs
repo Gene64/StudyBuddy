@@ -20,13 +20,35 @@ namespace StudyBuddy
         private void OptionsForm_Load(object sender, EventArgs e)
         {
             timerCheckBox.Checked = Properties.Settings.Default.timerEnabled;
+            timerVisibilityCheckBox.Checked = Properties.Settings.Default.timerVisibilityEnabled;
+
+            checkTimerCheckBox();
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.timerEnabled = timerCheckBox.Checked;
+            Properties.Settings.Default.timerVisibilityEnabled = timerVisibilityCheckBox.Checked;
             Properties.Settings.Default.Save();
             Dispose();
+        }
+
+        private void checkTimerCheckBox()
+        {
+            if (timerCheckBox.Checked)
+                timerVisibilityCheckBox.Visible = true;
+            else
+            {
+                timerVisibilityCheckBox.Visible = false;
+                timerVisibilityCheckBox.Checked = false;
+            }
+                
+
+        }
+
+        private void timerCheckBox_CheckStateChanged(object sender, EventArgs e)
+        {
+            checkTimerCheckBox();
         }
     }
 }
