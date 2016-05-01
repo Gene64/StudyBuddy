@@ -19,6 +19,11 @@ namespace QuadraticEquationSolver
 
         private void solveButton_Click(object sender, EventArgs e)
         {
+            findRoots();
+        }
+
+        private void findRoots()
+        {
             // Get variable's values from user.
             a = double.Parse(aValueTextBox.Text);
             b = double.Parse(BValueTextBox.Text);
@@ -43,7 +48,7 @@ namespace QuadraticEquationSolver
                 solutionsLabel.Text = "There are 2 solutions:";
 
             // Print out the solutions to the TextBox.
-            solutionOut.Text = solution1 + " and " + solution2;
+            solutionOut.Text = solution1 + ", " + solution2;
         }
     }
 }

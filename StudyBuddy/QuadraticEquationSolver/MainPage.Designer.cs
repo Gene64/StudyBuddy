@@ -115,6 +115,7 @@
             this.solutionOut.ReadOnly = true;
             this.solutionOut.Size = new System.Drawing.Size(100, 20);
             this.solutionOut.TabIndex = 10;
+            this.solutionOut.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // solveButton
             // 
