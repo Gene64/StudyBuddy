@@ -36,6 +36,14 @@ namespace QuadraticEquationSolver
             solution1 = Math.Round((leftSide) - (rightSide), 3);
             solution2 = Math.Round((leftSide) + (rightSide), 3);
 
+            // Find out how many solutions there are and print it out to the label.
+            if (solution1.ToString() == "NaN" && solution2.ToString() == "NaN")
+                solutionsLabel.Text = "There are 0 solutions:";
+            else if (solution1.ToString() == "NaN" || solution2.ToString() == "NaN")
+                solutionsLabel.Text = "There is 1 solution:";
+            else if (solution1.ToString() != "NaN" && solution1.ToString() != "NaN")
+                solutionsLabel.Text = "There are 2 solutions:";
+
             // Print out the solutions to the TextBox.
             solutionOut.Text = solution1 + " and " + solution2;
         }
