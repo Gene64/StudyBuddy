@@ -58,14 +58,20 @@ namespace StudyBuddy
             {
                 int percentScore = (rightAnswers / totalQuestions) * 100;
 
+                string totalTime;
                 if (totalSeconds >= 60) // Checks if the time has been a minute or more.
                 {
                     double totalMinutesRemainder = (totalSeconds / 60);
                     totalMinutes = Math.Round(totalMinutesRemainder, 0);
                     totalSeconds = (totalMinutesRemainder - totalMinutes) * 60;
+                    totalTime = totalMinutes + " minutes and " + totalSeconds + " seconds";
+                }
+                else
+                {
+                    totalTime = totalSeconds + " seconds";
                 }
                 // TODO: Fix this so it actually works.
-                string totalTime = totalMinutes + " minutes and " + totalSeconds + " seconds ";
+                
                 MessageBox.Show("Congratulations, you have finished this study session! You got " + rightAnswers + " correct and " + wrongAnswers + " wrong. Your final score is a " + percentScore + "% and it took you " + totalTime + " to complete this study quiz.");
                 Dispose();
             }
