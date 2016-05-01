@@ -124,6 +124,7 @@
             this.solveButton.TabIndex = 11;
             this.solveButton.Text = "Solve";
             this.solveButton.UseVisualStyleBackColor = true;
+            this.solveButton.Click += new System.EventHandler(this.solveButton_Click);
             // 
             // MainPage
             // 
