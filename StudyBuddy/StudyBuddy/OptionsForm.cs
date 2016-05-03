@@ -42,8 +42,6 @@ namespace StudyBuddy
                 timerVisibilityCheckBox.Visible = false;
                 timerVisibilityCheckBox.Checked = false;
             }
-                
-
         }
 
         private void timerCheckBox_CheckStateChanged(object sender, EventArgs e)

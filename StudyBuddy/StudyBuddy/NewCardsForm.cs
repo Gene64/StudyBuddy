@@ -55,6 +55,8 @@ namespace StudyBuddy
 
         private void nextButton_Click(object sender, EventArgs e)
         {
+            // TODO: Add option to change quiz name (Rename inside the xml AND the actual xml file name) and number of questions (Delete/add questions and change inside the xml file).
+
             Properties.Settings.Default.currentSelectedQuiz = quizNameTextBox.Text;
             Properties.Settings.Default.Save();
 
