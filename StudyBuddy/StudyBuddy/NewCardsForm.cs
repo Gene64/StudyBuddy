@@ -16,12 +16,12 @@ namespace StudyBuddy
 
         string currentQuizFile = Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml";
         string[] illegalStartingCharacters = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+        XmlDocument xmlDoc = new XmlDocument();
 
         private void NewCardsForm_Load(object sender, EventArgs e)
         {
             if (Properties.Settings.Default.backButtonPressed || Properties.Settings.Default.editMode)
             {
-                XmlDocument xmlDoc = new XmlDocument();
                 xmlDoc.Load(currentQuizFile); // Loads the XML
                 quizNameTextBox.Text = xmlDoc.SelectSingleNode("StudyBuddy/TestInfo/TestName").InnerText;
                 questionNumbersComboBox.Text = xmlDoc.SelectSingleNode("StudyBuddy/TestInfo/NumberOfTestQuestions").InnerText;
@@ -55,146 +55,166 @@ namespace StudyBuddy
 
         private void nextButton_Click(object sender, EventArgs e)
         {
-            // TODO: Add option to change quiz name (Rename inside the xml AND the actual xml file name) and number of questions (Delete/add questions and change inside the xml file).
+            if (!Properties.Settings.Default.editMode)
+            {
+                if (!File.Exists(Application.StartupPath + @"\saved cards\" + quizNameTextBox.Text + ".xml"))
+                {
+                    XmlTextWriter xWriter = new XmlTextWriter(Application.StartupPath + @"\saved cards\" + quizNameTextBox.Text + ".xml", Encoding.UTF8);
+                    xWriter.Formatting = Formatting.Indented;
+                    xWriter.WriteStartElement("StudyBuddy"); // <StudyBuddy>
+                    xWriter.WriteStartElement("TestInfo"); // <TestInfo>
+                    xWriter.WriteStartElement("TestName"); // <TestName>
+                    xWriter.WriteString(quizNameTextBox.Text); // quizNameNameTextBox.Text
+                    xWriter.WriteEndElement(); // </TestName>
+                    xWriter.WriteStartElement("NumberOfTestQuestions"); // <NumberOfTestQuestions>
+                    xWriter.WriteString(questionNumbersComboBox.Text); // questionNumbersComboBox.Text
+                    xWriter.WriteEndElement(); // </NumberOfTestQuestions>
+                    xWriter.WriteEndElement(); // </TestInfo>
 
+                    if (questionNumbersComboBox.SelectedIndex >= 0)
+                    {
+                        // Write the questions.
+                        xWriter.WriteStartElement("QuestionInfo"); // <QuestionInfo>
+                        xWriter.WriteStartElement("Question1"); // <Question1>
+                        xWriter.WriteEndElement(); // </Question1>
+                        if (questionNumbersComboBox.SelectedIndex >= 1)
+                        {
+                            xWriter.WriteStartElement("Question2"); // <Question2>
+                            xWriter.WriteEndElement(); // </Question2>
+
+                            if (questionNumbersComboBox.SelectedIndex >= 2)
+                            {
+                                xWriter.WriteStartElement("Question3"); // <Question3>
+                                xWriter.WriteEndElement(); // </Question3>
+
+                                if (questionNumbersComboBox.SelectedIndex >= 3)
+                                {
+                                    xWriter.WriteStartElement("Question4"); // <Question4>
+                                    xWriter.WriteEndElement(); // </Question4>
+
+                                    if (questionNumbersComboBox.SelectedIndex >= 4)
+                                    {
+                                        xWriter.WriteStartElement("Question5"); // <Question5>
+                                        xWriter.WriteEndElement(); // </Question5>
+
+                                        if (questionNumbersComboBox.SelectedIndex >= 5)
+                                        {
+                                            xWriter.WriteStartElement("Question6"); // <Question6>
+                                            xWriter.WriteEndElement(); // </Question6>
+
+                                            if (questionNumbersComboBox.SelectedIndex >= 6)
+                                            {
+                                                xWriter.WriteStartElement("Question7"); // <Question7>
+                                                xWriter.WriteEndElement(); // </Question7>
+
+                                                if (questionNumbersComboBox.SelectedIndex >= 7)
+                                                {
+                                                    xWriter.WriteStartElement("Question8"); // <Question8>
+                                                    xWriter.WriteEndElement(); // </Question8>
+
+                                                    if (questionNumbersComboBox.SelectedIndex >= 8)
+                                                    {
+                                                        xWriter.WriteStartElement("Question9"); // <Question9>
+                                                        xWriter.WriteEndElement(); // </Question9>
+
+                                                        if (questionNumbersComboBox.SelectedIndex == 9)
+                                                        {
+                                                            xWriter.WriteStartElement("Question10"); // <Question10>
+                                                            xWriter.WriteEndElement(); // </Question10>
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        xWriter.WriteEndElement(); // </QuestionInfo>
+                                                   // Write the answers.
+                        xWriter.WriteStartElement("AnswerInfo");
+                        xWriter.WriteStartElement("Answer1");
+                        xWriter.WriteEndElement(); // </Answer1>
+                        if (questionNumbersComboBox.SelectedIndex >= 1)
+                        {
+                            xWriter.WriteStartElement("Answer2"); // <Answer2>
+                            xWriter.WriteEndElement(); // </Answer2>
+
+                            if (questionNumbersComboBox.SelectedIndex >= 2)
+                            {
+                                xWriter.WriteStartElement("Answer3"); // <Answer3>
+                                xWriter.WriteEndElement(); // </Answer3>
+
+                                if (questionNumbersComboBox.SelectedIndex >= 3)
+                                {
+                                    xWriter.WriteStartElement("Answer4"); // <Answer4>
+                                    xWriter.WriteEndElement(); // </Answer4>
+
+                                    if (questionNumbersComboBox.SelectedIndex >= 4)
+                                    {
+                                        xWriter.WriteStartElement("Answer5"); // <Answer5>
+                                        xWriter.WriteEndElement(); // </Answer5>
+
+                                        if (questionNumbersComboBox.SelectedIndex >= 5)
+                                        {
+                                            xWriter.WriteStartElement("Answer6"); // <Answer6>
+                                            xWriter.WriteEndElement(); // </Answer6>
+
+                                            if (questionNumbersComboBox.SelectedIndex >= 6)
+                                            {
+                                                xWriter.WriteStartElement("Answer7"); // <Answer7>
+                                                xWriter.WriteEndElement(); // </Answer7>
+
+                                                if (questionNumbersComboBox.SelectedIndex >= 7)
+                                                {
+                                                    xWriter.WriteStartElement("Answer8"); // <Answer8>
+                                                    xWriter.WriteEndElement(); // </Answer8>
+
+                                                    if (questionNumbersComboBox.SelectedIndex >= 8)
+                                                    {
+                                                        xWriter.WriteStartElement("Answer9"); // <Answer9>
+                                                        xWriter.WriteEndElement(); // </Answer9>
+
+                                                        if (questionNumbersComboBox.SelectedIndex == 9)
+                                                        {
+                                                            xWriter.WriteStartElement("Answer10"); // <Answer10>
+                                                            xWriter.WriteEndElement(); // </Answer10>
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        xWriter.WriteEndElement(); // </AnswerInfo>
+                    }
+                    xWriter.Close();
+                }
+            }
+            else
+            {
+                xmlDoc.Load(currentQuizFile);
+                if (xmlDoc.SelectSingleNode("StudyBuddy/TestInfo/TestName").InnerText != quizNameTextBox.Text)
+                {
+                    try // We can remove this exception error catcher once we make sure the errors/crashing is all gone.
+                    {
+                        File.Move(currentQuizFile, Application.StartupPath + @"\saved cards\" + quizNameTextBox.Text + ".xml");
+                        currentQuizFile = Application.StartupPath + @"\saved cards\" + quizNameTextBox.Text + ".xml";
+                        xmlDoc.Load(currentQuizFile);
+                        xmlDoc.SelectSingleNode("StudyBuddy/TestInfo/TestName").InnerText = quizNameTextBox.Text;
+                        xmlDoc.Save(currentQuizFile);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Unexpected error occured:\n\n" + ex.Message);
+                    }
+                }
+                // TODO: Change number of questions here.
+            }
             Properties.Settings.Default.currentSelectedQuiz = quizNameTextBox.Text;
             Properties.Settings.Default.Save();
-
-            if (!File.Exists(Application.StartupPath + @"\saved cards\" + quizNameTextBox.Text + ".xml"))
-            {
-                XmlTextWriter xWriter = new XmlTextWriter(Application.StartupPath + @"\saved cards\" + quizNameTextBox.Text + ".xml", Encoding.UTF8);
-                xWriter.Formatting = Formatting.Indented;
-                xWriter.WriteStartElement("StudyBuddy"); // <StudyBuddy>
-                xWriter.WriteStartElement("TestInfo"); // <TestInfo>
-                xWriter.WriteStartElement("TestName"); // <TestName>
-                xWriter.WriteString(quizNameTextBox.Text); // quizNameNameTextBox.Text
-                xWriter.WriteEndElement(); // </TestName>
-                xWriter.WriteStartElement("NumberOfTestQuestions"); // <NumberOfTestQuestions>
-                xWriter.WriteString(questionNumbersComboBox.Text); // questionNumbersComboBox.Text
-                xWriter.WriteEndElement(); // </NumberOfTestQuestions>
-                xWriter.WriteEndElement(); // </TestInfo>
-                
-                if (questionNumbersComboBox.SelectedIndex >= 0)
-                {
-                    // Write the questions.
-                    xWriter.WriteStartElement("QuestionInfo"); // <QuestionInfo>
-                    xWriter.WriteStartElement("Question1"); // <Question1>
-                    xWriter.WriteEndElement(); // </Question1>
-                    if (questionNumbersComboBox.SelectedIndex >= 1)
-                    {
-                        xWriter.WriteStartElement("Question2"); // <Question2>
-                        xWriter.WriteEndElement(); // </Question2>
-
-                        if (questionNumbersComboBox.SelectedIndex >= 2)
-                        {
-                            xWriter.WriteStartElement("Question3"); // <Question3>
-                            xWriter.WriteEndElement(); // </Question3>
-
-                            if (questionNumbersComboBox.SelectedIndex >= 3)
-                            {
-                                xWriter.WriteStartElement("Question4"); // <Question4>
-                                xWriter.WriteEndElement(); // </Question4>
-
-                                if (questionNumbersComboBox.SelectedIndex >= 4)
-                                {
-                                    xWriter.WriteStartElement("Question5"); // <Question5>
-                                    xWriter.WriteEndElement(); // </Question5>
-
-                                    if (questionNumbersComboBox.SelectedIndex >= 5)
-                                    {
-                                        xWriter.WriteStartElement("Question6"); // <Question6>
-                                        xWriter.WriteEndElement(); // </Question6>
-
-                                        if (questionNumbersComboBox.SelectedIndex >= 6)
-                                        {
-                                            xWriter.WriteStartElement("Question7"); // <Question7>
-                                            xWriter.WriteEndElement(); // </Question7>
-
-                                            if (questionNumbersComboBox.SelectedIndex >= 7)
-                                            {
-                                                xWriter.WriteStartElement("Question8"); // <Question8>
-                                                xWriter.WriteEndElement(); // </Question8>
-
-                                                if (questionNumbersComboBox.SelectedIndex >= 8)
-                                                {
-                                                    xWriter.WriteStartElement("Question9"); // <Question9>
-                                                    xWriter.WriteEndElement(); // </Question9>
-
-                                                    if (questionNumbersComboBox.SelectedIndex == 9)
-                                                    {
-                                                        xWriter.WriteStartElement("Question10"); // <Question10>
-                                                        xWriter.WriteEndElement(); // </Question10>
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    xWriter.WriteEndElement(); // </QuestionInfo>
-                    // Write the answers.
-                    xWriter.WriteStartElement("AnswerInfo");
-                    xWriter.WriteStartElement("Answer1");
-                    xWriter.WriteEndElement(); // </Answer1>
-                    if (questionNumbersComboBox.SelectedIndex >= 1)
-                    {
-                        xWriter.WriteStartElement("Answer2"); // <Answer2>
-                        xWriter.WriteEndElement(); // </Answer2>
-
-                        if (questionNumbersComboBox.SelectedIndex >= 2)
-                        {
-                            xWriter.WriteStartElement("Answer3"); // <Answer3>
-                            xWriter.WriteEndElement(); // </Answer3>
-
-                            if (questionNumbersComboBox.SelectedIndex >= 3)
-                            {
-                                xWriter.WriteStartElement("Answer4"); // <Answer4>
-                                xWriter.WriteEndElement(); // </Answer4>
-
-                                if (questionNumbersComboBox.SelectedIndex >= 4)
-                                {
-                                    xWriter.WriteStartElement("Answer5"); // <Answer5>
-                                    xWriter.WriteEndElement(); // </Answer5>
-
-                                    if (questionNumbersComboBox.SelectedIndex >= 5)
-                                    {
-                                        xWriter.WriteStartElement("Answer6"); // <Answer6>
-                                        xWriter.WriteEndElement(); // </Answer6>
-
-                                        if (questionNumbersComboBox.SelectedIndex >= 6)
-                                        {
-                                            xWriter.WriteStartElement("Answer7"); // <Answer7>
-                                            xWriter.WriteEndElement(); // </Answer7>
-
-                                            if (questionNumbersComboBox.SelectedIndex >= 7)
-                                            {
-                                                xWriter.WriteStartElement("Answer8"); // <Answer8>
-                                                xWriter.WriteEndElement(); // </Answer8>
-
-                                                if (questionNumbersComboBox.SelectedIndex >= 8)
-                                                {
-                                                    xWriter.WriteStartElement("Answer9"); // <Answer9>
-                                                    xWriter.WriteEndElement(); // </Answer9>
-
-                                                    if (questionNumbersComboBox.SelectedIndex == 9)
-                                                    {
-                                                        xWriter.WriteStartElement("Answer10"); // <Answer10>
-                                                        xWriter.WriteEndElement(); // </Answer10>
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    xWriter.WriteEndElement(); // </AnswerInfo>
-                }
-                xWriter.Close();
-            }
             Dispose();
             NewQuestionsForm nqf = new NewQuestionsForm();
             nqf.ShowDialog();
