@@ -94,5 +94,17 @@ namespace StudyBuddy.Properties {
                 this["timerVisibilityEnabled"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string QuizDirectory {
+            get {
+                return ((string)(this["QuizDirectory"]));
+            }
+            set {
+                this["QuizDirectory"] = value;
+            }
+        }
     }
 }

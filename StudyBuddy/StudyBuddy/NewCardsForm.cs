@@ -14,7 +14,7 @@ namespace StudyBuddy
             InitializeComponent();
         }
 
-        string currentQuizFile = Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml";
+        string currentQuizFile = Properties.Settings.Default.QuizDirectory + Properties.Settings.Default.currentSelectedQuiz + ".xml";
         string[] illegalStartingCharacters = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
         XmlDocument xmlDoc = new XmlDocument();
 
@@ -34,7 +34,7 @@ namespace StudyBuddy
 
         private void cardGroupNameTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (File.Exists(Application.StartupPath + @"\saved cards\" + quizNameTextBox.Text + ".xml") && quizNameTextBox.Text != Properties.Settings.Default.currentSelectedQuiz)
+            if (File.Exists(Properties.Settings.Default.QuizDirectory + quizNameTextBox.Text + ".xml") && quizNameTextBox.Text != Properties.Settings.Default.currentSelectedQuiz)
             {
                 nextButton.Enabled = false;
                 alreadyExistsLabel.Text = "The quiz '" + quizNameTextBox.Text + "' already exists.";
@@ -57,9 +57,9 @@ namespace StudyBuddy
         {
             if (!Properties.Settings.Default.editMode)
             {
-                if (!File.Exists(Application.StartupPath + @"\saved cards\" + quizNameTextBox.Text + ".xml"))
+                if (!File.Exists(Properties.Settings.Default.QuizDirectory + quizNameTextBox.Text + ".xml"))
                 {
-                    XmlTextWriter xWriter = new XmlTextWriter(Application.StartupPath + @"\saved cards\" + quizNameTextBox.Text + ".xml", Encoding.UTF8);
+                    XmlTextWriter xWriter = new XmlTextWriter(Properties.Settings.Default.QuizDirectory + quizNameTextBox.Text + ".xml", Encoding.UTF8);
                     xWriter.Formatting = Formatting.Indented;
                     xWriter.WriteStartElement("StudyBuddy"); // <StudyBuddy>
                     xWriter.WriteStartElement("TestInfo"); // <TestInfo>
@@ -200,8 +200,8 @@ namespace StudyBuddy
                 {
                     try // We can remove this exception error catcher once we make sure the errors/crashing is all gone.
                     {
-                        File.Move(currentQuizFile, Application.StartupPath + @"\saved cards\" + quizNameTextBox.Text + ".xml");
-                        currentQuizFile = Application.StartupPath + @"\saved cards\" + quizNameTextBox.Text + ".xml";
+                        File.Move(currentQuizFile, Properties.Settings.Default.QuizDirectory + quizNameTextBox.Text + ".xml");
+                        currentQuizFile = Properties.Settings.Default.QuizDirectory + quizNameTextBox.Text + ".xml";
                         xmlDoc.Load(currentQuizFile);
                         xmlDoc.SelectSingleNode("StudyBuddy/TestInfo/TestName").InnerText = quizNameTextBox.Text;
                         xmlDoc.Save(currentQuizFile);

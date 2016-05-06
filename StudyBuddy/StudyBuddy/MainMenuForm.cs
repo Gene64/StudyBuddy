@@ -77,9 +77,32 @@ namespace StudyBuddy
 
         private void MainMenuForm_Load(object sender, EventArgs e)
         {
-            if (!Directory.Exists(Application.StartupPath + @"\saved cards"))
+            if (!Directory.Exists(Properties.Settings.Default.QuizDirectory))
             {
-                Directory.CreateDirectory(Application.StartupPath + @"\saved cards");
+                DialogResult dr = MessageBox.Show("There is currently no quiz folder configured. Would you like to manually choose?", "Choose Quiz Directory", MessageBoxButtons.YesNo);
+
+                if (dr == DialogResult.Yes)
+                {
+                    string dirStatus;
+                    FolderBrowserDialog fbd = new FolderBrowserDialog();
+                    fbd.Description = "Please select a folder for your saved quizes to go.";
+                    fbd.ShowDialog();
+                    if (Directory.Exists(fbd.SelectedPath))
+                    {
+                        Properties.Settings.Default.QuizDirectory = fbd.SelectedPath;
+                        dirStatus = "success";
+                    }
+                    else
+                        dirStatus = "failure";
+                    MessageBox.Show("Choosing the directory was a " + dirStatus);
+                        
+                }
+                else if (dr == DialogResult.No)
+                {
+                    string defaultDir = Application.StartupPath + @"\saved quizes";
+                    Directory.CreateDirectory(defaultDir);
+                    Properties.Settings.Default.QuizDirectory = defaultDir;
+                }
             }
             Properties.Settings.Default.backButtonPressed = false;
             Properties.Settings.Default.Save();
