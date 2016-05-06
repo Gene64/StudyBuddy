@@ -91,11 +91,10 @@ namespace StudyBuddy
                         if (Directory.Exists(fbd.SelectedPath))
                         {
                             Properties.Settings.Default.QuizDirectory = fbd.SelectedPath;
-                            dirStatus = "success";
+                            MessageBox.Show("Choosing the directory was a success.", "Success");
                         }
                         else
-                            dirStatus = "failure";
-                        MessageBox.Show("Choosing the directory was a " + dirStatus);
+                            MessageBox.Show("Choosing the directory was a failure. Please select a valid directory.", "Failure");
                     }   
                 }
                 else if (dr == DialogResult.No)
