@@ -86,7 +86,6 @@ namespace StudyBuddy
                     string dirStatus;
                     FolderBrowserDialog fbd = new FolderBrowserDialog();
                     fbd.Description = "Please select a folder for your saved quizes to go.";
-                    fbd.ShowDialog();
                     if (fbd.ShowDialog() == DialogResult.OK)
                     {
                         if (Directory.Exists(fbd.SelectedPath))
