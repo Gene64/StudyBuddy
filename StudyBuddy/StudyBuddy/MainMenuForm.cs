@@ -87,15 +87,17 @@ namespace StudyBuddy
                     FolderBrowserDialog fbd = new FolderBrowserDialog();
                     fbd.Description = "Please select a folder for your saved quizes to go.";
                     fbd.ShowDialog();
-                    if (Directory.Exists(fbd.SelectedPath))
+                    if (fbd.ShowDialog() == DialogResult.OK)
                     {
-                        Properties.Settings.Default.QuizDirectory = fbd.SelectedPath;
-                        dirStatus = "success";
-                    }
-                    else
-                        dirStatus = "failure";
-                    MessageBox.Show("Choosing the directory was a " + dirStatus);
-                        
+                        if (Directory.Exists(fbd.SelectedPath))
+                        {
+                            Properties.Settings.Default.QuizDirectory = fbd.SelectedPath;
+                            dirStatus = "success";
+                        }
+                        else
+                            dirStatus = "failure";
+                        MessageBox.Show("Choosing the directory was a " + dirStatus);
+                    }   
                 }
                 else if (dr == DialogResult.No)
                 {
