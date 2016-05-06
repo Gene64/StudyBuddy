@@ -57,6 +57,7 @@ namespace StudyBuddy
             if (totalQuestions > currentIndex)
             {
                 currentIndex++;
+                currentQuestionLabel.Text = "Question " + currentIndex;
                 questionLabel.Text = xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question" + currentIndex).InnerText; // Sets the question to the next question.
                 answerTextBox.Text = "";
                 centerQuestionLabel();
