@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChangeQuizDirForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeQuizDirForm.Designer.cs">
+      <DependentUpon>ChangeQuizDirForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainMenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
     </Compile>
     <EmbeddedResource Include="CardSelectionForm.resx">
       <DependentUpon>CardSelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeQuizDirForm.resx">
+      <DependentUpon>ChangeQuizDirForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenuForm.resx">
       <DependentUpon>MainMenuForm.cs</DependentUpon>

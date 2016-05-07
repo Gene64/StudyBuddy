@@ -57,5 +57,11 @@ namespace StudyBuddy
             CardSelectionForm csf = new CardSelectionForm();
             csf.ShowDialog();
         }
+
+        private void changeQuizDirButton_Click(object sender, EventArgs e)
+        {
+            ChangeQuizDirForm changeQuizForm = new ChangeQuizDirForm();
+            changeQuizForm.ShowDialog();
+        }
     }
 }

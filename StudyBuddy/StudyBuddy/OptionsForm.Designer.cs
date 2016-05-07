@@ -33,6 +33,7 @@
             this.saveButton = new System.Windows.Forms.Button();
             this.timerVisibilityCheckBox = new System.Windows.Forms.CheckBox();
             this.editButton = new System.Windows.Forms.Button();
+            this.changeQuizDirButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // timerCheckBox
@@ -80,12 +81,23 @@
             this.editButton.UseVisualStyleBackColor = true;
             this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
+            // changeQuizDirButton
+            // 
+            this.changeQuizDirButton.Location = new System.Drawing.Point(12, 103);
+            this.changeQuizDirButton.Name = "changeQuizDirButton";
+            this.changeQuizDirButton.Size = new System.Drawing.Size(80, 35);
+            this.changeQuizDirButton.TabIndex = 5;
+            this.changeQuizDirButton.Text = "Change Quiz Directory";
+            this.changeQuizDirButton.UseVisualStyleBackColor = true;
+            this.changeQuizDirButton.Click += new System.EventHandler(this.changeQuizDirButton_Click);
+            // 
             // OptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::StudyBuddy.Properties.Resources.A;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.changeQuizDirButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.timerVisibilityCheckBox);
             this.Controls.Add(this.saveButton);
@@ -109,5 +121,6 @@
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.CheckBox timerVisibilityCheckBox;
         private System.Windows.Forms.Button editButton;
+        private System.Windows.Forms.Button changeQuizDirButton;
     }
 }

@@ -83,7 +83,6 @@ namespace StudyBuddy
 
                 if (dr == DialogResult.Yes)
                 {
-                    string dirStatus;
                     FolderBrowserDialog fbd = new FolderBrowserDialog();
                     fbd.Description = "Please select a folder for your saved quizes to go.";
                     if (fbd.ShowDialog() == DialogResult.OK)
@@ -103,9 +102,9 @@ namespace StudyBuddy
                     Directory.CreateDirectory(defaultDir);
                     Properties.Settings.Default.QuizDirectory = defaultDir;
                 }
+                Properties.Settings.Default.Save();
             }
             Properties.Settings.Default.backButtonPressed = false;
-            Properties.Settings.Default.Save();
         }
 
         private void optionsButton_Click(object sender, EventArgs e)
