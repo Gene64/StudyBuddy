@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangeQuizDirForm));
             this.changeDirButton = new System.Windows.Forms.Button();
             this.directoryTextBox = new System.Windows.Forms.TextBox();
             this.applyButton = new System.Windows.Forms.Button();
@@ -71,6 +72,7 @@
             this.Controls.Add(this.directoryTextBox);
             this.Controls.Add(this.changeDirButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ChangeQuizDirForm";
