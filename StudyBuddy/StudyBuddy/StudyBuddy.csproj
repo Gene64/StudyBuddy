@@ -49,66 +49,66 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChangeQuizDirForm.cs">
+    <Compile Include="Forms\ChangeQuizDirForm\ChangeQuizDirForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChangeQuizDirForm.Designer.cs">
+    <Compile Include="Forms\ChangeQuizDirForm\ChangeQuizDirForm.Designer.cs">
       <DependentUpon>ChangeQuizDirForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainMenuForm.cs">
+    <Compile Include="Forms\MainMenuForm\MainMenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainMenuForm.Designer.cs">
+    <Compile Include="Forms\MainMenuForm\MainMenuForm.Designer.cs">
       <DependentUpon>MainMenuForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewCardsForm.cs">
+    <Compile Include="Forms\NewCardsForm\NewCardsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewCardsForm.Designer.cs">
+    <Compile Include="Forms\NewCardsForm\NewCardsForm.Designer.cs">
       <DependentUpon>NewCardsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewQuestionsForm.cs">
+    <Compile Include="Forms\NewQuestionsForm\NewQuestionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewQuestionsForm.Designer.cs">
+    <Compile Include="Forms\NewQuestionsForm\NewQuestionsForm.Designer.cs">
       <DependentUpon>NewQuestionsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OptionsForm.cs">
+    <Compile Include="Forms\OptionsForm\OptionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OptionsForm.Designer.cs">
+    <Compile Include="Forms\OptionsForm\OptionsForm.Designer.cs">
       <DependentUpon>OptionsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CardSelectionForm.cs">
+    <Compile Include="Forms\CardSelectionForm\CardSelectionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CardSelectionForm.Designer.cs">
+    <Compile Include="Forms\CardSelectionForm\CardSelectionForm.Designer.cs">
       <DependentUpon>CardSelectionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudyForm.cs">
+    <Compile Include="Forms\StudyForm\StudyForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StudyForm.Designer.cs">
+    <Compile Include="Forms\StudyForm\StudyForm.Designer.cs">
       <DependentUpon>StudyForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CardSelectionForm.resx">
+    <EmbeddedResource Include="Forms\CardSelectionForm\CardSelectionForm.resx">
       <DependentUpon>CardSelectionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChangeQuizDirForm.resx">
+    <EmbeddedResource Include="Forms\ChangeQuizDirForm\ChangeQuizDirForm.resx">
       <DependentUpon>ChangeQuizDirForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainMenuForm.resx">
+    <EmbeddedResource Include="Forms\MainMenuForm\MainMenuForm.resx">
       <DependentUpon>MainMenuForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewCardsForm.resx">
+    <EmbeddedResource Include="Forms\NewCardsForm\NewCardsForm.resx">
       <DependentUpon>NewCardsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewQuestionsForm.resx">
+    <EmbeddedResource Include="Forms\NewQuestionsForm\NewQuestionsForm.resx">
       <DependentUpon>NewQuestionsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OptionsForm.resx">
+    <EmbeddedResource Include="Forms\OptionsForm\OptionsForm.resx">
       <DependentUpon>OptionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -121,7 +121,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="StudyForm.resx">
+    <EmbeddedResource Include="Forms\StudyForm\StudyForm.resx">
       <DependentUpon>StudyForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
