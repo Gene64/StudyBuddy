@@ -29,7 +29,7 @@ namespace StudyBuddy
             }
             directionsLabel.Text = "Pick one of your quizes from the box\nbelow to begin " + userType + "ing!";
 
-            string[] availableQuizDir = Directory.GetFiles(Application.StartupPath + @"\saved cards");
+            string[] availableQuizDir = Directory.GetFiles(Properties.Settings.Default.QuizDirectory);
             
             foreach (string availableQuizes in availableQuizDir)
                 quizSelectionComboBox.Items.Add(Path.GetFileNameWithoutExtension(availableQuizes));

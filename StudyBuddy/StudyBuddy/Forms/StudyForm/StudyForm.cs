@@ -19,7 +19,7 @@ namespace StudyBuddy
         double totalSeconds;
         double totalMinutes;
 
-        string currentQuizFile = Properties.Settings.Default.QuizDirectory + Properties.Settings.Default.currentSelectedQuiz + ".xml";
+        string currentQuizFile = Properties.Settings.Default.QuizDirectory + @"\" +Properties.Settings.Default.currentSelectedQuiz + ".xml";
 
         private void StudyForm_Load(object sender, EventArgs e)
         {

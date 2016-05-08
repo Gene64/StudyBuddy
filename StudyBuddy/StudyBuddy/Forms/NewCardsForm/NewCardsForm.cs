@@ -14,7 +14,7 @@ namespace StudyBuddy
             InitializeComponent();
         }
 
-        string currentQuizFile = Properties.Settings.Default.QuizDirectory + Properties.Settings.Default.currentSelectedQuiz + ".xml";
+        string currentQuizFile = Properties.Settings.Default.QuizDirectory + @"\" + Properties.Settings.Default.currentSelectedQuiz + ".xml";
         string[] illegalStartingCharacters = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
         XmlDocument xmlDoc = new XmlDocument();
 
