@@ -57,9 +57,9 @@ namespace StudyBuddy
         {
             if (!Properties.Settings.Default.editMode)
             {
-                if (!File.Exists(Properties.Settings.Default.QuizDirectory + quizNameTextBox.Text + ".xml"))
+                if (!File.Exists(Properties.Settings.Default.QuizDirectory + @"\" + quizNameTextBox.Text + ".xml"))
                 {
-                    XmlTextWriter xWriter = new XmlTextWriter(Properties.Settings.Default.QuizDirectory + quizNameTextBox.Text + ".xml", Encoding.UTF8);
+                    XmlTextWriter xWriter = new XmlTextWriter(Properties.Settings.Default.QuizDirectory + @"\" + quizNameTextBox.Text + ".xml", Encoding.UTF8);
                     xWriter.Formatting = Formatting.Indented;
                     xWriter.WriteStartElement("StudyBuddy"); // <StudyBuddy>
                     xWriter.WriteStartElement("TestInfo"); // <TestInfo>
@@ -131,7 +131,8 @@ namespace StudyBuddy
                             }
                         }
                         xWriter.WriteEndElement(); // </QuestionInfo>
-                                                   // Write the answers.
+
+                        // Write the answers
                         xWriter.WriteStartElement("AnswerInfo");
                         xWriter.WriteStartElement("Answer1");
                         xWriter.WriteEndElement(); // </Answer1>

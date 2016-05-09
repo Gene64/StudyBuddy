@@ -31,6 +31,7 @@ namespace StudyBuddy
         {
             Properties.Settings.Default.QuizDirectory = directoryTextBox.Text;
             Properties.Settings.Default.Save();
+            Dispose();
         }
     }
 }

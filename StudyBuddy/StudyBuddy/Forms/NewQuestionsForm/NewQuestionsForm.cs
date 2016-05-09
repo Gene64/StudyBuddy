@@ -14,7 +14,7 @@ namespace StudyBuddy
         XmlDocument xmlDoc = new XmlDocument();
         int currentIndex = 1;
         string currentMode;
-        string currentQuizFile = Application.StartupPath + @"\saved cards\" + Properties.Settings.Default.currentSelectedQuiz + ".xml";
+        string currentQuizFile = Properties.Settings.Default.QuizDirectory + @"\" + Properties.Settings.Default.currentSelectedQuiz + ".xml";
 
         private void backButton_Click(object sender, EventArgs e)
         {

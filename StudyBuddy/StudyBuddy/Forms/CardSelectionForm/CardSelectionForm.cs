@@ -54,9 +54,7 @@ namespace StudyBuddy
                 }
             }
             else
-            {
                 MessageBox.Show("Please select a quiz to " + userType + ".", "No Quiz Selected");
-            }
         }
     }
 }

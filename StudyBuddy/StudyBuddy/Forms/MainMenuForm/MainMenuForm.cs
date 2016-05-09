@@ -79,6 +79,7 @@ namespace StudyBuddy
         {
             if (!Directory.Exists(Properties.Settings.Default.QuizDirectory))
             {
+                MessageBox.Show(Properties.Settings.Default.QuizDirectory);
                 DialogResult dr = MessageBox.Show("There is currently no quiz folder configured. Would you like to manually choose?", "Choose Quiz Directory", MessageBoxButtons.YesNo);
 
                 if (dr == DialogResult.Yes)
