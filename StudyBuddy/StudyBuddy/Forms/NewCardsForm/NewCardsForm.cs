@@ -34,7 +34,7 @@ namespace StudyBuddy
 
         private void cardGroupNameTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (File.Exists(Properties.Settings.Default.QuizDirectory + quizNameTextBox.Text + ".xml") && quizNameTextBox.Text != Properties.Settings.Default.currentSelectedQuiz)
+            if (File.Exists(Properties.Settings.Default.QuizDirectory + @"\" + quizNameTextBox.Text + ".xml") && quizNameTextBox.Text != Properties.Settings.Default.currentSelectedQuiz)
             {
                 nextButton.Enabled = false;
                 alreadyExistsLabel.Text = "The quiz '" + quizNameTextBox.Text + "' already exists.";
@@ -201,8 +201,8 @@ namespace StudyBuddy
                 {
                     try // We can remove this exception error catcher once we make sure the errors/crashing is all gone.
                     {
-                        File.Move(currentQuizFile, Properties.Settings.Default.QuizDirectory + quizNameTextBox.Text + ".xml");
-                        currentQuizFile = Properties.Settings.Default.QuizDirectory + quizNameTextBox.Text + ".xml";
+                        File.Move(currentQuizFile, Properties.Settings.Default.QuizDirectory + @"\" +quizNameTextBox.Text + ".xml");
+                        currentQuizFile = Properties.Settings.Default.QuizDirectory + @"\" + quizNameTextBox.Text + ".xml";
                         xmlDoc.Load(currentQuizFile);
                         xmlDoc.SelectSingleNode("StudyBuddy/TestInfo/TestName").InnerText = quizNameTextBox.Text;
                         xmlDoc.Save(currentQuizFile);
