@@ -194,18 +194,23 @@ namespace StudyBuddy
             }
             else if (Properties.Settings.Default.editMode)
             {
-                xmlDoc.Load(currentQuizFile);
+                currentQuizFile = Properties.Settings.Default.QuizDirectory + @"\" + quizNameTextBox.Text + ".xml";
                 
                 // If the user has changed the name, we will need to override the old xml file with the new name.
                 if (xmlDoc.SelectSingleNode("StudyBuddy/TestInfo/TestName").InnerText != quizNameTextBox.Text)
                 {
-                    File.Move(currentQuizFile, Properties.Settings.Default.QuizDirectory + @"\" + quizNameTextBox.Text + ".xml");
-                    currentQuizFile = Properties.Settings.Default.QuizDirectory + @"\" + quizNameTextBox.Text + ".xml";
                     xmlDoc.Load(currentQuizFile);
+                    File.Move(currentQuizFile, Properties.Settings.Default.QuizDirectory + @"\" + quizNameTextBox.Text + ".xml");
                     xmlDoc.SelectSingleNode("StudyBuddy/TestInfo/TestName").InnerText = quizNameTextBox.Text;
                     xmlDoc.Save(currentQuizFile);
                 }
                 // TODO: Change number of questions here.
+                if (xmlDoc.SelectSingleNode("StudyBuddy/TestInfo/NumberOfTestQuestions").InnerText != questionNumbersComboBox.Text)
+                {
+                    xmlDoc.Load(currentQuizFile);
+                    xmlDoc.SelectSingleNode("StudyBuddy/TestInfo/NumberOfTestQuestions").InnerText = questionNumbersComboBox.Text;
+                    xmlDoc.Save(currentQuizFile);
+                }
             }
             Properties.Settings.Default.currentSelectedQuiz = quizNameTextBox.Text;
             Properties.Settings.Default.Save();
