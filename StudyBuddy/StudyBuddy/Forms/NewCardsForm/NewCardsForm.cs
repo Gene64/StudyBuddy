@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Xml;
 
@@ -15,7 +14,6 @@ namespace StudyBuddy
         }
 
         string currentQuizFile = Properties.Settings.Default.QuizDirectory + @"\" + Properties.Settings.Default.currentSelectedQuiz + ".xml";
-        string[] illegalStartingCharacters = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
         XmlDocument xmlDoc = new XmlDocument();
 
         private void NewCardsForm_Load(object sender, EventArgs e)
@@ -40,7 +38,7 @@ namespace StudyBuddy
                 alreadyExistsLabel.Text = "The quiz '" + quizNameTextBox.Text + "' already exists.";
                 alreadyExistsLabel.Visible = true;
             }
-            else if (quizNameTextBox.Text == "" || Regex.IsMatch(quizNameTextBox.Text, @"[!@#$%^&*()_+~`<>,.?/]") || quizNameTextBox.Text.StartsWith("illegalStartingCharacters")) // TODO: Check if it starts with a number, or if it has illegal characters.
+            else if (quizNameTextBox.Text == "")
             {
                 nextButton.Enabled = false;
                 alreadyExistsLabel.Text = "Please enter a valid quiz name.";
@@ -194,23 +192,18 @@ namespace StudyBuddy
                     xWriter.Close();
                 }
             }
-            else
+            else if (Properties.Settings.Default.editMode)
             {
                 xmlDoc.Load(currentQuizFile);
+                
+                // If the user has changed the name, we will need to override the old xml file with the new name.
                 if (xmlDoc.SelectSingleNode("StudyBuddy/TestInfo/TestName").InnerText != quizNameTextBox.Text)
                 {
-                    try // We can remove this exception error catcher once we make sure the errors/crashing is all gone.
-                    {
-                        File.Move(currentQuizFile, Properties.Settings.Default.QuizDirectory + @"\" +quizNameTextBox.Text + ".xml");
-                        currentQuizFile = Properties.Settings.Default.QuizDirectory + @"\" + quizNameTextBox.Text + ".xml";
-                        xmlDoc.Load(currentQuizFile);
-                        xmlDoc.SelectSingleNode("StudyBuddy/TestInfo/TestName").InnerText = quizNameTextBox.Text;
-                        xmlDoc.Save(currentQuizFile);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Unexpected error occured:\n\n" + ex.Message);
-                    }
+                    File.Move(currentQuizFile, Properties.Settings.Default.QuizDirectory + @"\" + quizNameTextBox.Text + ".xml");
+                    currentQuizFile = Properties.Settings.Default.QuizDirectory + @"\" + quizNameTextBox.Text + ".xml";
+                    xmlDoc.Load(currentQuizFile);
+                    xmlDoc.SelectSingleNode("StudyBuddy/TestInfo/TestName").InnerText = quizNameTextBox.Text;
+                    xmlDoc.Save(currentQuizFile);
                 }
                 // TODO: Change number of questions here.
             }
