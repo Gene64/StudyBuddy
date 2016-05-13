@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Windows.Forms;
 
@@ -51,6 +51,11 @@ namespace StudyBuddy
                 {
                     NewCardsForm ncf = new NewCardsForm();
                     ncf.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Something has gone wrong. The program will now close now.", "Something has gone wrong");
+                    Application.Exit();
                 }
             }
             else
