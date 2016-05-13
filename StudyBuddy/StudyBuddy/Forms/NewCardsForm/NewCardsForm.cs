@@ -73,6 +73,7 @@ namespace StudyBuddy
                     xWriter.WriteStartElement("QuestionInfo"); // <QuestionInfo>
                     xWriter.WriteStartElement("Question1"); // <Question1>
                     xWriter.WriteEndElement(); // </Question1>
+
                     if (questionNumbersComboBox.SelectedIndex >= 1)
                     {
                         xWriter.WriteStartElement("Question2"); // <Question2>
@@ -196,6 +197,13 @@ namespace StudyBuddy
             if (!Properties.Settings.Default.editMode)
             {
                 createQuiz();
+
+                // Fill the saved information into the new xml quiz file.
+                xmlDoc.Load(Properties.Settings.Default.QuizDirectory + @"\" + quizNameTextBox.Text + ".xml");
+                xmlDoc.SelectSingleNode("StudyBuddy/QuesitonInfo/Question1").InnerText = Properties.Settings.Default.question1Save;
+                xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer1").InnerText = Properties.Settings.Default.answer1Save;
+                xmlDoc.Save(Properties.Settings.Default.QuizDirectory + @"\" + quizNameTextBox.Text + ".xml");
+
             }
             else if (Properties.Settings.Default.editMode)
             {
@@ -212,6 +220,11 @@ namespace StudyBuddy
                 // TODO: Just make a new XML at this point, instead of doing surgery on the XML file.
                 if (xmlDoc.SelectSingleNode("StudyBuddy/TestInfo/NumberOfTestQuestions").InnerText != questionNumbersComboBox.Text)
                 {
+                    // get a copy of all of the questions/answers
+                    Properties.Settings.Default.question1Save = xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question1").InnerText;
+                    Properties.Settings.Default.answer1Save = xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer1").InnerText;
+                    Properties.Settings.Default.Save();
+
                     File.Delete(Properties.Settings.Default.QuizDirectory + @"\" + quizNameTextBox.Text + ".xml");
                     createQuiz();
                     // TODO: As of now, it doesn't carry on the previous questions/answers. We will need to save them in the Properties form.
