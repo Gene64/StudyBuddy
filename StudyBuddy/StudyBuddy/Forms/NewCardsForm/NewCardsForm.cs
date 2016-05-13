@@ -197,11 +197,8 @@ namespace StudyBuddy
             if (!Properties.Settings.Default.editMode)
             {
                 createQuiz();
-
                 // Fill the saved information into the new xml quiz file.
                 xmlDoc.Load(Properties.Settings.Default.QuizDirectory + @"\" + quizNameTextBox.Text + ".xml");
-                xmlDoc.SelectSingleNode("StudyBuddy/QuesitonInfo/Question1").InnerText = Properties.Settings.Default.question1Save;
-                xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer1").InnerText = Properties.Settings.Default.answer1Save;
                 xmlDoc.Save(Properties.Settings.Default.QuizDirectory + @"\" + quizNameTextBox.Text + ".xml");
 
             }
