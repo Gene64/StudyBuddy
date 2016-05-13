@@ -7,3 +7,4 @@ Code Quick Links:
 - [Quiz Creation Part 2](https://github.com/Gene64/StudyBuddy/blob/master/StudyBuddy/StudyBuddy/NewQuestionsForm.cs)
 - [Quiz Selection](https://github.com/Gene64/StudyBuddy/blob/master/StudyBuddy/StudyBuddy/CardSelectionForm.cs)
 - [Quiz Form](https://github.com/Gene64/StudyBuddy/blob/master/StudyBuddy/StudyBuddy/StudyForm.cs)
+- [Quadratic Equation Solver](https://github.com/Gene64/StudyBuddy/blob/master/StudyBuddy/QuadraticEquationSolver/MainPage.cs)
