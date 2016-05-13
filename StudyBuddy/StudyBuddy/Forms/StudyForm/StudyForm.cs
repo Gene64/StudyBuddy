@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
 using System.Xml;
 
@@ -27,6 +27,9 @@ namespace StudyBuddy
             totalQuestions = int.Parse(xmlDoc.SelectSingleNode("StudyBuddy/TestInfo/NumberOfTestQuestions").InnerText); // Gets the number of questions.
             questionLabel.Text = xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question1").InnerText; // Sets the question to the first question.
             centerQuestionLabel();
+
+            if (totalQuestions == 1)
+                nextQuestionButton.Text = "Finish";
 
             if (Properties.Settings.Default.timerEnabled)
             {
@@ -78,6 +81,9 @@ namespace StudyBuddy
                 MessageBox.Show("Congratulations, you have finished this study session! You got " + rightAnswers + " correct and " + wrongAnswers + " wrong. Your final score is a " + percentScore + "%." + timeResults, "Study Quiz Finished");
                 Dispose();
             }
+
+            if (totalQuestions == 1)
+                nextQuestionButton.Text = "Finish";
         }
 
         private void centerQuestionLabel()
