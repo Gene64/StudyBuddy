@@ -366,6 +366,22 @@ namespace StudyBuddy
             Properties.Settings.Default.answer1Save = null;
             Properties.Settings.Default.question2Save = null;
             Properties.Settings.Default.answer2Save = null;
+            Properties.Settings.Default.question3Save = null;
+            Properties.Settings.Default.answer3Save = null;
+            Properties.Settings.Default.question4Save = null;
+            Properties.Settings.Default.answer4Save = null;
+            Properties.Settings.Default.question5Save = null;
+            Properties.Settings.Default.answer5Save = null;
+            Properties.Settings.Default.question6Save = null;
+            Properties.Settings.Default.answer6Save = null;
+            Properties.Settings.Default.question7Save = null;
+            Properties.Settings.Default.answer7Save = null;
+            Properties.Settings.Default.question8Save = null;
+            Properties.Settings.Default.answer8Save = null;
+            Properties.Settings.Default.question9Save = null;
+            Properties.Settings.Default.answer9Save = null;
+            Properties.Settings.Default.question10Save = null;
+            Properties.Settings.Default.answer10Save = null;
             Properties.Settings.Default.Save();
         }
     }
