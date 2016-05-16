@@ -374,9 +374,9 @@ namespace StudyBuddy.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public string nightMode {
+        public bool nightMode {
             get {
-                return ((string)(this["nightMode"]));
+                return ((bool)(this["nightMode"]));
             }
             set {
                 this["nightMode"] = value;

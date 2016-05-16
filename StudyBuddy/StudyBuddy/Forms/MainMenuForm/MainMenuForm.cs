@@ -78,7 +78,7 @@ namespace StudyBuddy
 
         private void checkBackground()
         {
-            if (Properties.Settings.Default.Setting)
+            if (Properties.Settings.Default.nightMode)
                 BackColor = Color.Black;
             else
                 BackColor = Color.White;

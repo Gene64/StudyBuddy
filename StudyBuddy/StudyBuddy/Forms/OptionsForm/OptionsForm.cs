@@ -15,7 +15,7 @@ namespace StudyBuddy
             timerCheckBox.Checked = Properties.Settings.Default.timerEnabled;
             timerVisibilityCheckBox.Checked = Properties.Settings.Default.timerVisibilityEnabled;
             enableHintCheckBox.Checked = Properties.Settings.Default.enableHintsCheckBox;
-            nightModeCheckBox.Checked = Properties.Settings.Default.Setting;
+            nightModeCheckBox.Checked = Properties.Settings.Default.nightMode;
             checkInvisibleItems();
         }
 
@@ -24,7 +24,7 @@ namespace StudyBuddy
             Properties.Settings.Default.timerEnabled = timerCheckBox.Checked;
             Properties.Settings.Default.timerVisibilityEnabled = timerVisibilityCheckBox.Checked;
             Properties.Settings.Default.enableHintsCheckBox = enableHintCheckBox.Checked;
-            Properties.Settings.Default.Setting = nightModeCheckBox.Checked;
+            Properties.Settings.Default.nightMode = nightModeCheckBox.Checked;
             Properties.Settings.Default.Save();
             Dispose();
         }
