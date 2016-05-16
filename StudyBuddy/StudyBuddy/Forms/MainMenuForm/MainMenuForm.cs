@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -75,8 +76,17 @@ namespace StudyBuddy
             csf.ShowDialog();
         }
 
+        private void checkBackground()
+        {
+            if (Properties.Settings.Default.Setting)
+                BackColor = Color.Black;
+            else
+                BackColor = Color.White;
+        }
+
         private void MainMenuForm_Load(object sender, EventArgs e)
         {
+            checkBackground();
             if (!Directory.Exists(Properties.Settings.Default.QuizDirectory))
             {
                 DialogResult dr = MessageBox.Show("There is currently no quiz folder configured. Would you like to manually choose?", "Choose Quiz Directory", MessageBoxButtons.YesNo);

@@ -36,6 +36,7 @@
             this.changeQuizDirButton = new System.Windows.Forms.Button();
             this.enableHintCheckBox = new System.Windows.Forms.CheckBox();
             this.hintOptionsButton = new System.Windows.Forms.Button();
+            this.nightModeCheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // timerCheckBox
@@ -116,12 +117,25 @@
             this.hintOptionsButton.UseVisualStyleBackColor = true;
             this.hintOptionsButton.Visible = false;
             // 
+            // nightModeCheckBox
+            // 
+            this.nightModeCheckBox.AutoSize = true;
+            this.nightModeCheckBox.BackColor = System.Drawing.Color.White;
+            this.nightModeCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nightModeCheckBox.Location = new System.Drawing.Point(12, 62);
+            this.nightModeCheckBox.Name = "nightModeCheckBox";
+            this.nightModeCheckBox.Size = new System.Drawing.Size(90, 19);
+            this.nightModeCheckBox.TabIndex = 8;
+            this.nightModeCheckBox.Text = "Night Mode";
+            this.nightModeCheckBox.UseVisualStyleBackColor = false;
+            // 
             // OptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::StudyBuddy.Properties.Resources.A;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.nightModeCheckBox);
             this.Controls.Add(this.hintOptionsButton);
             this.Controls.Add(this.enableHintCheckBox);
             this.Controls.Add(this.changeQuizDirButton);
@@ -151,5 +165,6 @@
         private System.Windows.Forms.Button changeQuizDirButton;
         private System.Windows.Forms.CheckBox enableHintCheckBox;
         private System.Windows.Forms.Button hintOptionsButton;
+        private System.Windows.Forms.CheckBox nightModeCheckBox;
     }
 }
