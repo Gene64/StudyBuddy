@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StudyBuddy
@@ -21,19 +14,20 @@ namespace StudyBuddy
         {
             timerCheckBox.Checked = Properties.Settings.Default.timerEnabled;
             timerVisibilityCheckBox.Checked = Properties.Settings.Default.timerVisibilityEnabled;
-
-            checkTimerCheckBox();
+            enableHintCheckBox.Checked = Properties.Settings.Default.enableHintsCheckBox;
+            checkInvisibleItems();
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.timerEnabled = timerCheckBox.Checked;
             Properties.Settings.Default.timerVisibilityEnabled = timerVisibilityCheckBox.Checked;
+            Properties.Settings.Default.enableHintsCheckBox = enableHintCheckBox.Checked;
             Properties.Settings.Default.Save();
             Dispose();
         }
 
-        private void checkTimerCheckBox()
+        private void checkInvisibleItems()
         {
             if (timerCheckBox.Checked)
                 timerVisibilityCheckBox.Visible = true;
@@ -42,11 +36,16 @@ namespace StudyBuddy
                 timerVisibilityCheckBox.Visible = false;
                 timerVisibilityCheckBox.Checked = false;
             }
+
+            if (enableHintCheckBox.Checked)
+                hintOptionsButton.Visible = true;
+            else
+                hintOptionsButton.Visible = false;
         }
 
         private void timerCheckBox_CheckStateChanged(object sender, EventArgs e)
         {
-            checkTimerCheckBox();
+            checkInvisibleItems();
         }
 
         private void editButton_Click(object sender, EventArgs e)
@@ -62,6 +61,11 @@ namespace StudyBuddy
         {
             ChangeQuizDirForm changeQuizForm = new ChangeQuizDirForm();
             changeQuizForm.ShowDialog();
+        }
+
+        private void enableHintCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            checkInvisibleItems();
         }
     }
 }

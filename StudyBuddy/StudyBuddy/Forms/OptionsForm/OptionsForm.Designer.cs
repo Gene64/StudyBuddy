@@ -34,6 +34,8 @@
             this.timerVisibilityCheckBox = new System.Windows.Forms.CheckBox();
             this.editButton = new System.Windows.Forms.Button();
             this.changeQuizDirButton = new System.Windows.Forms.Button();
+            this.enableHintCheckBox = new System.Windows.Forms.CheckBox();
+            this.hintOptionsButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // timerCheckBox
@@ -64,7 +66,7 @@
             this.timerVisibilityCheckBox.AutoSize = true;
             this.timerVisibilityCheckBox.BackColor = System.Drawing.Color.White;
             this.timerVisibilityCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timerVisibilityCheckBox.Location = new System.Drawing.Point(12, 37);
+            this.timerVisibilityCheckBox.Location = new System.Drawing.Point(118, 12);
             this.timerVisibilityCheckBox.Name = "timerVisibilityCheckBox";
             this.timerVisibilityCheckBox.Size = new System.Drawing.Size(146, 19);
             this.timerVisibilityCheckBox.TabIndex = 2;
@@ -73,7 +75,7 @@
             // 
             // editButton
             // 
-            this.editButton.Location = new System.Drawing.Point(12, 62);
+            this.editButton.Location = new System.Drawing.Point(12, 106);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(80, 35);
             this.editButton.TabIndex = 4;
@@ -83,7 +85,7 @@
             // 
             // changeQuizDirButton
             // 
-            this.changeQuizDirButton.Location = new System.Drawing.Point(12, 103);
+            this.changeQuizDirButton.Location = new System.Drawing.Point(12, 147);
             this.changeQuizDirButton.Name = "changeQuizDirButton";
             this.changeQuizDirButton.Size = new System.Drawing.Size(80, 35);
             this.changeQuizDirButton.TabIndex = 5;
@@ -91,12 +93,37 @@
             this.changeQuizDirButton.UseVisualStyleBackColor = true;
             this.changeQuizDirButton.Click += new System.EventHandler(this.changeQuizDirButton_Click);
             // 
+            // enableHintCheckBox
+            // 
+            this.enableHintCheckBox.AutoSize = true;
+            this.enableHintCheckBox.BackColor = System.Drawing.Color.White;
+            this.enableHintCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.enableHintCheckBox.Location = new System.Drawing.Point(12, 37);
+            this.enableHintCheckBox.Name = "enableHintCheckBox";
+            this.enableHintCheckBox.Size = new System.Drawing.Size(96, 19);
+            this.enableHintCheckBox.TabIndex = 6;
+            this.enableHintCheckBox.Text = "Enable Hints";
+            this.enableHintCheckBox.UseVisualStyleBackColor = false;
+            this.enableHintCheckBox.CheckedChanged += new System.EventHandler(this.enableHintCheckBox_CheckedChanged);
+            // 
+            // hintOptionsButton
+            // 
+            this.hintOptionsButton.Location = new System.Drawing.Point(114, 33);
+            this.hintOptionsButton.Name = "hintOptionsButton";
+            this.hintOptionsButton.Size = new System.Drawing.Size(79, 23);
+            this.hintOptionsButton.TabIndex = 7;
+            this.hintOptionsButton.Text = "Hint Options";
+            this.hintOptionsButton.UseVisualStyleBackColor = true;
+            this.hintOptionsButton.Visible = false;
+            // 
             // OptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::StudyBuddy.Properties.Resources.A;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.hintOptionsButton);
+            this.Controls.Add(this.enableHintCheckBox);
             this.Controls.Add(this.changeQuizDirButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.timerVisibilityCheckBox);
@@ -122,5 +149,7 @@
         private System.Windows.Forms.CheckBox timerVisibilityCheckBox;
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button changeQuizDirButton;
+        private System.Windows.Forms.CheckBox enableHintCheckBox;
+        private System.Windows.Forms.Button hintOptionsButton;
     }
 }
