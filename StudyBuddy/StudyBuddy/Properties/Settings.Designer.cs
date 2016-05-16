@@ -154,5 +154,197 @@ namespace StudyBuddy.Properties {
                 this["answer2Save"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string question3Save {
+            get {
+                return ((string)(this["question3Save"]));
+            }
+            set {
+                this["question3Save"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string answer3Save {
+            get {
+                return ((string)(this["answer3Save"]));
+            }
+            set {
+                this["answer3Save"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string question4Save {
+            get {
+                return ((string)(this["question4Save"]));
+            }
+            set {
+                this["question4Save"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string answer4Save {
+            get {
+                return ((string)(this["answer4Save"]));
+            }
+            set {
+                this["answer4Save"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string question5Save {
+            get {
+                return ((string)(this["question5Save"]));
+            }
+            set {
+                this["question5Save"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string answer5Save {
+            get {
+                return ((string)(this["answer5Save"]));
+            }
+            set {
+                this["answer5Save"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string question6Save {
+            get {
+                return ((string)(this["question6Save"]));
+            }
+            set {
+                this["question6Save"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string answer6Save {
+            get {
+                return ((string)(this["answer6Save"]));
+            }
+            set {
+                this["answer6Save"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string question7Save {
+            get {
+                return ((string)(this["question7Save"]));
+            }
+            set {
+                this["question7Save"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string answer7Save {
+            get {
+                return ((string)(this["answer7Save"]));
+            }
+            set {
+                this["answer7Save"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string question8Save {
+            get {
+                return ((string)(this["question8Save"]));
+            }
+            set {
+                this["question8Save"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string answer8Save {
+            get {
+                return ((string)(this["answer8Save"]));
+            }
+            set {
+                this["answer8Save"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string question9Save {
+            get {
+                return ((string)(this["question9Save"]));
+            }
+            set {
+                this["question9Save"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string answer9Save {
+            get {
+                return ((string)(this["answer9Save"]));
+            }
+            set {
+                this["answer9Save"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string question10Save {
+            get {
+                return ((string)(this["question10Save"]));
+            }
+            set {
+                this["question10Save"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string answer10Save {
+            get {
+                return ((string)(this["answer10Save"]));
+            }
+            set {
+                this["answer10Save"] = value;
+            }
+        }
     }
 }

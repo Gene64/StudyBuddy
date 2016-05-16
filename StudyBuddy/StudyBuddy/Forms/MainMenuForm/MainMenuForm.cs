@@ -90,7 +90,6 @@ namespace StudyBuddy
                         if (Directory.Exists(fbd.SelectedPath))
                         {
                             Properties.Settings.Default.QuizDirectory = fbd.SelectedPath;
-                            Properties.Settings.Default.Save();
                             MessageBox.Show("Choosing the directory was a success.", "Success");
                         }
                         else
@@ -101,9 +100,9 @@ namespace StudyBuddy
                 {
                     string defaultDir = Application.StartupPath + @"\saved quizzes";
                     Directory.CreateDirectory(defaultDir);
-                    Properties.Settings.Default.QuizDirectory = defaultDir;
-                    Properties.Settings.Default.Save();
+                    Properties.Settings.Default.QuizDirectory = defaultDir;  
                 }
+                Properties.Settings.Default.Save();
             }
             Properties.Settings.Default.backButtonPressed = false;
         }

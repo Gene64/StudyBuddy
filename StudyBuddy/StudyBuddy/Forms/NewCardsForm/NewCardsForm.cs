@@ -213,9 +213,66 @@ namespace StudyBuddy
                 // TODO: Just make a new XML at this point, instead of doing surgery on the XML file.
                 if (xmlDoc.SelectSingleNode("StudyBuddy/TestInfo/NumberOfTestQuestions").InnerText != questionNumbersComboBox.Text)
                 {
-                    // get a copy of all of the questions/answers
-                    Properties.Settings.Default.question1Save = xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question1").InnerText;
-                    Properties.Settings.Default.answer1Save = xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer1").InnerText;
+                    // Get a copy of all of the questions/answers.
+                    // First Question/Answer
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question1") != null)
+                        Properties.Settings.Default.question1Save = xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question1").InnerText;
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer1") != null)
+                        Properties.Settings.Default.answer1Save = xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer1").InnerText;
+
+                    // Second Question/Answer
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question2") != null)
+                        Properties.Settings.Default.question2Save = xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question2").InnerText;
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer2") != null)
+                        Properties.Settings.Default.answer2Save = xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer2").InnerText;
+
+                    // Third Question/Answer
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question3") != null)
+                        Properties.Settings.Default.question3Save = xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question3").InnerText;
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer3") != null)
+                        Properties.Settings.Default.answer3Save = xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer3").InnerText;
+
+                    // Fourth Question/Answer
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question4") != null)
+                        Properties.Settings.Default.question4Save = xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question4").InnerText;
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer4") != null)
+                        Properties.Settings.Default.answer4Save = xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer4").InnerText;
+
+                    // Fifth Question/Answer
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question5") != null)
+                        Properties.Settings.Default.question5Save = xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question5").InnerText;
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer5") != null)
+                        Properties.Settings.Default.answer5Save = xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer5").InnerText;
+
+                    // Sixth Question/Answer
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question6") != null)
+                        Properties.Settings.Default.question6Save = xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question6").InnerText;
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer6") != null)
+                        Properties.Settings.Default.answer6Save = xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer6").InnerText;
+
+                    // Seventh Question/Answer
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question7") != null)
+                        Properties.Settings.Default.question7Save = xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question7").InnerText;
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer7") != null)
+                        Properties.Settings.Default.answer7Save = xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer7").InnerText;
+
+                    // Eighth Question/Answer
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question8") != null)
+                        Properties.Settings.Default.question8Save = xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question8").InnerText;
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer6") != null)
+                        Properties.Settings.Default.answer8Save = xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer8").InnerText;
+
+                    // Ninth Question/Answer
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question9") != null)
+                        Properties.Settings.Default.question9Save = xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question9").InnerText;
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer9") != null)
+                        Properties.Settings.Default.answer9Save = xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer9").InnerText;
+
+                    // Tenth Question/Answer
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question10") != null)
+                        Properties.Settings.Default.question10Save = xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question10").InnerText;
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer10") != null)
+                        Properties.Settings.Default.answer10Save = xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer10").InnerText;
                     Properties.Settings.Default.Save();
 
                     File.Delete(Properties.Settings.Default.QuizDirectory + @"\" + quizNameTextBox.Text + ".xml");
@@ -223,13 +280,24 @@ namespace StudyBuddy
                     string textBoxInfo = quizNameTextBox.Text;
                     currentQuizFile = Properties.Settings.Default.QuizDirectory + @"\" + textBoxInfo + ".xml";
                     xmlDoc.Load(currentQuizFile);
-                    xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question1").InnerText = Properties.Settings.Default.question1Save;
-                    xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer1").InnerText = Properties.Settings.Default.answer1Save;
+
+                    // Load the questions/answers to the new xml file.
+                    // First Question/Answer
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question1") != null)
+                        xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question1").InnerText = Properties.Settings.Default.question1Save;
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer1") != null)
+                        xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer1").InnerText = Properties.Settings.Default.answer1Save;
+
+                    // Second Question/Answer
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question2") != null)
+                        xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question2").InnerText = Properties.Settings.Default.question2Save;
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer2") != null)
+                        xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer2").InnerText = Properties.Settings.Default.answer2Save;
+
                     xmlDoc.Save(currentQuizFile);
-                    // TODO: As of now, it doesn't carry on the previous questions/answers. We will need to save them in the Properties form.
-                    // Load the xml with the previous questions/answers.
                 }
             }
+            clearAllQuestions();
             Properties.Settings.Default.currentSelectedQuiz = quizNameTextBox.Text;
             Properties.Settings.Default.Save();
             Dispose();
@@ -241,6 +309,15 @@ namespace StudyBuddy
         {
             Properties.Settings.Default.backButtonPressed = false;
             Properties.Settings.Default.currentSelectedQuiz = null;
+            Properties.Settings.Default.Save();
+        }
+
+        private void clearAllQuestions()
+        {
+            Properties.Settings.Default.question1Save = null;
+            Properties.Settings.Default.answer1Save = null;
+            Properties.Settings.Default.question2Save = null;
+            Properties.Settings.Default.answer2Save = null;
             Properties.Settings.Default.Save();
         }
     }
