@@ -220,7 +220,8 @@ namespace StudyBuddy
 
                     File.Delete(Properties.Settings.Default.QuizDirectory + @"\" + quizNameTextBox.Text + ".xml");
                     createQuiz();
-                    currentQuizFile = Properties.Settings.Default.QuizDirectory + @"\" + quizNameTextBox + ".xml";
+                    string textBoxInfo = quizNameTextBox.Text;
+                    currentQuizFile = Properties.Settings.Default.QuizDirectory + @"\" + textBoxInfo + ".xml";
                     xmlDoc.Load(currentQuizFile);
                     xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question1").InnerText = Properties.Settings.Default.question1Save;
                     xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer1").InnerText = Properties.Settings.Default.answer1Save;
