@@ -294,6 +294,54 @@ namespace StudyBuddy
                     if (xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer2") != null)
                         xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer2").InnerText = Properties.Settings.Default.answer2Save;
 
+                    // Third Question/Answer
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question3") != null)
+                        xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question3").InnerText = Properties.Settings.Default.question3Save;
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer3") != null)
+                        xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer3").InnerText = Properties.Settings.Default.answer3Save;
+
+                    // Fourth Question/Answer
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question4") != null)
+                        xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question4").InnerText = Properties.Settings.Default.question4Save;
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer4") != null)
+                        xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer4").InnerText = Properties.Settings.Default.answer4Save;
+
+                    // Fifth Question/Answer
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question5") != null)
+                        xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question5").InnerText = Properties.Settings.Default.question5Save;
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer5") != null)
+                        xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer5").InnerText = Properties.Settings.Default.answer5Save;
+
+                    // Sixth Question/Answer
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question6") != null)
+                        xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question6").InnerText = Properties.Settings.Default.question6Save;
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer6") != null)
+                        xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer6").InnerText = Properties.Settings.Default.answer6Save;
+
+                    // Seventh Question/Answer
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question7") != null)
+                        xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question7").InnerText = Properties.Settings.Default.question7Save;
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer7") != null)
+                        xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer7").InnerText = Properties.Settings.Default.answer7Save;
+
+                    // Eighth Question/Answer
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question8") != null)
+                        xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question8").InnerText = Properties.Settings.Default.question8Save;
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer8") != null)
+                        xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer8").InnerText = Properties.Settings.Default.answer8Save;
+
+                    // Ninth Question/Answer
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question9") != null)
+                        xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question9").InnerText = Properties.Settings.Default.question9Save;
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer9") != null)
+                        xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer9").InnerText = Properties.Settings.Default.answer9Save;
+
+                    // Tenth Question/Answer
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question10") != null)
+                        xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question10").InnerText = Properties.Settings.Default.question10Save;
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer10") != null)
+                        xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer10").InnerText = Properties.Settings.Default.answer10Save;
+
                     xmlDoc.Save(currentQuizFile);
                 }
             }
