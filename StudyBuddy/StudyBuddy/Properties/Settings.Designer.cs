@@ -106,5 +106,53 @@ namespace StudyBuddy.Properties {
                 this["QuizDirectory"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string question1Save {
+            get {
+                return ((string)(this["question1Save"]));
+            }
+            set {
+                this["question1Save"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string answer1Save {
+            get {
+                return ((string)(this["answer1Save"]));
+            }
+            set {
+                this["answer1Save"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string question2Save {
+            get {
+                return ((string)(this["question2Save"]));
+            }
+            set {
+                this["question2Save"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string answer2Save {
+            get {
+                return ((string)(this["answer2Save"]));
+            }
+            set {
+                this["answer2Save"] = value;
+            }
+        }
     }
 }

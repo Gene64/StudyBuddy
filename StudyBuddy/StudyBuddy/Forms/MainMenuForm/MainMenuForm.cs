@@ -99,7 +99,7 @@ namespace StudyBuddy
                 }
                 else if (dr == DialogResult.No)
                 {
-                    string defaultDir = Application.StartupPath + @"\saved quizes";
+                    string defaultDir = Application.StartupPath + @"\saved quizzes";
                     Directory.CreateDirectory(defaultDir);
                     Properties.Settings.Default.QuizDirectory = defaultDir;
                     Properties.Settings.Default.Save();

@@ -197,10 +197,6 @@ namespace StudyBuddy
             if (!Properties.Settings.Default.editMode)
             {
                 createQuiz();
-                // Fill the saved information into the new xml quiz file.
-                xmlDoc.Load(Properties.Settings.Default.QuizDirectory + @"\" + quizNameTextBox.Text + ".xml");
-                xmlDoc.Save(Properties.Settings.Default.QuizDirectory + @"\" + quizNameTextBox.Text + ".xml");
-
             }
             else if (Properties.Settings.Default.editMode)
             {
@@ -224,6 +220,11 @@ namespace StudyBuddy
 
                     File.Delete(Properties.Settings.Default.QuizDirectory + @"\" + quizNameTextBox.Text + ".xml");
                     createQuiz();
+                    currentQuizFile = Properties.Settings.Default.QuizDirectory + @"\" + quizNameTextBox + ".xml";
+                    xmlDoc.Load(currentQuizFile);
+                    xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question1").InnerText = Properties.Settings.Default.question1Save;
+                    xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer1").InnerText = Properties.Settings.Default.answer1Save;
+                    xmlDoc.Save(currentQuizFile);
                     // TODO: As of now, it doesn't carry on the previous questions/answers. We will need to save them in the Properties form.
                     // Load the xml with the previous questions/answers.
                 }
