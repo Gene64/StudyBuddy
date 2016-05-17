@@ -19,6 +19,7 @@ namespace StudyBuddy
             descriptionLabel.Visible = true;
             descriptionLabel.Text = "Create study cards about a topic that you\nneed to review.";
             centerDescriptionLabel();
+            checkBackground();
         }
 
         private void practiceButton_MouseMove(object sender, MouseEventArgs e)
