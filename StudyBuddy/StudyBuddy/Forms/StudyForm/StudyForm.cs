@@ -130,5 +130,17 @@ namespace StudyBuddy
             else
                 MessageBox.Show("Sorry, you have no skips left to use.", "No Skips Left");
         }
+
+        private void StudyForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            questionTimer.Stop();
+            DialogResult dr = MessageBox.Show("Are you sure you want to exit the study session while you are still working?", "Exit Study Session", MessageBoxButtons.YesNo);
+
+            if (dr == DialogResult.No)
+            {
+                e.Cancel = true;
+                questionTimer.Start();
+            }
+        }
     }
 }
