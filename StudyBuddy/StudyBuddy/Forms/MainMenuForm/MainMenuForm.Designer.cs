@@ -1,4 +1,4 @@
-﻿namespace StudyBuddy
+namespace StudyBuddy
 {
     partial class MainMenuForm
     {
@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenuForm));
-            this.WelcomeLabel = new System.Windows.Forms.Label();
+            this.welcomeLabel = new System.Windows.Forms.Label();
             this.createButton = new System.Windows.Forms.Button();
             this.descriptionLabel = new System.Windows.Forms.Label();
             this.practiceButton = new System.Windows.Forms.Button();
             this.optionsButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // WelcomeLabel
+            // welcomeLabel
             // 
-            this.WelcomeLabel.AutoSize = true;
-            this.WelcomeLabel.BackColor = System.Drawing.Color.White;
-            this.WelcomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WelcomeLabel.Location = new System.Drawing.Point(42, 9);
-            this.WelcomeLabel.Name = "WelcomeLabel";
-            this.WelcomeLabel.Size = new System.Drawing.Size(201, 18);
-            this.WelcomeLabel.TabIndex = 0;
-            this.WelcomeLabel.Text = "Welcome to Study Buddy!";
-            this.WelcomeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.welcomeLabel.AutoSize = true;
+            this.welcomeLabel.BackColor = System.Drawing.Color.White;
+            this.welcomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.welcomeLabel.Location = new System.Drawing.Point(42, 9);
+            this.welcomeLabel.Name = "welcomeLabel";
+            this.welcomeLabel.Size = new System.Drawing.Size(201, 18);
+            this.welcomeLabel.TabIndex = 0;
+            this.welcomeLabel.Text = "Welcome to Study Buddy!";
+            this.welcomeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // createButton
             // 
@@ -107,7 +107,7 @@
             this.Controls.Add(this.practiceButton);
             this.Controls.Add(this.descriptionLabel);
             this.Controls.Add(this.createButton);
-            this.Controls.Add(this.WelcomeLabel);
+            this.Controls.Add(this.welcomeLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -123,7 +123,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label WelcomeLabel;
+        private System.Windows.Forms.Label welcomeLabel;
         private System.Windows.Forms.Button createButton;
         private System.Windows.Forms.Label descriptionLabel;
         private System.Windows.Forms.Button practiceButton;
