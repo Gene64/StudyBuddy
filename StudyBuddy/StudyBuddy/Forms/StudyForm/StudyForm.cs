@@ -12,6 +12,7 @@ namespace StudyBuddy
         }
 
         XmlDocument xmlDoc = new XmlDocument();
+        int skipsLeft = Properties.Settings.Default.skipsLeft;
         int totalQuestions;
         int currentIndex = 1;
         int wrongAnswers;
@@ -42,7 +43,10 @@ namespace StudyBuddy
                 timerLabel.Visible = false;
 
             if (Properties.Settings.Default.skipEnabled)
+            {
                 skipButton.Visible = true;
+                skipsLeftLabel.Visible = true;
+            }
         }
 
         private void nextQuestionButton_Click(object sender, EventArgs e)
@@ -117,9 +121,14 @@ namespace StudyBuddy
 
         private void skipButton_Click(object sender, EventArgs e)
         {
-            int skipsLeft = Properties.Settings.Default.skipsLeft;
-            skipsLeft = skipsLeft - 1;
-            nextQuestion();
+            if (skipsLeft > 0)
+            {
+                skipsLeft = skipsLeft - 1;
+                skipsLeftLabel.Text = "(" + skipsLeft + ")";
+                nextQuestion();
+            }
+            else
+                MessageBox.Show("Sorry, you have no skips left to use.", "No Skips Left");
         }
     }
 }
