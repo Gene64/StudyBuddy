@@ -13,17 +13,13 @@ namespace StudyBuddy.Forms.OptionsForm
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.currentSelectedOption == 1)
+            int selectedNumber;
+            if (int.TryParse(universalTextBox.Text, out selectedNumber))
             {
-                try
-                {
-                    Properties.Settings.Default.hintTries = int.Parse(universalTextBox.Text);
-                }
-                catch (FormatException)
-                {
-                    MessageBox.Show("Please enter a valid number.", "Invalid Number");
-                }
+                if (Properties.Settings.Default.currentSelectedOption == 1)
+                    Properties.Settings.Default.hintTries = selectedNumber;
             }
+            
             Properties.Settings.Default.Save();
             Dispose();
         }
