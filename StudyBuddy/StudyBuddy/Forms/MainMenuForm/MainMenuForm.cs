@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -79,9 +79,21 @@ namespace StudyBuddy
         private void checkBackground()
         {
             if (Properties.Settings.Default.nightMode)
+            {
                 BackColor = Color.Black;
+                descriptionLabel.BackColor = Color.Black;
+                descriptionLabel.ForeColor = Color.White;
+                welcomeLabel.BackColor = Color.Black;
+                welcomeLabel.ForeColor = Color.White;
+            }  
             else
+            {
                 BackColor = Color.White;
+                descriptionLabel.BackColor = Color.White;
+                descriptionLabel.ForeColor = Color.Black;
+                welcomeLabel.BackColor = Color.White;
+                welcomeLabel.ForeColor = Color.Black;
+            }  
         }
 
         private void MainMenuForm_Load(object sender, EventArgs e)
