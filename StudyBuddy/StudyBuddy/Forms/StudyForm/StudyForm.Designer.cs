@@ -38,6 +38,7 @@ namespace StudyBuddy
             this.timerLabel = new System.Windows.Forms.Label();
             this.skipButton = new System.Windows.Forms.Button();
             this.skipsLeftLabel = new System.Windows.Forms.Label();
+            this.hintLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // questionLabel
@@ -117,12 +118,24 @@ namespace StudyBuddy
             this.skipsLeftLabel.Text = "(3)";
             this.skipsLeftLabel.Visible = false;
             // 
+            // hintLabel
+            // 
+            this.hintLabel.AutoSize = true;
+            this.hintLabel.Location = new System.Drawing.Point(118, 90);
+            this.hintLabel.Name = "hintLabel";
+            this.hintLabel.Size = new System.Drawing.Size(48, 13);
+            this.hintLabel.TabIndex = 7;
+            this.hintLabel.Text = "First Hint";
+            this.hintLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.hintLabel.Visible = false;
+            // 
             // StudyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.hintLabel);
             this.Controls.Add(this.skipsLeftLabel);
             this.Controls.Add(this.skipButton);
             this.Controls.Add(this.timerLabel);
@@ -154,5 +167,6 @@ namespace StudyBuddy
         private System.Windows.Forms.Label timerLabel;
         private System.Windows.Forms.Button skipButton;
         private System.Windows.Forms.Label skipsLeftLabel;
+        private System.Windows.Forms.Label hintLabel;
     }
 }

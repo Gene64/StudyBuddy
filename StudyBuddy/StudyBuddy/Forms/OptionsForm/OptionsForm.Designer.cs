@@ -118,6 +118,7 @@
             this.hintOptionsButton.Text = "Hint Options";
             this.hintOptionsButton.UseVisualStyleBackColor = true;
             this.hintOptionsButton.Visible = false;
+            this.hintOptionsButton.Click += new System.EventHandler(this.hintOptionsButton_Click);
             // 
             // nightModeCheckBox
             // 

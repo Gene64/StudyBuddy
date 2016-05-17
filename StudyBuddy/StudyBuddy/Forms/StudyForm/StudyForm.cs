@@ -17,6 +17,7 @@ namespace StudyBuddy
         int currentIndex = 1;
         int wrongAnswers;
         int rightAnswers;
+        int currentQuestionTimes;
         double totalSeconds;
         double totalMinutes;
 
@@ -54,10 +55,14 @@ namespace StudyBuddy
             if (xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer" + currentIndex).InnerText != answerTextBox.Text)
             {
                 wrongAnswers++;
+                currentQuestionTimes++;
+                if (currentQuestionTimes >= Properties.Settings.Default.hintTries)
+                    hintLabel.Visible = true;
             }
             else
             {
                 rightAnswers++;
+                currentQuestionTimes = 0;
                 nextQuestion();
             }
         }
@@ -101,9 +106,7 @@ namespace StudyBuddy
         private void questionTimer_Tick(object sender, EventArgs e)
         {
             if (totalSeconds < 60)
-            {
                 totalSeconds++;
-            }
             else if (totalSeconds == 60)
             {
                 totalMinutes++;

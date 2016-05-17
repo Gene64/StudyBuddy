@@ -406,5 +406,41 @@ namespace StudyBuddy.Properties {
                 this["skipsLeft"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string currentUser {
+            get {
+                return ((string)(this["currentUser"]));
+            }
+            set {
+                this["currentUser"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int currentSelectedOption {
+            get {
+                return ((int)(this["currentSelectedOption"]));
+            }
+            set {
+                this["currentSelectedOption"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int hintTries {
+            get {
+                return ((int)(this["hintTries"]));
+            }
+            set {
+                this["hintTries"] = value;
+            }
+        }
     }
 }

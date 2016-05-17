@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudyBuddy.Forms.OptionsForm;
+using System;
 using System.Windows.Forms;
 
 namespace StudyBuddy
@@ -52,7 +53,7 @@ namespace StudyBuddy
                 Properties.Settings.Default.skipsLeft = 3;
             }
             else
-                skipOptionsButton.Visible = true;
+                skipOptionsButton.Visible = false;
         }
 
         private void timerCheckBox_CheckStateChanged(object sender, EventArgs e)
@@ -83,6 +84,14 @@ namespace StudyBuddy
         private void skipEnabledCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             checkInvisibleItems();
+        }
+
+        private void hintOptionsButton_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.currentSelectedOption = 1;
+            Properties.Settings.Default.Save();
+            UniversalExtraOptions extraOptions = new UniversalExtraOptions();
+            extraOptions.ShowDialog();
         }
     }
 }
