@@ -1,4 +1,4 @@
-﻿namespace StudyBuddy
+namespace StudyBuddy
 {
     partial class StudyForm
     {
@@ -115,6 +115,7 @@
             this.skipsLeftLabel.Size = new System.Drawing.Size(25, 15);
             this.skipsLeftLabel.TabIndex = 6;
             this.skipsLeftLabel.Text = "(3)";
+            this.skipsLeftLabel.Visible = false;
             // 
             // StudyForm
             // 
