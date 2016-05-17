@@ -12,6 +12,7 @@ namespace StudyBuddy
 
         private void OptionsForm_Load(object sender, EventArgs e)
         {
+            skipEnabledCheckBox.Checked = Properties.Settings.Default.skipEnabled;
             timerCheckBox.Checked = Properties.Settings.Default.timerEnabled;
             timerVisibilityCheckBox.Checked = Properties.Settings.Default.timerVisibilityEnabled;
             enableHintCheckBox.Checked = Properties.Settings.Default.enableHintsCheckBox;
@@ -25,6 +26,7 @@ namespace StudyBuddy
             Properties.Settings.Default.timerVisibilityEnabled = timerVisibilityCheckBox.Checked;
             Properties.Settings.Default.enableHintsCheckBox = enableHintCheckBox.Checked;
             Properties.Settings.Default.nightMode = nightModeCheckBox.Checked;
+            Properties.Settings.Default.skipEnabled = skipEnabledCheckBox.Checked;
             Properties.Settings.Default.Save();
             Dispose();
         }
@@ -43,6 +45,14 @@ namespace StudyBuddy
                 hintOptionsButton.Visible = true;
             else
                 hintOptionsButton.Visible = false;
+
+            if (skipEnabledCheckBox.Checked)
+            {
+                skipOptionsButton.Visible = true;
+                Properties.Settings.Default.skipsLeft = 3;
+            }
+            else
+                skipOptionsButton.Visible = true;
         }
 
         private void timerCheckBox_CheckStateChanged(object sender, EventArgs e)
@@ -66,6 +76,11 @@ namespace StudyBuddy
         }
 
         private void enableHintCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            checkInvisibleItems();
+        }
+
+        private void skipEnabledCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             checkInvisibleItems();
         }

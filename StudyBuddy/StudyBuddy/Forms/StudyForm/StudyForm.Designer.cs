@@ -36,6 +36,8 @@
             this.currentQuestionLabel = new System.Windows.Forms.Label();
             this.questionTimer = new System.Windows.Forms.Timer(this.components);
             this.timerLabel = new System.Windows.Forms.Label();
+            this.skipButton = new System.Windows.Forms.Button();
+            this.skipsLeftLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // questionLabel
@@ -93,12 +95,35 @@
             this.timerLabel.TabIndex = 4;
             this.timerLabel.Text = "0:00";
             // 
+            // skipButton
+            // 
+            this.skipButton.Location = new System.Drawing.Point(222, 226);
+            this.skipButton.Name = "skipButton";
+            this.skipButton.Size = new System.Drawing.Size(50, 25);
+            this.skipButton.TabIndex = 5;
+            this.skipButton.Text = "Skip";
+            this.skipButton.UseVisualStyleBackColor = true;
+            this.skipButton.Visible = false;
+            this.skipButton.Click += new System.EventHandler(this.skipButton_Click);
+            // 
+            // skipsLeftLabel
+            // 
+            this.skipsLeftLabel.AutoSize = true;
+            this.skipsLeftLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.skipsLeftLabel.Location = new System.Drawing.Point(235, 208);
+            this.skipsLeftLabel.Name = "skipsLeftLabel";
+            this.skipsLeftLabel.Size = new System.Drawing.Size(25, 15);
+            this.skipsLeftLabel.TabIndex = 6;
+            this.skipsLeftLabel.Text = "(3)";
+            // 
             // StudyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.skipsLeftLabel);
+            this.Controls.Add(this.skipButton);
             this.Controls.Add(this.timerLabel);
             this.Controls.Add(this.currentQuestionLabel);
             this.Controls.Add(this.nextQuestionButton);
@@ -125,5 +150,7 @@
         private System.Windows.Forms.Label currentQuestionLabel;
         private System.Windows.Forms.Timer questionTimer;
         private System.Windows.Forms.Label timerLabel;
+        private System.Windows.Forms.Button skipButton;
+        private System.Windows.Forms.Label skipsLeftLabel;
     }
 }

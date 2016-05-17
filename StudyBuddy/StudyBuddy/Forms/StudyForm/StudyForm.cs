@@ -40,6 +40,9 @@ namespace StudyBuddy
             }
             else
                 timerLabel.Visible = false;
+
+            if (Properties.Settings.Default.skipEnabled)
+                skipButton.Visible = true;
         }
 
         private void nextQuestionButton_Click(object sender, EventArgs e)
@@ -110,6 +113,13 @@ namespace StudyBuddy
                 else
                     timerLabel.Text = totalMinutes + ":" + totalSeconds;
             }
+        }
+
+        private void skipButton_Click(object sender, EventArgs e)
+        {
+            int skipsLeft = Properties.Settings.Default.skipsLeft;
+            skipsLeft = skipsLeft - 1;
+            nextQuestion();
         }
     }
 }

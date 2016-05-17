@@ -37,6 +37,8 @@
             this.enableHintCheckBox = new System.Windows.Forms.CheckBox();
             this.hintOptionsButton = new System.Windows.Forms.Button();
             this.nightModeCheckBox = new System.Windows.Forms.CheckBox();
+            this.skipEnabledCheckBox = new System.Windows.Forms.CheckBox();
+            this.skipOptionsButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // timerCheckBox
@@ -76,7 +78,7 @@
             // 
             // editButton
             // 
-            this.editButton.Location = new System.Drawing.Point(12, 106);
+            this.editButton.Location = new System.Drawing.Point(12, 112);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(80, 35);
             this.editButton.TabIndex = 4;
@@ -86,7 +88,7 @@
             // 
             // changeQuizDirButton
             // 
-            this.changeQuizDirButton.Location = new System.Drawing.Point(12, 147);
+            this.changeQuizDirButton.Location = new System.Drawing.Point(12, 153);
             this.changeQuizDirButton.Name = "changeQuizDirButton";
             this.changeQuizDirButton.Size = new System.Drawing.Size(80, 35);
             this.changeQuizDirButton.TabIndex = 5;
@@ -122,12 +124,35 @@
             this.nightModeCheckBox.AutoSize = true;
             this.nightModeCheckBox.BackColor = System.Drawing.Color.White;
             this.nightModeCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nightModeCheckBox.Location = new System.Drawing.Point(12, 62);
+            this.nightModeCheckBox.Location = new System.Drawing.Point(12, 87);
             this.nightModeCheckBox.Name = "nightModeCheckBox";
             this.nightModeCheckBox.Size = new System.Drawing.Size(90, 19);
             this.nightModeCheckBox.TabIndex = 8;
             this.nightModeCheckBox.Text = "Night Mode";
             this.nightModeCheckBox.UseVisualStyleBackColor = false;
+            // 
+            // skipEnabledCheckBox
+            // 
+            this.skipEnabledCheckBox.AutoSize = true;
+            this.skipEnabledCheckBox.BackColor = System.Drawing.Color.White;
+            this.skipEnabledCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.skipEnabledCheckBox.Location = new System.Drawing.Point(12, 62);
+            this.skipEnabledCheckBox.Name = "skipEnabledCheckBox";
+            this.skipEnabledCheckBox.Size = new System.Drawing.Size(99, 19);
+            this.skipEnabledCheckBox.TabIndex = 9;
+            this.skipEnabledCheckBox.Text = "Skip Enabled";
+            this.skipEnabledCheckBox.UseVisualStyleBackColor = false;
+            this.skipEnabledCheckBox.CheckedChanged += new System.EventHandler(this.skipEnabledCheckBox_CheckedChanged);
+            // 
+            // skipOptionsButton
+            // 
+            this.skipOptionsButton.Location = new System.Drawing.Point(114, 60);
+            this.skipOptionsButton.Name = "skipOptionsButton";
+            this.skipOptionsButton.Size = new System.Drawing.Size(79, 23);
+            this.skipOptionsButton.TabIndex = 10;
+            this.skipOptionsButton.Text = "Skip Options";
+            this.skipOptionsButton.UseVisualStyleBackColor = true;
+            this.skipOptionsButton.Visible = false;
             // 
             // OptionsForm
             // 
@@ -135,6 +160,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.skipOptionsButton);
+            this.Controls.Add(this.skipEnabledCheckBox);
             this.Controls.Add(this.nightModeCheckBox);
             this.Controls.Add(this.hintOptionsButton);
             this.Controls.Add(this.enableHintCheckBox);
@@ -166,5 +193,7 @@
         private System.Windows.Forms.CheckBox enableHintCheckBox;
         private System.Windows.Forms.Button hintOptionsButton;
         private System.Windows.Forms.CheckBox nightModeCheckBox;
+        private System.Windows.Forms.CheckBox skipEnabledCheckBox;
+        private System.Windows.Forms.Button skipOptionsButton;
     }
 }

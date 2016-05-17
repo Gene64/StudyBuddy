@@ -382,5 +382,29 @@ namespace StudyBuddy.Properties {
                 this["nightMode"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool skipEnabled {
+            get {
+                return ((bool)(this["skipEnabled"]));
+            }
+            set {
+                this["skipEnabled"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int skipsLeft {
+            get {
+                return ((int)(this["skipsLeft"]));
+            }
+            set {
+                this["skipsLeft"] = value;
+            }
+        }
     }
 }
