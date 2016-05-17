@@ -38,6 +38,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.currentQuestionLabel = new System.Windows.Forms.Label();
             this.previousQuestionButton = new System.Windows.Forms.Button();
+            this.hintTextBox = new System.Windows.Forms.TextBox();
+            this.hintHeaderLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // backButton
@@ -64,7 +66,7 @@
             // 
             this.answerHeaderLabel.AutoSize = true;
             this.answerHeaderLabel.BackColor = System.Drawing.Color.White;
-            this.answerHeaderLabel.Location = new System.Drawing.Point(9, 143);
+            this.answerHeaderLabel.Location = new System.Drawing.Point(9, 122);
             this.answerHeaderLabel.Name = "answerHeaderLabel";
             this.answerHeaderLabel.Size = new System.Drawing.Size(58, 13);
             this.answerHeaderLabel.TabIndex = 2;
@@ -72,14 +74,14 @@
             // 
             // questionTextBox
             // 
-            this.questionTextBox.Location = new System.Drawing.Point(12, 97);
+            this.questionTextBox.Location = new System.Drawing.Point(12, 98);
             this.questionTextBox.Name = "questionTextBox";
             this.questionTextBox.Size = new System.Drawing.Size(260, 20);
             this.questionTextBox.TabIndex = 3;
             // 
             // answerTextBox
             // 
-            this.answerTextBox.Location = new System.Drawing.Point(12, 159);
+            this.answerTextBox.Location = new System.Drawing.Point(12, 139);
             this.answerTextBox.Name = "answerTextBox";
             this.answerTextBox.Size = new System.Drawing.Size(260, 20);
             this.answerTextBox.TabIndex = 4;
@@ -128,12 +130,31 @@
             this.previousQuestionButton.Visible = false;
             this.previousQuestionButton.Click += new System.EventHandler(this.previousQuestionButton_Click);
             // 
+            // hintTextBox
+            // 
+            this.hintTextBox.Location = new System.Drawing.Point(11, 179);
+            this.hintTextBox.Name = "hintTextBox";
+            this.hintTextBox.Size = new System.Drawing.Size(260, 20);
+            this.hintTextBox.TabIndex = 10;
+            // 
+            // hintHeaderLabel
+            // 
+            this.hintHeaderLabel.AutoSize = true;
+            this.hintHeaderLabel.BackColor = System.Drawing.Color.White;
+            this.hintHeaderLabel.Location = new System.Drawing.Point(11, 163);
+            this.hintHeaderLabel.Name = "hintHeaderLabel";
+            this.hintHeaderLabel.Size = new System.Drawing.Size(42, 13);
+            this.hintHeaderLabel.TabIndex = 9;
+            this.hintHeaderLabel.Text = "Hint #1";
+            // 
             // NewQuestionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.hintTextBox);
+            this.Controls.Add(this.hintHeaderLabel);
             this.Controls.Add(this.previousQuestionButton);
             this.Controls.Add(this.currentQuestionLabel);
             this.Controls.Add(this.label3);
@@ -166,5 +187,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label currentQuestionLabel;
         private System.Windows.Forms.Button previousQuestionButton;
+        private System.Windows.Forms.TextBox hintTextBox;
+        private System.Windows.Forms.Label hintHeaderLabel;
     }
 }
