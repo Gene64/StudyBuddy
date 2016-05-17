@@ -137,6 +137,7 @@ namespace StudyBuddy
             this.Name = "StudyForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Study Quiz";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.StudyForm_FormClosing);
             this.Load += new System.EventHandler(this.StudyForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
