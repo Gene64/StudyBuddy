@@ -131,6 +131,7 @@
             this.nightModeCheckBox.TabIndex = 8;
             this.nightModeCheckBox.Text = "Night Mode";
             this.nightModeCheckBox.UseVisualStyleBackColor = false;
+            this.nightModeCheckBox.CheckStateChanged += new System.EventHandler(this.nightModeCheckBox_CheckStateChanged);
             // 
             // skipEnabledCheckBox
             // 
