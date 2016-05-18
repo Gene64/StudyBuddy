@@ -1,3 +1,4 @@
+using StudyBuddy.Forms.OptionsForm;
 using System;
 using System.Drawing;
 using System.IO;
@@ -139,10 +140,17 @@ namespace StudyBuddy
 
         private void checkUser()
         {
-            if (Properties.Settings.Default.currentUser == null)
+            if (Properties.Settings.Default.currentUser == "")
             {
-                MessageBox.Show("Please enter a username.", "Enter a username.");
+                UniversalExtraOptions extraOptions = new UniversalExtraOptions();
+                extraOptions.ShowDialog();
             }
+        }
+
+        private void MainMenuForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.currentUser = ""; // Log the user off when the application shuts down.
+            Properties.Settings.Default.Save();
         }
     }
 }

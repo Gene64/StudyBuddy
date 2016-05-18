@@ -13,13 +13,22 @@ namespace StudyBuddy.Forms.OptionsForm
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            int selectedNumber;
-            if (int.TryParse(universalTextBox.Text, out selectedNumber))
+            if (Properties.Settings.Default.currentSelectedOption == 1 || Properties.Settings.Default.currentSelectedOption == 2)
             {
-                if (Properties.Settings.Default.currentSelectedOption == 1)
-                    Properties.Settings.Default.hintTries = selectedNumber;
+                int selectedNumber;
+                if (int.TryParse(universalTextBox.Text, out selectedNumber))
+                {
+                    if (Properties.Settings.Default.currentSelectedOption == 1)
+                        Properties.Settings.Default.hintTries = selectedNumber;
+                }
             }
-            
+            else if (Properties.Settings.Default.currentUser == "")
+            {
+                if (universalTextBox.Text.Length >= 20)
+                    MessageBox.Show("Please choose a username that's 20 characters or less.");
+                else
+                    Properties.Settings.Default.currentUser = universalTextBox.Text;
+            }
             Properties.Settings.Default.Save();
             Dispose();
         }
@@ -39,6 +48,14 @@ namespace StudyBuddy.Forms.OptionsForm
             }
             else if (Properties.Settings.Default.currentSelectedOption == 2)
                 universalLabel.Text = "Number of available skips:";
+            else if (Properties.Settings.Default.currentUser == "")
+            {
+                saveButton.Text = "Next";
+                universalLabel.Text = "Please enter a username:";
+                universalTextBox.Size = new Size(100, 20);
+                universalTextBox.Location = new Point(140, 6);
+            }
+            
             else
             {
                 MessageBox.Show("Whoops, something went wrong. The application will now close.");
