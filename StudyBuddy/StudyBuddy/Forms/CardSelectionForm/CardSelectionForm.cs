@@ -1,4 +1,5 @@
 using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -13,8 +14,25 @@ namespace StudyBuddy
 
         string userType;
 
+        private void checkBackground()
+        {
+            if (Properties.Settings.Default.nightMode)
+            {
+                BackColor = Color.Black;
+                directionsLabel.BackColor = Color.Black;
+                directionsLabel.ForeColor = Color.White;
+            }
+            else
+            {
+                BackColor = Color.White;
+                directionsLabel.BackColor = Color.White;
+                directionsLabel.ForeColor = Color.Black;
+            }
+        }
+
         private void CardSelectionForm_Load(object sender, EventArgs e)
         {
+            checkBackground();
             if (Properties.Settings.Default.editMode)
             {
                 Text = "Study Quiz Editor";

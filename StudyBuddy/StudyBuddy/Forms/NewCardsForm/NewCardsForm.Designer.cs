@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewCardsForm));
-            this.label1 = new System.Windows.Forms.Label();
+            this.quizNameLabel = new System.Windows.Forms.Label();
             this.quizNameTextBox = new System.Windows.Forms.TextBox();
             this.questionNumbersComboBox = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.numberOfQuestionsLabel = new System.Windows.Forms.Label();
             this.nextButton = new System.Windows.Forms.Button();
             this.alreadyExistsLabel = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.newQuizDescriptionLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // quizNameLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(108, 67);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Quiz Name";
+            this.quizNameLabel.AutoSize = true;
+            this.quizNameLabel.BackColor = System.Drawing.Color.White;
+            this.quizNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quizNameLabel.Location = new System.Drawing.Point(108, 67);
+            this.quizNameLabel.Name = "quizNameLabel";
+            this.quizNameLabel.Size = new System.Drawing.Size(69, 15);
+            this.quizNameLabel.TabIndex = 0;
+            this.quizNameLabel.Text = "Quiz Name";
             // 
             // quizNameTextBox
             // 
@@ -77,16 +77,16 @@
             this.questionNumbersComboBox.Size = new System.Drawing.Size(121, 21);
             this.questionNumbersComboBox.TabIndex = 2;
             // 
-            // label2
+            // numberOfQuestionsLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(79, 132);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 15);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Number of Questions";
+            this.numberOfQuestionsLabel.AutoSize = true;
+            this.numberOfQuestionsLabel.BackColor = System.Drawing.Color.White;
+            this.numberOfQuestionsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numberOfQuestionsLabel.Location = new System.Drawing.Point(79, 132);
+            this.numberOfQuestionsLabel.Name = "numberOfQuestionsLabel";
+            this.numberOfQuestionsLabel.Size = new System.Drawing.Size(123, 15);
+            this.numberOfQuestionsLabel.TabIndex = 3;
+            this.numberOfQuestionsLabel.Text = "Number of Questions";
             // 
             // nextButton
             // 
@@ -102,7 +102,7 @@
             // alreadyExistsLabel
             // 
             this.alreadyExistsLabel.AutoSize = true;
-            this.alreadyExistsLabel.BackColor = System.Drawing.Color.Black;
+            this.alreadyExistsLabel.BackColor = System.Drawing.Color.White;
             this.alreadyExistsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.alreadyExistsLabel.ForeColor = System.Drawing.Color.Red;
             this.alreadyExistsLabel.Location = new System.Drawing.Point(30, 190);
@@ -113,17 +113,17 @@
             this.alreadyExistsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.alreadyExistsLabel.Visible = false;
             // 
-            // label3
+            // newQuizDescriptionLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(5, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(274, 32);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Create a new quiz by filling out the information\nbelow to help you study.";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.newQuizDescriptionLabel.AutoSize = true;
+            this.newQuizDescriptionLabel.BackColor = System.Drawing.Color.White;
+            this.newQuizDescriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newQuizDescriptionLabel.Location = new System.Drawing.Point(5, 9);
+            this.newQuizDescriptionLabel.Name = "newQuizDescriptionLabel";
+            this.newQuizDescriptionLabel.Size = new System.Drawing.Size(274, 32);
+            this.newQuizDescriptionLabel.TabIndex = 6;
+            this.newQuizDescriptionLabel.Text = "Create a new quiz by filling out the information\nbelow to help you study.";
+            this.newQuizDescriptionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // NewCardsForm
             // 
@@ -131,13 +131,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.newQuizDescriptionLabel);
             this.Controls.Add(this.alreadyExistsLabel);
             this.Controls.Add(this.nextButton);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.numberOfQuestionsLabel);
             this.Controls.Add(this.questionNumbersComboBox);
             this.Controls.Add(this.quizNameTextBox);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.quizNameLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -154,12 +154,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label quizNameLabel;
         private System.Windows.Forms.TextBox quizNameTextBox;
         private System.Windows.Forms.ComboBox questionNumbersComboBox;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label numberOfQuestionsLabel;
         private System.Windows.Forms.Button nextButton;
         private System.Windows.Forms.Label alreadyExistsLabel;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label newQuizDescriptionLabel;
     }
 }

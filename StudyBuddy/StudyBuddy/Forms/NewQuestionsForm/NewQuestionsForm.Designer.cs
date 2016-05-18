@@ -35,7 +35,7 @@
             this.questionTextBox = new System.Windows.Forms.TextBox();
             this.answerTextBox = new System.Windows.Forms.TextBox();
             this.nextQuestionButton = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.newQuestionsDescriptionLabel = new System.Windows.Forms.Label();
             this.currentQuestionLabel = new System.Windows.Forms.Label();
             this.previousQuestionButton = new System.Windows.Forms.Button();
             this.hintTextBox = new System.Windows.Forms.TextBox();
@@ -96,17 +96,17 @@
             this.nextQuestionButton.UseVisualStyleBackColor = true;
             this.nextQuestionButton.Click += new System.EventHandler(this.nextQuestionButton_Click);
             // 
-            // label3
+            // newQuestionsDescriptionLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(13, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(258, 32);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Fill out the questions and answers to\nadd them.";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.newQuestionsDescriptionLabel.AutoSize = true;
+            this.newQuestionsDescriptionLabel.BackColor = System.Drawing.Color.White;
+            this.newQuestionsDescriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newQuestionsDescriptionLabel.Location = new System.Drawing.Point(13, 9);
+            this.newQuestionsDescriptionLabel.Name = "newQuestionsDescriptionLabel";
+            this.newQuestionsDescriptionLabel.Size = new System.Drawing.Size(258, 32);
+            this.newQuestionsDescriptionLabel.TabIndex = 6;
+            this.newQuestionsDescriptionLabel.Text = "Fill out the questions and answers to\nadd them.";
+            this.newQuestionsDescriptionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // currentQuestionLabel
             // 
@@ -141,7 +141,7 @@
             // 
             this.hintHeaderLabel.AutoSize = true;
             this.hintHeaderLabel.BackColor = System.Drawing.Color.White;
-            this.hintHeaderLabel.Location = new System.Drawing.Point(11, 163);
+            this.hintHeaderLabel.Location = new System.Drawing.Point(8, 163);
             this.hintHeaderLabel.Name = "hintHeaderLabel";
             this.hintHeaderLabel.Size = new System.Drawing.Size(42, 13);
             this.hintHeaderLabel.TabIndex = 9;
@@ -157,7 +157,7 @@
             this.Controls.Add(this.hintHeaderLabel);
             this.Controls.Add(this.previousQuestionButton);
             this.Controls.Add(this.currentQuestionLabel);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.newQuestionsDescriptionLabel);
             this.Controls.Add(this.nextQuestionButton);
             this.Controls.Add(this.answerTextBox);
             this.Controls.Add(this.questionTextBox);
@@ -184,7 +184,7 @@
         private System.Windows.Forms.TextBox questionTextBox;
         private System.Windows.Forms.TextBox answerTextBox;
         private System.Windows.Forms.Button nextQuestionButton;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label newQuestionsDescriptionLabel;
         private System.Windows.Forms.Label currentQuestionLabel;
         private System.Windows.Forms.Button previousQuestionButton;
         private System.Windows.Forms.TextBox hintTextBox;

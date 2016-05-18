@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -11,8 +12,21 @@ namespace StudyBuddy
             InitializeComponent();
         }
 
+        private void checkBackground()
+        {
+            if (Properties.Settings.Default.nightMode)
+            {
+                BackColor = Color.Black;
+            }
+            else
+            {
+                BackColor = Color.White;
+            }
+        }
+
         private void ChangeQuizDirForm_Load(object sender, EventArgs e)
         {
+            checkBackground();
             directoryTextBox.Text = Properties.Settings.Default.QuizDirectory;
         }
 

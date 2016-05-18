@@ -11,6 +11,26 @@ namespace StudyBuddy.Forms.OptionsForm
             InitializeComponent();
         }
 
+        private void checkBackground()
+        {
+            if (Properties.Settings.Default.nightMode)
+            {
+                BackColor = Color.Black;
+                universalLabel.BackColor = Color.Black;
+                universalLabel.ForeColor = Color.White;
+                universalTextBox.BackColor = Color.Black;
+                universalTextBox.ForeColor = Color.White;
+            }
+            else
+            {
+                BackColor = Color.White;
+                universalLabel.BackColor = Color.White;
+                universalLabel.ForeColor = Color.Black;
+                universalTextBox.BackColor = Color.White;
+                universalTextBox.ForeColor = Color.Black;
+            }
+        }
+
         private void saveButton_Click(object sender, EventArgs e)
         {
             if (Properties.Settings.Default.currentSelectedOption == 1 || Properties.Settings.Default.currentSelectedOption == 2)
@@ -35,6 +55,7 @@ namespace StudyBuddy.Forms.OptionsForm
 
         private void UniversalExtraOptions_Load(object sender, EventArgs e)
         {
+            checkBackground();
             if (Properties.Settings.Default.currentSelectedOption == 1)
             {
                 universalLabel.Text = "Give hint after this many tries:";

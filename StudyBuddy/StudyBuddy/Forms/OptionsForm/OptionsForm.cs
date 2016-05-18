@@ -1,5 +1,6 @@
 ﻿using StudyBuddy.Forms.OptionsForm;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace StudyBuddy
@@ -11,8 +12,41 @@ namespace StudyBuddy
             InitializeComponent();
         }
 
+        private void checkBackground()
+        {
+            if (nightModeCheckBox.Checked)
+            {
+                BackColor = Color.Black;
+                timerCheckBox.BackColor = Color.Black;
+                timerCheckBox.ForeColor = Color.White;
+                timerVisibilityCheckBox.BackColor = Color.Black;
+                timerVisibilityCheckBox.ForeColor = Color.White;
+                enableHintCheckBox.BackColor = Color.Black;
+                enableHintCheckBox.ForeColor = Color.White;
+                skipEnabledCheckBox.BackColor = Color.Black;
+                skipEnabledCheckBox.ForeColor = Color.White;
+                nightModeCheckBox.BackColor = Color.Black;
+                nightModeCheckBox.ForeColor = Color.White;
+            }
+            else
+            {
+                BackColor = Color.White;
+                timerCheckBox.BackColor = Color.White;
+                timerCheckBox.ForeColor = Color.Black;
+                timerVisibilityCheckBox.BackColor = Color.White;
+                timerVisibilityCheckBox.ForeColor = Color.Black;
+                enableHintCheckBox.BackColor = Color.White;
+                enableHintCheckBox.ForeColor = Color.Black;
+                skipEnabledCheckBox.BackColor = Color.White;
+                skipEnabledCheckBox.ForeColor = Color.Black;
+                nightModeCheckBox.BackColor = Color.White;
+                nightModeCheckBox.ForeColor = Color.Black;
+            }
+        }
+
         private void OptionsForm_Load(object sender, EventArgs e)
         {
+            checkBackground();
             skipEnabledCheckBox.Checked = Properties.Settings.Default.skipEnabled;
             timerCheckBox.Checked = Properties.Settings.Default.timerEnabled;
             timerVisibilityCheckBox.Checked = Properties.Settings.Default.timerVisibilityEnabled;
@@ -92,6 +126,11 @@ namespace StudyBuddy
             Properties.Settings.Default.Save();
             UniversalExtraOptions extraOptions = new UniversalExtraOptions();
             extraOptions.ShowDialog();
+        }
+
+        private void nightModeCheckBox_CheckStateChanged(object sender, EventArgs e)
+        {
+            checkBackground();
         }
     }
 }

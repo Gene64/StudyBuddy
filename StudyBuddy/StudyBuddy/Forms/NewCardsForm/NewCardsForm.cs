@@ -1,4 +1,5 @@
 using System;
+using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
@@ -16,8 +17,33 @@ namespace StudyBuddy
         string currentQuizFile = Properties.Settings.Default.QuizDirectory + @"\" + Properties.Settings.Default.currentSelectedQuiz + ".xml";
         XmlDocument xmlDoc = new XmlDocument();
 
+        private void checkBackground()
+        {
+            if (Properties.Settings.Default.nightMode)
+            {
+                BackColor = Color.Black;
+                newQuizDescriptionLabel.BackColor = Color.Black;
+                newQuizDescriptionLabel.ForeColor = Color.White;
+                quizNameLabel.BackColor = Color.Black;
+                quizNameLabel.ForeColor = Color.White;
+                numberOfQuestionsLabel.BackColor = Color.Black;
+                numberOfQuestionsLabel.ForeColor = Color.White;
+            }
+            else
+            {
+                BackColor = Color.White;
+                newQuizDescriptionLabel.BackColor = Color.White;
+                newQuizDescriptionLabel.ForeColor = Color.Black;
+                quizNameLabel.BackColor = Color.White;
+                quizNameLabel.ForeColor = Color.Black;
+                numberOfQuestionsLabel.BackColor = Color.White;
+                numberOfQuestionsLabel.ForeColor = Color.Black;
+            }
+        }
+
         private void NewCardsForm_Load(object sender, EventArgs e)
         {
+            checkBackground();
             if (Properties.Settings.Default.backButtonPressed || Properties.Settings.Default.editMode)
             {
                 xmlDoc.Load(currentQuizFile); // Loads the XML
