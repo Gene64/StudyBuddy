@@ -102,6 +102,7 @@ namespace StudyBuddy
         {
             checkBackground();
             checkUser();
+            setWelcomeLabel();
             if (!Directory.Exists(Properties.Settings.Default.QuizDirectory))
             {
                 DialogResult dr = MessageBox.Show("There is currently no quiz folder configured. Would you like to manually choose?", "Choose Quiz Directory", MessageBoxButtons.YesNo);
@@ -149,8 +150,18 @@ namespace StudyBuddy
 
         private void MainMenuForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Properties.Settings.Default.currentUser = ""; // Log the user off when the application shuts down.
-            Properties.Settings.Default.Save();
+            if (!Properties.Settings.Default.rememberUser)
+            {
+                Properties.Settings.Default.currentUser = ""; // Log the user off when the application shuts down.
+                Properties.Settings.Default.Save();
+            }
+        }
+
+        private void setWelcomeLabel()
+        {
+            welcomeLabel.Text = "Welcome to Study Buddy, " + Properties.Settings.Default.currentUser + "!";
+            welcomeLabel.MaximumSize = new Size(280, 0);
+            welcomeLabel.Left = (ClientSize.Width - welcomeLabel.Size.Width) / 2;
         }
     }
 }

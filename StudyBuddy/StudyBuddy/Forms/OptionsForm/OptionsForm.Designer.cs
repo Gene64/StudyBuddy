@@ -39,6 +39,7 @@
             this.nightModeCheckBox = new System.Windows.Forms.CheckBox();
             this.skipEnabledCheckBox = new System.Windows.Forms.CheckBox();
             this.skipOptionsButton = new System.Windows.Forms.Button();
+            this.changeCurrentUserButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // timerCheckBox
@@ -156,12 +157,23 @@
             this.skipOptionsButton.UseVisualStyleBackColor = true;
             this.skipOptionsButton.Visible = false;
             // 
+            // changeCurrentUserButton
+            // 
+            this.changeCurrentUserButton.Location = new System.Drawing.Point(12, 194);
+            this.changeCurrentUserButton.Name = "changeCurrentUserButton";
+            this.changeCurrentUserButton.Size = new System.Drawing.Size(80, 35);
+            this.changeCurrentUserButton.TabIndex = 11;
+            this.changeCurrentUserButton.Text = "Change Current User";
+            this.changeCurrentUserButton.UseVisualStyleBackColor = true;
+            this.changeCurrentUserButton.Click += new System.EventHandler(this.changeCurrentUserButton_Click);
+            // 
             // OptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.changeCurrentUserButton);
             this.Controls.Add(this.skipOptionsButton);
             this.Controls.Add(this.skipEnabledCheckBox);
             this.Controls.Add(this.nightModeCheckBox);
@@ -197,5 +209,6 @@
         private System.Windows.Forms.CheckBox nightModeCheckBox;
         private System.Windows.Forms.CheckBox skipEnabledCheckBox;
         private System.Windows.Forms.Button skipOptionsButton;
+        private System.Windows.Forms.Button changeCurrentUserButton;
     }
 }

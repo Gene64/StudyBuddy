@@ -132,5 +132,13 @@ namespace StudyBuddy
         {
             checkBackground();
         }
+
+        private void changeCurrentUserButton_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.changeCurrentUser = true;
+            Properties.Settings.Default.Save();
+            UniversalExtraOptions extraOptions = new UniversalExtraOptions();
+            extraOptions.ShowDialog();
+        }
     }
 }

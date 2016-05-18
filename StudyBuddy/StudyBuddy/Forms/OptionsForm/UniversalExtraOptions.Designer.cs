@@ -32,6 +32,7 @@
             this.universalTextBox = new System.Windows.Forms.TextBox();
             this.universalLabel = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
+            this.rememberUserCheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // universalTextBox
@@ -60,12 +61,24 @@
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
+            // rememberUserCheckBox
+            // 
+            this.rememberUserCheckBox.AutoSize = true;
+            this.rememberUserCheckBox.Location = new System.Drawing.Point(15, 25);
+            this.rememberUserCheckBox.Name = "rememberUserCheckBox";
+            this.rememberUserCheckBox.Size = new System.Drawing.Size(102, 17);
+            this.rememberUserCheckBox.TabIndex = 3;
+            this.rememberUserCheckBox.Text = "Remember User";
+            this.rememberUserCheckBox.UseVisualStyleBackColor = true;
+            this.rememberUserCheckBox.Visible = false;
+            // 
             // UniversalExtraOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(284, 106);
+            this.Controls.Add(this.rememberUserCheckBox);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.universalLabel);
             this.Controls.Add(this.universalTextBox);
@@ -76,6 +89,7 @@
             this.Name = "UniversalExtraOptions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Extra Options";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UniversalExtraOptions_FormClosing);
             this.Load += new System.EventHandler(this.UniversalExtraOptions_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -87,5 +101,6 @@
         private System.Windows.Forms.TextBox universalTextBox;
         private System.Windows.Forms.Label universalLabel;
         private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.CheckBox rememberUserCheckBox;
     }
 }

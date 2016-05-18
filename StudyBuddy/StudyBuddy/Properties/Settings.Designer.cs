@@ -442,5 +442,29 @@ namespace StudyBuddy.Properties {
                 this["hintTries"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool rememberUser {
+            get {
+                return ((bool)(this["rememberUser"]));
+            }
+            set {
+                this["rememberUser"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool changeCurrentUser {
+            get {
+                return ((bool)(this["changeCurrentUser"]));
+            }
+            set {
+                this["changeCurrentUser"] = value;
+            }
+        }
     }
 }

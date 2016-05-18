@@ -42,12 +42,15 @@ namespace StudyBuddy.Forms.OptionsForm
                         Properties.Settings.Default.hintTries = selectedNumber;
                 }
             }
-            else if (Properties.Settings.Default.currentUser == "")
+            else if (Properties.Settings.Default.currentUser == "" || Properties.Settings.Default.changeCurrentUser)
             {
                 if (universalTextBox.Text.Length >= 20)
                     MessageBox.Show("Please choose a username that's 20 characters or less.");
                 else
+                {
                     Properties.Settings.Default.currentUser = universalTextBox.Text;
+                    Properties.Settings.Default.rememberUser = rememberUserCheckBox.Checked;
+                }
             }
             Properties.Settings.Default.Save();
             Dispose();
@@ -69,19 +72,27 @@ namespace StudyBuddy.Forms.OptionsForm
             }
             else if (Properties.Settings.Default.currentSelectedOption == 2)
                 universalLabel.Text = "Number of available skips:";
-            else if (Properties.Settings.Default.currentUser == "")
+            else if (Properties.Settings.Default.currentUser == "" || Properties.Settings.Default.changeCurrentUser)
             {
                 saveButton.Text = "Next";
                 universalLabel.Text = "Please enter a username:";
                 universalTextBox.Size = new Size(100, 20);
                 universalTextBox.Location = new Point(140, 6);
+                rememberUserCheckBox.Visible = true;
+                rememberUserCheckBox.Checked = Properties.Settings.Default.rememberUser;
+                universalTextBox.Text = Properties.Settings.Default.currentUser;
             }
-            
             else
             {
                 MessageBox.Show("Whoops, something went wrong. The application will now close.");
                 Application.Exit();
             }
+        }
+
+        private void UniversalExtraOptions_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.changeCurrentUser = false;
+            Properties.Settings.Default.Save();
         }
     }
 }
