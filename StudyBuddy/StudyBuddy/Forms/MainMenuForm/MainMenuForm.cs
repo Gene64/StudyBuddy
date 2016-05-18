@@ -100,6 +100,7 @@ namespace StudyBuddy
         private void MainMenuForm_Load(object sender, EventArgs e)
         {
             checkBackground();
+            checkUser();
             if (!Directory.Exists(Properties.Settings.Default.QuizDirectory))
             {
                 DialogResult dr = MessageBox.Show("There is currently no quiz folder configured. Would you like to manually choose?", "Choose Quiz Directory", MessageBoxButtons.YesNo);
@@ -134,6 +135,14 @@ namespace StudyBuddy
         {
             OptionsForm options = new OptionsForm();
             options.ShowDialog();
+        }
+
+        private void checkUser()
+        {
+            if (Properties.Settings.Default.currentUser == null)
+            {
+                MessageBox.Show("Please enter a username.", "Enter a username.");
+            }
         }
     }
 }
