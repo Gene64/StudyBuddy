@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -46,6 +46,12 @@ namespace StudyBuddy.Forms.OptionsForm
             }
             else if (Properties.Settings.Default.currentUser == "" || Properties.Settings.Default.changeCurrentUser)
             {
+                if (universalTextBox.Text == "")
+                {
+                    MessageBox.Show("Please enter a valid username.", "Username not valid");
+                    return;
+                }
+
                 if (universalTextBox.Text.Length >= 20)
                     MessageBox.Show("Please choose a username that's 20 characters or less.");
                 else
@@ -101,6 +107,15 @@ namespace StudyBuddy.Forms.OptionsForm
 
         private void UniversalExtraOptions_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if (universalTextBox.Text == "")
+            {
+                DialogResult dr = MessageBox.Show("You have to enter a username, otherwise the application will close. Are you sure you want to quit?", "Are you sure you want to quit?", MessageBoxButtons.YesNo);
+
+                if (dr == DialogResult.No)
+                    e.Cancel = true;
+                else if (dr == DialogResult.Yes)
+                    Application.Exit();
+            }
             Properties.Settings.Default.currentSelectedOption = 0;
             Properties.Settings.Default.changeCurrentUser = false;
             Properties.Settings.Default.Save();
