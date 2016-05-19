@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -50,6 +51,11 @@ namespace StudyBuddy
             Properties.Settings.Default.QuizDirectory = directoryTextBox.Text;
             Properties.Settings.Default.Save();
             Dispose();
+        }
+
+        private void openButton_Click(object sender, EventArgs e)
+        {
+            Process.Start(directoryTextBox.Text);
         }
     }
 }
