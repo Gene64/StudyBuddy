@@ -107,6 +107,7 @@ namespace StudyBuddy.Forms.OptionsForm
 
         private void UniversalExtraOptions_FormClosing(object sender, FormClosingEventArgs e)
         {
+            universalTextBox.Text = Properties.Settings.Default.currentUser; // This needs to be used because the data gets removed since the form is closing.
             if (universalTextBox.Text == "")
             {
                 DialogResult dr = MessageBox.Show("You have to enter a username, otherwise the application will close. Are you sure you want to quit?", "Are you sure you want to quit?", MessageBoxButtons.YesNo);
