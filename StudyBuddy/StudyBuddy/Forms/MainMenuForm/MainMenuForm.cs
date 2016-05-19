@@ -110,7 +110,7 @@ namespace StudyBuddy
                 if (dr == DialogResult.Yes)
                 {
                     FolderBrowserDialog fbd = new FolderBrowserDialog();
-                    fbd.Description = "Please select a folder for your saved quizes to go.";
+                    fbd.Description = "Please select a folder for your saved quizzes to go.";
                     if (fbd.ShowDialog() == DialogResult.OK)
                     {
                         if (Directory.Exists(fbd.SelectedPath))
