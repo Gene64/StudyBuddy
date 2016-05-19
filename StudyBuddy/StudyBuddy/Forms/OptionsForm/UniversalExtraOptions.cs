@@ -69,6 +69,7 @@ namespace StudyBuddy.Forms.OptionsForm
             checkBackground();
             if (Properties.Settings.Default.currentSelectedOption == 1)
             {
+                Text = "Change hint options";
                 universalLabel.Text = "Give hint after this many tries:";
                 universalTextBox.Location = new Point(163, 6);
                 if (Properties.Settings.Default.hintTries == 0)
@@ -80,6 +81,7 @@ namespace StudyBuddy.Forms.OptionsForm
             }
             else if (Properties.Settings.Default.currentSelectedOption == 2)
             {
+                Text = "Change skip options";
                 universalLabel.Text = "Number of available skips:";
                 if (Properties.Settings.Default.skipsLeft == 0)
                 {
@@ -90,6 +92,7 @@ namespace StudyBuddy.Forms.OptionsForm
             }
             else if (Properties.Settings.Default.currentUser == "" || Properties.Settings.Default.changeCurrentUser)
             {
+                Text = "Change username";
                 saveButton.Text = "Next";
                 universalLabel.Text = "Please enter a username:";
                 universalTextBox.Size = new Size(100, 20);
