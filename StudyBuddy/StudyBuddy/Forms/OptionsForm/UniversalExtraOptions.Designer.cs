@@ -1,106 +1,124 @@
-﻿namespace StudyBuddy.Forms.OptionsForm
+using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace StudyBuddy.Forms.OptionsForm
 {
-    partial class UniversalExtraOptions
+    public partial class UniversalExtraOptions : Form
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
-
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
+        public UniversalExtraOptions()
         {
-            if (disposing && (components != null))
+            InitializeComponent();
+        }
+
+        private void checkBackground()
+        {
+            if (Properties.Settings.Default.nightMode)
             {
-                components.Dispose();
+                BackColor = Color.Black;
+                universalLabel.BackColor = Color.Black;
+                universalLabel.ForeColor = Color.White;
+                universalTextBox.BackColor = Color.Black;
+                universalTextBox.ForeColor = Color.White;
             }
-            base.Dispose(disposing);
+            else
+            {
+                BackColor = Color.White;
+                universalLabel.BackColor = Color.White;
+                universalLabel.ForeColor = Color.Black;
+                universalTextBox.BackColor = Color.White;
+                universalTextBox.ForeColor = Color.Black;
+            }
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
+        private void saveButton_Click(object sender, EventArgs e)
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UniversalExtraOptions));
-            this.universalTextBox = new System.Windows.Forms.TextBox();
-            this.universalLabel = new System.Windows.Forms.Label();
-            this.saveButton = new System.Windows.Forms.Button();
-            this.rememberUserCheckBox = new System.Windows.Forms.CheckBox();
-            this.SuspendLayout();
-            // 
-            // universalTextBox
-            // 
-            this.universalTextBox.Location = new System.Drawing.Point(163, 6);
-            this.universalTextBox.Name = "universalTextBox";
-            this.universalTextBox.Size = new System.Drawing.Size(37, 20);
-            this.universalTextBox.TabIndex = 0;
-            // 
-            // universalLabel
-            // 
-            this.universalLabel.AutoSize = true;
-            this.universalLabel.Location = new System.Drawing.Point(12, 9);
-            this.universalLabel.Name = "universalLabel";
-            this.universalLabel.Size = new System.Drawing.Size(145, 13);
-            this.universalLabel.TabIndex = 1;
-            this.universalLabel.Text = "Give hint after this many tries:";
-            // 
-            // saveButton
-            // 
-            this.saveButton.Location = new System.Drawing.Point(105, 71);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(75, 23);
-            this.saveButton.TabIndex = 2;
-            this.saveButton.Text = "Save";
-            this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
-            // 
-            // rememberUserCheckBox
-            // 
-            this.rememberUserCheckBox.AutoSize = true;
-            this.rememberUserCheckBox.Location = new System.Drawing.Point(15, 25);
-            this.rememberUserCheckBox.Name = "rememberUserCheckBox";
-            this.rememberUserCheckBox.Size = new System.Drawing.Size(102, 17);
-            this.rememberUserCheckBox.TabIndex = 3;
-            this.rememberUserCheckBox.Text = "Remember User";
-            this.rememberUserCheckBox.UseVisualStyleBackColor = true;
-            this.rememberUserCheckBox.Visible = false;
-            // 
-            // UniversalExtraOptions
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(284, 106);
-            this.Controls.Add(this.rememberUserCheckBox);
-            this.Controls.Add(this.saveButton);
-            this.Controls.Add(this.universalLabel);
-            this.Controls.Add(this.universalTextBox);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "UniversalExtraOptions";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Extra Options";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UniversalExtraOptions_FormClosing);
-            this.Load += new System.EventHandler(this.UniversalExtraOptions_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            if (Properties.Settings.Default.currentSelectedOption == 1 || Properties.Settings.Default.currentSelectedOption == 2)
+            {
+                int selectedNumber;
+                if (int.TryParse(universalTextBox.Text, out selectedNumber))
+                {
+                    if (Properties.Settings.Default.currentSelectedOption == 1)
+                        Properties.Settings.Default.hintTries = selectedNumber;
+                    else if (Properties.Settings.Default.currentSelectedOption == 2)
+                        Properties.Settings.Default.skipsLeft = selectedNumber;
+                }
+            }
+            else if (Properties.Settings.Default.currentUser == "" || Properties.Settings.Default.changeCurrentUser)
+            {
+                if (universalTextBox.Text == "")
+                {
+                    MessageBox.Show("Please enter a valid username.", "Username not valid");
+                    return;
+                }
 
+                if (universalTextBox.Text.Length >= 20)
+                    MessageBox.Show("Please choose a username that's 20 characters or less.");
+                else
+                {
+                    Properties.Settings.Default.currentUser = universalTextBox.Text;
+                    Properties.Settings.Default.rememberUser = rememberUserCheckBox.Checked;
+                }
+            }
+            Properties.Settings.Default.Save();
+            Dispose();
         }
 
-        #endregion
+        private void UniversalExtraOptions_Load(object sender, EventArgs e)
+        {
+            checkBackground();
+            if (Properties.Settings.Default.currentSelectedOption == 1)
+            {
+                universalLabel.Text = "Give hint after this many tries:";
+                universalTextBox.Location = new Point(163, 6);
+                if (Properties.Settings.Default.hintTries == 0)
+                {
+                    Properties.Settings.Default.hintTries = 1; // 1 is the default number of tries
+                    Properties.Settings.Default.Save();
+                }
+                universalTextBox.Text = Properties.Settings.Default.hintTries.ToString();
+            }
+            else if (Properties.Settings.Default.currentSelectedOption == 2)
+            {
+                universalLabel.Text = "Number of available skips:";
+                if (Properties.Settings.Default.skipsLeft == 0)
+                {
+                    Properties.Settings.Default.skipsLeft = 3; // 3 is the default number of skips
+                    Properties.Settings.Default.Save();
+                }
+                universalTextBox.Text = Properties.Settings.Default.skipsLeft.ToString();
+            }
+            else if (Properties.Settings.Default.currentUser == "" || Properties.Settings.Default.changeCurrentUser)
+            {
+                saveButton.Text = "Next";
+                universalLabel.Text = "Please enter a username:";
+                universalTextBox.Size = new Size(100, 20);
+                universalTextBox.Location = new Point(140, 6);
+                rememberUserCheckBox.Visible = true;
+                rememberUserCheckBox.Checked = Properties.Settings.Default.rememberUser;
+                universalTextBox.Text = Properties.Settings.Default.currentUser;
+            }
+            else
+            {
+                MessageBox.Show("Whoops, something went wrong. The application will now close.");
+                Application.Exit();
+            }
+        }
 
-        private System.Windows.Forms.TextBox universalTextBox;
-        private System.Windows.Forms.Label universalLabel;
-        private System.Windows.Forms.Button saveButton;
-        private System.Windows.Forms.CheckBox rememberUserCheckBox;
+        private void UniversalExtraOptions_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (universalTextBox.Text == "")
+            {
+                DialogResult dr = MessageBox.Show("You have to enter a username, otherwise the application will close. Are you sure you want to quit?", "Are you sure you want to quit?", MessageBoxButtons.YesNo);
+
+                if (dr == DialogResult.No)
+                    e.Cancel = true;
+                else if (dr == DialogResult.Yes)
+                    Application.Exit();
+            }
+            Properties.Settings.Default.currentSelectedOption = 0;
+            Properties.Settings.Default.changeCurrentUser = false;
+            Properties.Settings.Default.Save();
+        }
     }
 }
