@@ -1,4 +1,4 @@
-﻿namespace StudyBuddy
+namespace StudyBuddy
 {
     partial class ChangeQuizDirForm
     {
@@ -32,6 +32,7 @@
             this.changeDirButton = new System.Windows.Forms.Button();
             this.directoryTextBox = new System.Windows.Forms.TextBox();
             this.applyButton = new System.Windows.Forms.Button();
+            this.openButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // changeDirButton
@@ -62,12 +63,23 @@
             this.applyButton.UseVisualStyleBackColor = true;
             this.applyButton.Click += new System.EventHandler(this.applyButton_Click);
             // 
+            // openButton
+            // 
+            this.openButton.Location = new System.Drawing.Point(93, 38);
+            this.openButton.Name = "openButton";
+            this.openButton.Size = new System.Drawing.Size(75, 23);
+            this.openButton.TabIndex = 3;
+            this.openButton.Text = "Open";
+            this.openButton.UseVisualStyleBackColor = true;
+            this.openButton.Click += new System.EventHandler(this.openButton_Click);
+            // 
             // ChangeQuizDirForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.openButton);
             this.Controls.Add(this.applyButton);
             this.Controls.Add(this.directoryTextBox);
             this.Controls.Add(this.changeDirButton);
@@ -89,5 +101,6 @@
         private System.Windows.Forms.Button changeDirButton;
         private System.Windows.Forms.TextBox directoryTextBox;
         private System.Windows.Forms.Button applyButton;
+        private System.Windows.Forms.Button openButton;
     }
 }
