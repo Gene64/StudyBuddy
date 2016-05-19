@@ -85,6 +85,7 @@ namespace StudyBuddy
             {
                 skipButton.Visible = true;
                 skipsLeftLabel.Visible = true;
+                skipsLeftLabel.Text = "(" + skipsLeft + ")";
             }
         }
 

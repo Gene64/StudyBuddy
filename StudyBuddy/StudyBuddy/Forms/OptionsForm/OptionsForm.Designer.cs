@@ -156,6 +156,7 @@
             this.skipOptionsButton.Text = "Skip Options";
             this.skipOptionsButton.UseVisualStyleBackColor = true;
             this.skipOptionsButton.Visible = false;
+            this.skipOptionsButton.Click += new System.EventHandler(this.skipOptionsButton_Click);
             // 
             // changeCurrentUserButton
             // 

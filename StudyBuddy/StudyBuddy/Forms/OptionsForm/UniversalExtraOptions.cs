@@ -40,6 +40,8 @@ namespace StudyBuddy.Forms.OptionsForm
                 {
                     if (Properties.Settings.Default.currentSelectedOption == 1)
                         Properties.Settings.Default.hintTries = selectedNumber;
+                    else if (Properties.Settings.Default.currentSelectedOption == 2)
+                        Properties.Settings.Default.skipsLeft = selectedNumber;
                 }
             }
             else if (Properties.Settings.Default.currentUser == "" || Properties.Settings.Default.changeCurrentUser)
@@ -71,7 +73,15 @@ namespace StudyBuddy.Forms.OptionsForm
                 universalTextBox.Text = Properties.Settings.Default.hintTries.ToString();
             }
             else if (Properties.Settings.Default.currentSelectedOption == 2)
+            {
                 universalLabel.Text = "Number of available skips:";
+                if (Properties.Settings.Default.skipsLeft == 0)
+                {
+                    Properties.Settings.Default.skipsLeft = 3; // 3 is the default number of skips
+                    Properties.Settings.Default.Save();
+                }
+                universalTextBox.Text = Properties.Settings.Default.skipsLeft.ToString();
+            }
             else if (Properties.Settings.Default.currentUser == "" || Properties.Settings.Default.changeCurrentUser)
             {
                 saveButton.Text = "Next";
@@ -91,6 +101,7 @@ namespace StudyBuddy.Forms.OptionsForm
 
         private void UniversalExtraOptions_FormClosing(object sender, FormClosingEventArgs e)
         {
+            Properties.Settings.Default.currentSelectedOption = 0;
             Properties.Settings.Default.changeCurrentUser = false;
             Properties.Settings.Default.Save();
         }

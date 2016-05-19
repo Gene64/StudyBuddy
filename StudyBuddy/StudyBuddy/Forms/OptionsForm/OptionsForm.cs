@@ -84,7 +84,6 @@ namespace StudyBuddy
             if (skipEnabledCheckBox.Checked)
             {
                 skipOptionsButton.Visible = true;
-                Properties.Settings.Default.skipsLeft = 3;
             }
             else
                 skipOptionsButton.Visible = false;
@@ -136,6 +135,14 @@ namespace StudyBuddy
         private void changeCurrentUserButton_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.changeCurrentUser = true;
+            Properties.Settings.Default.Save();
+            UniversalExtraOptions extraOptions = new UniversalExtraOptions();
+            extraOptions.ShowDialog();
+        }
+
+        private void skipOptionsButton_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.currentSelectedOption = 2;
             Properties.Settings.Default.Save();
             UniversalExtraOptions extraOptions = new UniversalExtraOptions();
             extraOptions.ShowDialog();
