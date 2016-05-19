@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Xml;
@@ -119,6 +119,14 @@ namespace StudyBuddy
 
         private void previousQuestionButton_Click(object sender, EventArgs e)
         {
+            int currentMaxQuestions = int.Parse(xmlDoc.SelectSingleNode("StudyBuddy/TestInfo/NumberOfTestQuestions").InnerText);
+            if (currentIndex == currentMaxQuestions)
+            {
+                xmlDoc.Load(currentQuizFile); // Loads the XML
+                xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question" + currentIndex).InnerText = questionTextBox.Text;
+                xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer" + currentIndex).InnerText = answerTextBox.Text;
+                xmlDoc.Save(currentQuizFile); // Saves changes to the XML
+            }
             currentIndex--;
             if (currentIndex== 1)
                 previousQuestionButton.Visible = false;
