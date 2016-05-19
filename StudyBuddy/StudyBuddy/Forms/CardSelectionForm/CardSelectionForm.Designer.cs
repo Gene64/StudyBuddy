@@ -1,4 +1,4 @@
-﻿namespace StudyBuddy
+namespace StudyBuddy
 {
     partial class CardSelectionForm
     {
@@ -62,7 +62,7 @@
             this.directionsLabel.Name = "directionsLabel";
             this.directionsLabel.Size = new System.Drawing.Size(256, 32);
             this.directionsLabel.TabIndex = 3;
-            this.directionsLabel.Text = "Pick one of your quizes from the box\nbelow to begin studying!";
+            this.directionsLabel.Text = "Pick one of your quizzes from the box\nbelow to begin studying!";
             this.directionsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CardSelectionForm
