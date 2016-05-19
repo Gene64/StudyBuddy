@@ -17,10 +17,14 @@ namespace StudyBuddy
             if (Properties.Settings.Default.nightMode)
             {
                 BackColor = Color.Black;
+                directoryTextBox.BackColor = Color.Black;
+                directoryTextBox.ForeColor = Color.White;
             }
             else
             {
                 BackColor = Color.White;
+                directoryTextBox.BackColor = Color.White;
+                directoryTextBox.ForeColor = Color.Black;
             }
         }
 
