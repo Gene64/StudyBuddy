@@ -15,6 +15,7 @@ namespace StudyBuddy
         XmlDocument xmlDoc = new XmlDocument();
         int skipsLeft = Properties.Settings.Default.skipsLeft;
         int totalQuestions;
+        int totalSkips;
         int currentIndex = 1;
         int wrongAnswers;
         int rightAnswers;
@@ -62,6 +63,11 @@ namespace StudyBuddy
 
         private void StudyForm_Load(object sender, EventArgs e)
         {
+            if (Properties.Settings.Default.skipsLeft == 0)
+            {
+                Properties.Settings.Default.skipsLeft = 3;
+                Properties.Settings.Default.Save();
+            }
             checkBackground();
             xmlDoc.Load(currentQuizFile); // Loads the XML
             totalQuestions = int.Parse(xmlDoc.SelectSingleNode("StudyBuddy/TestInfo/NumberOfTestQuestions").InnerText); // Gets the number of questions.
@@ -129,7 +135,7 @@ namespace StudyBuddy
                 else if (totalMinutes > 0 && totalSeconds > 0)
                     timeResults = " It took you " + totalMinutes + " minutes and " + totalSeconds + " seconds to complete this study quiz.";
 
-                MessageBox.Show("Congratulations, you have finished this study session! You got " + rightAnswers + " correct and " + wrongAnswers + " wrong. Your final score is a " + percentScore + "%." + timeResults, "Study Quiz Finished");
+                MessageBox.Show("Congratulations, you have finished this study session! You got " + rightAnswers + " correct, " + wrongAnswers + " wrong, and skipped " + totalSkips + ". Your final score is a " + percentScore + "%." + timeResults, "Study Quiz Finished");
                 Dispose();
             }
 
@@ -163,6 +169,7 @@ namespace StudyBuddy
 
         private void skipButton_Click(object sender, EventArgs e)
         {
+            totalSkips++;
             if (skipsLeft > 0)
             {
                 skipsLeft = skipsLeft - 1;
