@@ -1,4 +1,4 @@
-﻿namespace StudyBuddy
+namespace StudyBuddy
 {
     partial class OptionsForm
     {
@@ -112,7 +112,7 @@
             // 
             // hintOptionsButton
             // 
-            this.hintOptionsButton.Location = new System.Drawing.Point(114, 33);
+            this.hintOptionsButton.Location = new System.Drawing.Point(118, 35);
             this.hintOptionsButton.Name = "hintOptionsButton";
             this.hintOptionsButton.Size = new System.Drawing.Size(79, 23);
             this.hintOptionsButton.TabIndex = 7;
@@ -141,15 +141,15 @@
             this.skipEnabledCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.skipEnabledCheckBox.Location = new System.Drawing.Point(12, 62);
             this.skipEnabledCheckBox.Name = "skipEnabledCheckBox";
-            this.skipEnabledCheckBox.Size = new System.Drawing.Size(99, 19);
+            this.skipEnabledCheckBox.Size = new System.Drawing.Size(105, 19);
             this.skipEnabledCheckBox.TabIndex = 9;
-            this.skipEnabledCheckBox.Text = "Skip Enabled";
+            this.skipEnabledCheckBox.Text = "Skips Enabled";
             this.skipEnabledCheckBox.UseVisualStyleBackColor = false;
             this.skipEnabledCheckBox.CheckedChanged += new System.EventHandler(this.skipEnabledCheckBox_CheckedChanged);
             // 
             // skipOptionsButton
             // 
-            this.skipOptionsButton.Location = new System.Drawing.Point(114, 60);
+            this.skipOptionsButton.Location = new System.Drawing.Point(118, 60);
             this.skipOptionsButton.Name = "skipOptionsButton";
             this.skipOptionsButton.Size = new System.Drawing.Size(79, 23);
             this.skipOptionsButton.TabIndex = 10;
