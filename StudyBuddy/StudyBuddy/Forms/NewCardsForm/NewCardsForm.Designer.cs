@@ -1,4 +1,4 @@
-﻿namespace StudyBuddy
+namespace StudyBuddy
 {
     partial class NewCardsForm
     {
@@ -102,7 +102,7 @@
             // alreadyExistsLabel
             // 
             this.alreadyExistsLabel.AutoSize = true;
-            this.alreadyExistsLabel.BackColor = System.Drawing.Color.White;
+            this.alreadyExistsLabel.BackColor = System.Drawing.Color.Transparent;
             this.alreadyExistsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.alreadyExistsLabel.ForeColor = System.Drawing.Color.Red;
             this.alreadyExistsLabel.Location = new System.Drawing.Point(30, 190);
