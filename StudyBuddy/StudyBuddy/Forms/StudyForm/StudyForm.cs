@@ -25,6 +25,14 @@ namespace StudyBuddy
 
         string currentQuizFile = Properties.Settings.Default.QuizDirectory + @"\" +Properties.Settings.Default.currentSelectedQuiz + ".xml";
 
+        private bool quizHasHints()
+        {
+            xmlDoc.Load(currentQuizFile); // Loads the XML
+            if (xmlDoc.SelectSingleNode("StudyBuddy/HintInfo") == null)
+                return false;
+            return true;
+        }
+
         private void checkBackground()
         {
             if (Properties.Settings.Default.nightMode)
@@ -100,14 +108,21 @@ namespace StudyBuddy
             if (xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer" + currentIndex).InnerText != answerTextBox.Text)
             {
                 wrongAnswers++;
-                currentQuestionTimes++;
-                if (currentQuestionTimes >= Properties.Settings.Default.hintTries)
-                    hintLabel.Visible = true;
+                if (quizHasHints() && Properties.Settings.Default.enableHintsCheckBox)
+                {
+                    currentQuestionTimes++;
+                    if (currentQuestionTimes >= Properties.Settings.Default.hintTries)
+                    {
+                        hintLabel.Visible = true;
+                        hintLabel.Text = "Hint: " + xmlDoc.SelectSingleNode("StudyBuddy/HintInfo/Hint" + currentIndex).InnerText;
+                    }
+                }
             }
             else
             {
                 rightAnswers++;
-                currentQuestionTimes = 0;
+                if (quizHasHints() && Properties.Settings.Default.enableHintsCheckBox)
+                    currentQuestionTimes = 0;
                 nextQuestion();
             }
         }

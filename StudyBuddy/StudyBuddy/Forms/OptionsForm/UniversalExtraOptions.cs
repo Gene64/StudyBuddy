@@ -74,7 +74,7 @@ namespace StudyBuddy.Forms.OptionsForm
                 universalTextBox.Location = new Point(163, 6);
                 if (Properties.Settings.Default.hintTries == 0)
                 {
-                    Properties.Settings.Default.hintTries = 1; // 1 is the default number of tries
+                    Properties.Settings.Default.hintTries = 3; // 3 is the default number of tries
                     Properties.Settings.Default.Save();
                 }
                 universalTextBox.Text = Properties.Settings.Default.hintTries.ToString();

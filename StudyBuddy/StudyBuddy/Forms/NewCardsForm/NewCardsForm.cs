@@ -278,6 +278,14 @@ namespace StudyBuddy
                         }
                         xWriter.WriteEndElement();
                     }
+                    xWriter.WriteStartElement("TopScoreInfo"); // <BestScoreInfo>
+                    xWriter.WriteStartElement("BestUser");
+                    xWriter.WriteEndElement(); // </BestUser>
+                    xWriter.WriteStartElement("BestScore");
+                    xWriter.WriteEndElement(); // </BestScore>
+                    xWriter.WriteStartElement("BestTime");
+                    xWriter.WriteEndElement(); // </BestTime>
+                    xWriter.WriteEndElement(); // </BestScoreInfo>
                 }
                 xWriter.Close();
             }
