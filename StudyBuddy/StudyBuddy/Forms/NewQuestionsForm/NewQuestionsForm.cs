@@ -92,6 +92,8 @@ namespace StudyBuddy
             xmlDoc.Load(currentQuizFile); // Loads the XML
             xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question" + currentIndex).InnerText = questionTextBox.Text;
             xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer" + currentIndex).InnerText = answerTextBox.Text;
+            if (quizHasHints())
+                xmlDoc.SelectSingleNode("StudyBuddy/HintInfo/Hint" + currentIndex).InnerText = hintTextBox.Text;
             xmlDoc.Save(currentQuizFile); // Saves changes to the XML
 
             if (nextQuestionButton.Text == "Finish")
@@ -125,6 +127,8 @@ namespace StudyBuddy
                 xmlDoc.Load(currentQuizFile); // Loads the XML
                 xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question" + currentIndex).InnerText = questionTextBox.Text;
                 xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer" + currentIndex).InnerText = answerTextBox.Text;
+                if (quizHasHints())
+                    xmlDoc.SelectSingleNode("StudyBuddy/HintInfo/Hint" + currentIndex).InnerText = hintTextBox.Text;
                 xmlDoc.Save(currentQuizFile); // Saves changes to the XML
             }
             currentIndex--;
@@ -148,6 +152,7 @@ namespace StudyBuddy
                 hintHeaderLabel.Text = "Hint #" + currentIndex;
                 hintHeaderLabel.Visible = true;
                 hintTextBox.Visible = true;
+                hintTextBox.Text = xmlDoc.SelectSingleNode("StudyBuddy/HintInfo/Hint" + currentIndex).InnerText;
             }
             questionTextBox.Text = xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question" + currentIndex).InnerText;
             answerTextBox.Text = xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer" + currentIndex).InnerText;

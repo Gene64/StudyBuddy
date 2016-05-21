@@ -41,6 +41,14 @@ namespace StudyBuddy
             }
         }
 
+        private bool quizHasHints()
+        {
+            xmlDoc.Load(currentQuizFile); // Loads the XML
+            if (xmlDoc.SelectSingleNode("StudyBuddy/HintInfo") == null)
+                return false;
+            return true;
+        }
+
         private void NewCardsForm_Load(object sender, EventArgs e)
         {
             checkBackground();
@@ -49,6 +57,7 @@ namespace StudyBuddy
                 xmlDoc.Load(currentQuizFile); // Loads the XML
                 quizNameTextBox.Text = xmlDoc.SelectSingleNode("StudyBuddy/TestInfo/TestName").InnerText;
                 questionNumbersComboBox.Text = xmlDoc.SelectSingleNode("StudyBuddy/TestInfo/NumberOfTestQuestions").InnerText;
+                hintCheckBox.Checked = quizHasHints();
             }
             else
             {
