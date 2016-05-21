@@ -2,6 +2,7 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace StudyBuddy
 {
@@ -13,6 +14,7 @@ namespace StudyBuddy
         }
 
         string userType;
+        XmlDocument xmlDoc = new XmlDocument();
 
         private void checkBackground()
         {
@@ -36,6 +38,12 @@ namespace StudyBuddy
                 Text = "Study Quiz Editor";
                 startStudyingButton.Text = "Begin Editing";
                 userType = "edit";
+            }
+            else if (Properties.Settings.Default.highScoreViewer)
+            {
+                Text = "High Score Viewer";
+                startStudyingButton.Text = "View High Score";
+                directionsLabel.Text = "Pick one of your quizzes from the box\nbelow to view the current high score!";
             }
             else
             {
@@ -67,6 +75,19 @@ namespace StudyBuddy
                 {
                     NewCardsForm ncf = new NewCardsForm();
                     ncf.ShowDialog();
+                }
+                else if (Properties.Settings.Default.highScoreViewer)
+                {
+                    xmlDoc.LoadXml(Properties.Settings.Default.QuizDirectory + @"\" + quizSelectionComboBox.Text + ".xml");
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/TopScoreInfo/BestUser").InnerText == "")
+                        MessageBox.Show("There is current no high score for this study quiz.");
+                    else
+                    {
+                        string highUser = xmlDoc.SelectSingleNode("StudyBuddy/TopScoreInfo/BestUser").InnerText;
+                        string highScore = xmlDoc.SelectSingleNode("StudyBuddy/TopScoreInfo/BestScore").InnerText;
+                        string highTime = xmlDoc.SelectSingleNode("StudyBuddy/TopScoreInfo/BestTime").InnerText;
+                        MessageBox.Show("Top User: " + highUser + "\nHigh Score: " + highScore + "\nTime: " + highTime);
+                    }
                 }
                 else
                 {

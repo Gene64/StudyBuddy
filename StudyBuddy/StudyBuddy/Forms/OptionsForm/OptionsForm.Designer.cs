@@ -40,6 +40,7 @@ namespace StudyBuddy
             this.skipEnabledCheckBox = new System.Windows.Forms.CheckBox();
             this.skipOptionsButton = new System.Windows.Forms.Button();
             this.changeCurrentUserButton = new System.Windows.Forms.Button();
+            this.getHighScores = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // timerCheckBox
@@ -168,12 +169,23 @@ namespace StudyBuddy
             this.changeCurrentUserButton.UseVisualStyleBackColor = true;
             this.changeCurrentUserButton.Click += new System.EventHandler(this.changeCurrentUserButton_Click);
             // 
+            // getHighScores
+            // 
+            this.getHighScores.Location = new System.Drawing.Point(98, 112);
+            this.getHighScores.Name = "getHighScores";
+            this.getHighScores.Size = new System.Drawing.Size(80, 35);
+            this.getHighScores.TabIndex = 12;
+            this.getHighScores.Text = "Get High Scores";
+            this.getHighScores.UseVisualStyleBackColor = true;
+            this.getHighScores.Click += new System.EventHandler(this.getHighScores_Click);
+            // 
             // OptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.getHighScores);
             this.Controls.Add(this.changeCurrentUserButton);
             this.Controls.Add(this.skipOptionsButton);
             this.Controls.Add(this.skipEnabledCheckBox);
@@ -211,5 +223,6 @@ namespace StudyBuddy
         private System.Windows.Forms.CheckBox skipEnabledCheckBox;
         private System.Windows.Forms.Button skipOptionsButton;
         private System.Windows.Forms.Button changeCurrentUserButton;
+        private System.Windows.Forms.Button getHighScores;
     }
 }

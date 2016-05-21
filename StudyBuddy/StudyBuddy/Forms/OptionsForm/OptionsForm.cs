@@ -135,5 +135,13 @@ namespace StudyBuddy
             UniversalExtraOptions extraOptions = new UniversalExtraOptions();
             extraOptions.ShowDialog();
         }
+
+        private void getHighScores_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.highScoreViewer = true;
+            Properties.Settings.Default.Save();
+            CardSelectionForm selectionForm = new CardSelectionForm();
+            selectionForm.ShowDialog();
+        }
     }
 }

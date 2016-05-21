@@ -454,5 +454,17 @@ namespace StudyBuddy.Properties {
                 this["changeCurrentUser"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool highScoreViewer {
+            get {
+                return ((bool)(this["highScoreViewer"]));
+            }
+            set {
+                this["highScoreViewer"] = value;
+            }
+        }
     }
 }
