@@ -86,9 +86,6 @@
     <Setting Name="enableHintsCheckBox" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="Setting" Type="System.String" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
     <Setting Name="nightMode" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
