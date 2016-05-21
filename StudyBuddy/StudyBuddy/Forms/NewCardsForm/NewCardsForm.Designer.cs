@@ -42,7 +42,7 @@ namespace StudyBuddy
             // quizNameLabel
             // 
             this.quizNameLabel.AutoSize = true;
-            this.quizNameLabel.BackColor = System.Drawing.Color.White;
+            this.quizNameLabel.BackColor = System.Drawing.Color.Transparent;
             this.quizNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quizNameLabel.Location = new System.Drawing.Point(108, 67);
             this.quizNameLabel.Name = "quizNameLabel";
@@ -52,6 +52,7 @@ namespace StudyBuddy
             // 
             // quizNameTextBox
             // 
+            this.quizNameTextBox.BackColor = System.Drawing.Color.White;
             this.quizNameTextBox.Location = new System.Drawing.Point(82, 85);
             this.quizNameTextBox.Name = "quizNameTextBox";
             this.quizNameTextBox.Size = new System.Drawing.Size(121, 20);
@@ -117,7 +118,7 @@ namespace StudyBuddy
             // newQuizDescriptionLabel
             // 
             this.newQuizDescriptionLabel.AutoSize = true;
-            this.newQuizDescriptionLabel.BackColor = System.Drawing.Color.White;
+            this.newQuizDescriptionLabel.BackColor = System.Drawing.Color.Transparent;
             this.newQuizDescriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newQuizDescriptionLabel.Location = new System.Drawing.Point(5, 9);
             this.newQuizDescriptionLabel.Name = "newQuizDescriptionLabel";
@@ -129,12 +130,13 @@ namespace StudyBuddy
             // hintCheckBox
             // 
             this.hintCheckBox.AutoSize = true;
+            this.hintCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.hintCheckBox.Location = new System.Drawing.Point(209, 85);
             this.hintCheckBox.Name = "hintCheckBox";
             this.hintCheckBox.Size = new System.Drawing.Size(50, 17);
             this.hintCheckBox.TabIndex = 7;
             this.hintCheckBox.Text = "Hints";
-            this.hintCheckBox.UseVisualStyleBackColor = true;
+            this.hintCheckBox.UseVisualStyleBackColor = false;
             // 
             // NewCardsForm
             // 

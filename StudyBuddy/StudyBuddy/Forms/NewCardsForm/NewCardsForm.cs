@@ -22,22 +22,20 @@ namespace StudyBuddy
             if (Properties.Settings.Default.nightMode)
             {
                 BackColor = Color.Black;
-                newQuizDescriptionLabel.BackColor = Color.Black;
                 newQuizDescriptionLabel.ForeColor = Color.White;
-                quizNameLabel.BackColor = Color.Black;
                 quizNameLabel.ForeColor = Color.White;
-                numberOfQuestionsLabel.BackColor = Color.Black;
+                quizNameTextBox.BackColor = Color.Black;
                 numberOfQuestionsLabel.ForeColor = Color.White;
+                hintCheckBox.ForeColor = Color.White;
             }
             else
             {
                 BackColor = Color.White;
-                newQuizDescriptionLabel.BackColor = Color.White;
                 newQuizDescriptionLabel.ForeColor = Color.Black;
-                quizNameLabel.BackColor = Color.White;
                 quizNameLabel.ForeColor = Color.Black;
-                numberOfQuestionsLabel.BackColor = Color.White;
+                quizNameTextBox.BackColor = Color.White;
                 numberOfQuestionsLabel.ForeColor = Color.Black;
+                hintCheckBox.ForeColor = Color.Black;
             }
         }
 
