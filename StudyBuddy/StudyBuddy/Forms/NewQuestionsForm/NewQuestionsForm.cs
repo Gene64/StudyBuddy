@@ -143,7 +143,12 @@ namespace StudyBuddy
             currentQuestionLabel.Text = "Current Question: " + currentIndex+ "/" + totalQuestions;
             questionHeaderLabel.Text = "Question #" + currentIndex;
             answerHeaderLabel.Text = "Answer #" + currentIndex;
-
+            if (quizHasHints())
+            {
+                hintHeaderLabel.Text = "Hint #" + currentIndex;
+                hintHeaderLabel.Visible = true;
+                hintTextBox.Visible = true;
+            }
             questionTextBox.Text = xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question" + currentIndex).InnerText;
             answerTextBox.Text = xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer" + currentIndex).InnerText;
 
@@ -151,6 +156,14 @@ namespace StudyBuddy
             int totalQuestionsInt = int.Parse(xmlDoc.SelectSingleNode("StudyBuddy/TestInfo/NumberOfTestQuestions").InnerText);
             if (currentIndex == totalQuestionsInt)
                 nextQuestionButton.Text = "Finish";
+        }
+
+        private bool quizHasHints()
+        {
+            xmlDoc.Load(currentQuizFile); // Loads the XML
+            if (xmlDoc.SelectSingleNode("StudyBuddy/HintInfo") == null)
+                return false;
+            return true;
         }
     }
 }

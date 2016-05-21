@@ -136,6 +136,7 @@
             this.hintTextBox.Name = "hintTextBox";
             this.hintTextBox.Size = new System.Drawing.Size(260, 20);
             this.hintTextBox.TabIndex = 10;
+            this.hintTextBox.Visible = false;
             // 
             // hintHeaderLabel
             // 
@@ -146,6 +147,7 @@
             this.hintHeaderLabel.Size = new System.Drawing.Size(42, 13);
             this.hintHeaderLabel.TabIndex = 9;
             this.hintHeaderLabel.Text = "Hint #1";
+            this.hintHeaderLabel.Visible = false;
             // 
             // NewQuestionsForm
             // 
