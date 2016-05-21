@@ -36,6 +36,7 @@ namespace StudyBuddy
             this.nextButton = new System.Windows.Forms.Button();
             this.alreadyExistsLabel = new System.Windows.Forms.Label();
             this.newQuizDescriptionLabel = new System.Windows.Forms.Label();
+            this.hintCheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // quizNameLabel
@@ -125,12 +126,23 @@ namespace StudyBuddy
             this.newQuizDescriptionLabel.Text = "Create a new quiz by filling out the information\nbelow to help you study.";
             this.newQuizDescriptionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // hintCheckBox
+            // 
+            this.hintCheckBox.AutoSize = true;
+            this.hintCheckBox.Location = new System.Drawing.Point(209, 85);
+            this.hintCheckBox.Name = "hintCheckBox";
+            this.hintCheckBox.Size = new System.Drawing.Size(50, 17);
+            this.hintCheckBox.TabIndex = 7;
+            this.hintCheckBox.Text = "Hints";
+            this.hintCheckBox.UseVisualStyleBackColor = true;
+            // 
             // NewCardsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.hintCheckBox);
             this.Controls.Add(this.newQuizDescriptionLabel);
             this.Controls.Add(this.alreadyExistsLabel);
             this.Controls.Add(this.nextButton);
@@ -161,5 +173,6 @@ namespace StudyBuddy
         private System.Windows.Forms.Button nextButton;
         private System.Windows.Forms.Label alreadyExistsLabel;
         private System.Windows.Forms.Label newQuizDescriptionLabel;
+        private System.Windows.Forms.CheckBox hintCheckBox;
     }
 }

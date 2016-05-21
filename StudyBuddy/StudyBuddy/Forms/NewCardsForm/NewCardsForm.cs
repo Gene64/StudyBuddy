@@ -213,6 +213,62 @@ namespace StudyBuddy
                         }
                     }
                     xWriter.WriteEndElement(); // </AnswerInfo>
+                    if (hintCheckBox.Checked)
+                    {
+                        xWriter.WriteStartElement("HintInfo");
+                        if (questionNumbersComboBox.SelectedIndex >= 0)
+                        {
+                            xWriter.WriteStartElement("Hint1");
+                            xWriter.WriteEndElement();
+                            if (questionNumbersComboBox.SelectedIndex >= 1)
+                            {
+                                xWriter.WriteStartElement("Hint2");
+                                xWriter.WriteEndElement();
+                                if (questionNumbersComboBox.SelectedIndex >= 2)
+                                {
+                                    xWriter.WriteStartElement("Hint3");
+                                    xWriter.WriteEndElement();
+                                    if (questionNumbersComboBox.SelectedIndex >= 3)
+                                    {
+                                        xWriter.WriteStartElement("Hint4");
+                                        xWriter.WriteEndElement();
+                                        if (questionNumbersComboBox.SelectedIndex >= 4)
+                                        {
+                                            xWriter.WriteStartElement("Hint5");
+                                            xWriter.WriteEndElement();
+                                            if (questionNumbersComboBox.SelectedIndex >= 5)
+                                            {
+                                                xWriter.WriteStartElement("Hint6");
+                                                xWriter.WriteEndElement();
+                                                if (questionNumbersComboBox.SelectedIndex >= 6)
+                                                {
+                                                    xWriter.WriteStartElement("Hint7");
+                                                    xWriter.WriteEndElement();
+                                                    if (questionNumbersComboBox.SelectedIndex >= 7)
+                                                    {
+                                                        xWriter.WriteStartElement("Hint8");
+                                                        xWriter.WriteEndElement();
+                                                        if (questionNumbersComboBox.SelectedIndex >= 8)
+                                                        {
+                                                            xWriter.WriteStartElement("Hint9");
+                                                            xWriter.WriteEndElement();
+                                                            if (questionNumbersComboBox.SelectedIndex >= 9)
+                                                            {
+                                                                xWriter.WriteStartElement("Hint10");
+                                                                xWriter.WriteEndElement();
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        xWriter.WriteEndElement();
+                    }
                 }
                 xWriter.Close();
             }
@@ -221,9 +277,7 @@ namespace StudyBuddy
         private void nextButton_Click(object sender, EventArgs e)
         {
             if (!Properties.Settings.Default.editMode)
-            {
                 createQuiz();
-            }
             else if (Properties.Settings.Default.editMode)
             {
                 currentQuizFile = Properties.Settings.Default.QuizDirectory + @"\" + quizNameTextBox.Text + ".xml";
