@@ -19,13 +19,11 @@ namespace StudyBuddy
             if (Properties.Settings.Default.nightMode)
             {
                 BackColor = Color.Black;
-                directionsLabel.BackColor = Color.Black;
                 directionsLabel.ForeColor = Color.White;
             }
             else
             {
                 BackColor = Color.White;
-                directionsLabel.BackColor = Color.White;
                 directionsLabel.ForeColor = Color.Black;
             }
         }

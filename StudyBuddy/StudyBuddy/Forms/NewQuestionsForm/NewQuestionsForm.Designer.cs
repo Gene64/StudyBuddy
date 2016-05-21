@@ -55,7 +55,7 @@
             // questionHeaderLabel
             // 
             this.questionHeaderLabel.AutoSize = true;
-            this.questionHeaderLabel.BackColor = System.Drawing.Color.White;
+            this.questionHeaderLabel.BackColor = System.Drawing.Color.Transparent;
             this.questionHeaderLabel.Location = new System.Drawing.Point(9, 81);
             this.questionHeaderLabel.Name = "questionHeaderLabel";
             this.questionHeaderLabel.Size = new System.Drawing.Size(65, 13);
@@ -65,7 +65,7 @@
             // answerHeaderLabel
             // 
             this.answerHeaderLabel.AutoSize = true;
-            this.answerHeaderLabel.BackColor = System.Drawing.Color.White;
+            this.answerHeaderLabel.BackColor = System.Drawing.Color.Transparent;
             this.answerHeaderLabel.Location = new System.Drawing.Point(9, 122);
             this.answerHeaderLabel.Name = "answerHeaderLabel";
             this.answerHeaderLabel.Size = new System.Drawing.Size(58, 13);
@@ -99,7 +99,7 @@
             // newQuestionsDescriptionLabel
             // 
             this.newQuestionsDescriptionLabel.AutoSize = true;
-            this.newQuestionsDescriptionLabel.BackColor = System.Drawing.Color.White;
+            this.newQuestionsDescriptionLabel.BackColor = System.Drawing.Color.Transparent;
             this.newQuestionsDescriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newQuestionsDescriptionLabel.Location = new System.Drawing.Point(13, 9);
             this.newQuestionsDescriptionLabel.Name = "newQuestionsDescriptionLabel";
@@ -111,7 +111,7 @@
             // currentQuestionLabel
             // 
             this.currentQuestionLabel.AutoSize = true;
-            this.currentQuestionLabel.BackColor = System.Drawing.Color.White;
+            this.currentQuestionLabel.BackColor = System.Drawing.Color.Transparent;
             this.currentQuestionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.currentQuestionLabel.Location = new System.Drawing.Point(77, 50);
             this.currentQuestionLabel.Name = "currentQuestionLabel";
@@ -141,7 +141,7 @@
             // hintHeaderLabel
             // 
             this.hintHeaderLabel.AutoSize = true;
-            this.hintHeaderLabel.BackColor = System.Drawing.Color.White;
+            this.hintHeaderLabel.BackColor = System.Drawing.Color.Transparent;
             this.hintHeaderLabel.Location = new System.Drawing.Point(8, 163);
             this.hintHeaderLabel.Name = "hintHeaderLabel";
             this.hintHeaderLabel.Size = new System.Drawing.Size(42, 13);

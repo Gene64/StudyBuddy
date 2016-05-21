@@ -16,7 +16,6 @@ namespace StudyBuddy.Forms.OptionsForm
             if (Properties.Settings.Default.nightMode)
             {
                 BackColor = Color.Black;
-                universalLabel.BackColor = Color.Black;
                 universalLabel.ForeColor = Color.White;
                 universalTextBox.BackColor = Color.Black;
                 universalTextBox.ForeColor = Color.White;
@@ -24,7 +23,6 @@ namespace StudyBuddy.Forms.OptionsForm
             else
             {
                 BackColor = Color.White;
-                universalLabel.BackColor = Color.White;
                 universalLabel.ForeColor = Color.Black;
                 universalTextBox.BackColor = Color.White;
                 universalTextBox.ForeColor = Color.Black;

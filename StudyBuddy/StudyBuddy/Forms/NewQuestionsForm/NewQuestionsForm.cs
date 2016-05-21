@@ -31,13 +31,9 @@ namespace StudyBuddy
             if (Properties.Settings.Default.nightMode)
             {
                 BackColor = Color.Black;
-                newQuestionsDescriptionLabel.BackColor = Color.Black;
                 newQuestionsDescriptionLabel.ForeColor = Color.White;
-                currentQuestionLabel.BackColor = Color.Black;
                 currentQuestionLabel.ForeColor = Color.White;
-                questionHeaderLabel.BackColor = Color.Black;
                 questionHeaderLabel.ForeColor = Color.White;
-                answerHeaderLabel.BackColor = Color.Black;
                 answerHeaderLabel.ForeColor = Color.White;
                 hintHeaderLabel.BackColor = Color.Black;
                 hintHeaderLabel.ForeColor = Color.White;
@@ -45,23 +41,17 @@ namespace StudyBuddy
                 questionTextBox.ForeColor = Color.White;
                 answerTextBox.BackColor = Color.Black;
                 answerTextBox.ForeColor = Color.White;
-                hintTextBox.BackColor = Color.Black;
                 hintTextBox.ForeColor = Color.White;
             }
             else
             {
                 BackColor = Color.White;
-                newQuestionsDescriptionLabel.BackColor = Color.White;
                 newQuestionsDescriptionLabel.ForeColor = Color.Black;
-                currentQuestionLabel.BackColor = Color.White;
                 currentQuestionLabel.ForeColor = Color.Black;
-                questionHeaderLabel.BackColor = Color.White;
                 questionHeaderLabel.ForeColor = Color.Black;
                 answerHeaderLabel.BackColor = Color.White;
                 answerHeaderLabel.ForeColor = Color.Black;
-                hintHeaderLabel.BackColor = Color.White;
                 hintHeaderLabel.ForeColor = Color.Black;
-                questionTextBox.BackColor = Color.White;
                 questionTextBox.ForeColor = Color.Black;
                 answerTextBox.BackColor = Color.White;
                 answerTextBox.ForeColor = Color.Black;

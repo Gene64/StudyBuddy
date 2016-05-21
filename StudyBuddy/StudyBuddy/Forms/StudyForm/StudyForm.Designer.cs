@@ -44,7 +44,7 @@ namespace StudyBuddy
             // questionLabel
             // 
             this.questionLabel.AutoSize = true;
-            this.questionLabel.BackColor = System.Drawing.Color.White;
+            this.questionLabel.BackColor = System.Drawing.Color.Transparent;
             this.questionLabel.Location = new System.Drawing.Point(107, 60);
             this.questionLabel.Name = "questionLabel";
             this.questionLabel.Size = new System.Drawing.Size(71, 13);
@@ -72,7 +72,7 @@ namespace StudyBuddy
             // currentQuestionLabel
             // 
             this.currentQuestionLabel.AutoSize = true;
-            this.currentQuestionLabel.BackColor = System.Drawing.Color.White;
+            this.currentQuestionLabel.BackColor = System.Drawing.Color.Transparent;
             this.currentQuestionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.currentQuestionLabel.Location = new System.Drawing.Point(102, 15);
             this.currentQuestionLabel.Name = "currentQuestionLabel";
@@ -88,7 +88,7 @@ namespace StudyBuddy
             // timerLabel
             // 
             this.timerLabel.AutoSize = true;
-            this.timerLabel.BackColor = System.Drawing.Color.White;
+            this.timerLabel.BackColor = System.Drawing.Color.Transparent;
             this.timerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timerLabel.Location = new System.Drawing.Point(236, 9);
             this.timerLabel.Name = "timerLabel";
@@ -110,6 +110,7 @@ namespace StudyBuddy
             // skipsLeftLabel
             // 
             this.skipsLeftLabel.AutoSize = true;
+            this.skipsLeftLabel.BackColor = System.Drawing.Color.Transparent;
             this.skipsLeftLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.skipsLeftLabel.Location = new System.Drawing.Point(235, 208);
             this.skipsLeftLabel.Name = "skipsLeftLabel";
@@ -121,6 +122,7 @@ namespace StudyBuddy
             // hintLabel
             // 
             this.hintLabel.AutoSize = true;
+            this.hintLabel.BackColor = System.Drawing.Color.Transparent;
             this.hintLabel.Location = new System.Drawing.Point(118, 90);
             this.hintLabel.Name = "hintLabel";
             this.hintLabel.Size = new System.Drawing.Size(48, 13);

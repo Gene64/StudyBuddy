@@ -56,11 +56,11 @@ namespace StudyBuddy
             // directionsLabel
             // 
             this.directionsLabel.AutoSize = true;
-            this.directionsLabel.BackColor = System.Drawing.Color.White;
+            this.directionsLabel.BackColor = System.Drawing.Color.Transparent;
             this.directionsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.directionsLabel.Location = new System.Drawing.Point(14, 9);
+            this.directionsLabel.Location = new System.Drawing.Point(11, 9);
             this.directionsLabel.Name = "directionsLabel";
-            this.directionsLabel.Size = new System.Drawing.Size(256, 32);
+            this.directionsLabel.Size = new System.Drawing.Size(263, 32);
             this.directionsLabel.TabIndex = 3;
             this.directionsLabel.Text = "Pick one of your quizzes from the box\nbelow to begin studying!";
             this.directionsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

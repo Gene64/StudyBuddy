@@ -64,12 +64,13 @@ namespace StudyBuddy.Forms.OptionsForm
             // rememberUserCheckBox
             // 
             this.rememberUserCheckBox.AutoSize = true;
+            this.rememberUserCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.rememberUserCheckBox.Location = new System.Drawing.Point(15, 25);
             this.rememberUserCheckBox.Name = "rememberUserCheckBox";
             this.rememberUserCheckBox.Size = new System.Drawing.Size(102, 17);
             this.rememberUserCheckBox.TabIndex = 3;
             this.rememberUserCheckBox.Text = "Remember User";
-            this.rememberUserCheckBox.UseVisualStyleBackColor = true;
+            this.rememberUserCheckBox.UseVisualStyleBackColor = false;
             this.rememberUserCheckBox.Visible = false;
             // 
             // UniversalExtraOptions

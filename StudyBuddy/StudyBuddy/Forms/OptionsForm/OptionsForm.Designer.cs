@@ -45,7 +45,7 @@ namespace StudyBuddy
             // timerCheckBox
             // 
             this.timerCheckBox.AutoSize = true;
-            this.timerCheckBox.BackColor = System.Drawing.Color.White;
+            this.timerCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.timerCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timerCheckBox.Location = new System.Drawing.Point(12, 12);
             this.timerCheckBox.Name = "timerCheckBox";
@@ -68,7 +68,7 @@ namespace StudyBuddy
             // timerVisibilityCheckBox
             // 
             this.timerVisibilityCheckBox.AutoSize = true;
-            this.timerVisibilityCheckBox.BackColor = System.Drawing.Color.White;
+            this.timerVisibilityCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.timerVisibilityCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timerVisibilityCheckBox.Location = new System.Drawing.Point(118, 12);
             this.timerVisibilityCheckBox.Name = "timerVisibilityCheckBox";
@@ -100,7 +100,7 @@ namespace StudyBuddy
             // enableHintCheckBox
             // 
             this.enableHintCheckBox.AutoSize = true;
-            this.enableHintCheckBox.BackColor = System.Drawing.Color.White;
+            this.enableHintCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.enableHintCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enableHintCheckBox.Location = new System.Drawing.Point(12, 37);
             this.enableHintCheckBox.Name = "enableHintCheckBox";
@@ -124,7 +124,7 @@ namespace StudyBuddy
             // nightModeCheckBox
             // 
             this.nightModeCheckBox.AutoSize = true;
-            this.nightModeCheckBox.BackColor = System.Drawing.Color.White;
+            this.nightModeCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.nightModeCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nightModeCheckBox.Location = new System.Drawing.Point(12, 87);
             this.nightModeCheckBox.Name = "nightModeCheckBox";
@@ -137,7 +137,7 @@ namespace StudyBuddy
             // skipEnabledCheckBox
             // 
             this.skipEnabledCheckBox.AutoSize = true;
-            this.skipEnabledCheckBox.BackColor = System.Drawing.Color.White;
+            this.skipEnabledCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.skipEnabledCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.skipEnabledCheckBox.Location = new System.Drawing.Point(12, 62);
             this.skipEnabledCheckBox.Name = "skipEnabledCheckBox";
