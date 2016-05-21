@@ -78,15 +78,19 @@ namespace StudyBuddy
                 }
                 else if (Properties.Settings.Default.highScoreViewer)
                 {
-                    xmlDoc.LoadXml(Properties.Settings.Default.QuizDirectory + @"\" + quizSelectionComboBox.Text + ".xml");
-                    if (xmlDoc.SelectSingleNode("StudyBuddy/TopScoreInfo/BestUser").InnerText == "")
-                        MessageBox.Show("There is current no high score for this study quiz.");
-                    else
+                    if (quizSelectionComboBox.Text != "")
                     {
-                        string highUser = xmlDoc.SelectSingleNode("StudyBuddy/TopScoreInfo/BestUser").InnerText;
-                        string highScore = xmlDoc.SelectSingleNode("StudyBuddy/TopScoreInfo/BestScore").InnerText;
-                        string highTime = xmlDoc.SelectSingleNode("StudyBuddy/TopScoreInfo/BestTime").InnerText;
-                        MessageBox.Show("Top User: " + highUser + "\nHigh Score: " + highScore + "\nTime: " + highTime);
+                        string currentQuiz = Properties.Settings.Default.QuizDirectory + @"\" + quizSelectionComboBox.Text + ".xml";
+                        xmlDoc.LoadXml(currentQuiz);
+                        if (xmlDoc.SelectSingleNode("StudyBuddy/TopScoreInfo/BestUser").InnerText == "")
+                            MessageBox.Show("There is current no high score for this study quiz.");
+                        else
+                        {
+                            string highUser = xmlDoc.SelectSingleNode("StudyBuddy/TopScoreInfo/BestUser").InnerText;
+                            string highScore = xmlDoc.SelectSingleNode("StudyBuddy/TopScoreInfo/BestScore").InnerText;
+                            string highTime = xmlDoc.SelectSingleNode("StudyBuddy/TopScoreInfo/BestTime").InnerText;
+                            MessageBox.Show("Top User: " + highUser + "\nHigh Score: " + highScore + "\nTime: " + highTime);
+                        }
                     }
                 }
                 else
