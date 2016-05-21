@@ -122,16 +122,12 @@ namespace StudyBuddy
         private void previousQuestionButton_Click(object sender, EventArgs e)
         {
             int currentMaxQuestions = int.Parse(xmlDoc.SelectSingleNode("StudyBuddy/TestInfo/NumberOfTestQuestions").InnerText);
-            if (currentIndex == currentMaxQuestions)
-            {
-                // TODO: Fix this so it saves. (For some reason it stoppped working when I implemented the hint option.
-                xmlDoc.Load(currentQuizFile); // Loads the XML
-                if (quizHasHints())
-                    xmlDoc.SelectSingleNode("StudyBuddy/HintInfo/Hint" + currentIndex).InnerText = hintTextBox.Text;
-                xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question" + currentIndex).InnerText = questionTextBox.Text;
-                xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer" + currentIndex).InnerText = answerTextBox.Text;
-                xmlDoc.Save(currentQuizFile); // Saves changes to the XML
-            }
+            xmlDoc.Load(currentQuizFile); // Loads the XML
+            if (quizHasHints())
+                xmlDoc.SelectSingleNode("StudyBuddy/HintInfo/Hint" + currentIndex).InnerText = hintTextBox.Text;
+            xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question" + currentIndex).InnerText = questionTextBox.Text;
+            xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer" + currentIndex).InnerText = answerTextBox.Text;
+            xmlDoc.Save(currentQuizFile); // Saves changes to the XML
             currentIndex--;
             if (currentIndex== 1)
                 previousQuestionButton.Visible = false;
