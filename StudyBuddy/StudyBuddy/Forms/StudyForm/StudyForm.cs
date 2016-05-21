@@ -141,11 +141,32 @@ namespace StudyBuddy
                     timeResults = " It took you " + totalMinutes + " minutes and " + totalSeconds + " seconds to complete this study quiz.";
 
                 MessageBox.Show("Congratulations, you have finished this study session! You got " + rightAnswers + " correct, " + wrongAnswers + " wrong, and skipped " + totalSkips + ". Your final score is a " + percentScore + "%." + timeResults, "Study Quiz Finished");
+                if (xmlDoc.SelectSingleNode("StudyBuddy/TopScoreInfo") != null)
+                {
+                    // TODO: Implement highest score in the xml
+                    if (xmlDoc.SelectSingleNode("StudyBuddy/TopScoreInfo/BestUser").InnerText == "") // Checks if someone has played or not before.
+                        writeBestUser(percentScore);
+                    else
+                    {
+                        if (int.Parse(xmlDoc.SelectSingleNode("StudyBuddy/TopScoreInfo/BestScore").InnerText) < percentScore)
+                            writeBestUser(percentScore);
+                    }
+                    xmlDoc.Save(currentQuizFile);
+                }
                 Dispose();
             }
 
             if (totalQuestions == 1)
                 nextQuestionButton.Text = "Finish";
+        }
+
+        private void writeBestUser(int percentScore)
+        {
+            xmlDoc.SelectSingleNode("StudyBuddy/TopScoreInfo/BestUser").InnerText = Properties.Settings.Default.currentUser;
+            xmlDoc.SelectSingleNode("StudyBuddy/TopScoreInfo/BestScore").InnerText = percentScore.ToString();
+            xmlDoc.SelectSingleNode("StudyBuddy/TopScoreInfo/BestTime").InnerText = ((totalMinutes * 60) + totalSeconds).ToString();
+            MessageBox.Show(percentScore.ToString());
+            xmlDoc.Save(currentQuizFile);
         }
 
         private void centerQuestionLabel()
