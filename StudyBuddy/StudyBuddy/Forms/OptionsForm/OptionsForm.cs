@@ -72,9 +72,7 @@ namespace StudyBuddy
                 hintOptionsButton.Visible = false;
 
             if (skipEnabledCheckBox.Checked)
-            {
                 skipOptionsButton.Visible = true;
-            }
             else
                 skipOptionsButton.Visible = false;
         }

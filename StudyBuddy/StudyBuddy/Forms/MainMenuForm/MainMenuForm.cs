@@ -13,7 +13,6 @@ namespace StudyBuddy
             InitializeComponent();
         }
 
-
         // Mouse hover effects (I used the MoveMouse event shandler instead of MouseHover because it responds quicker.)
         private void createButton_MouseMove(object sender, MouseEventArgs e)
         {
