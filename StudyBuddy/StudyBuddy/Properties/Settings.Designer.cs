@@ -50,12 +50,12 @@ namespace StudyBuddy.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string availableQuizes {
+        public string availableQuizzes {
             get {
-                return ((string)(this["availableQuizes"]));
+                return ((string)(this["availableQuizzes"]));
             }
             set {
-                this["availableQuizes"] = value;
+                this["availableQuizzes"] = value;
             }
         }
         

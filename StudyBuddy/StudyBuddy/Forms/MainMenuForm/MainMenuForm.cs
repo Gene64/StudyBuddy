@@ -17,7 +17,7 @@ namespace StudyBuddy
         private void createButton_MouseMove(object sender, MouseEventArgs e)
         {
             descriptionLabel.Visible = true;
-            descriptionLabel.Text = "Create study cards about a topic that you\nneed to review.";
+            descriptionLabel.Text = "Create study quizzes about a topic that you\nneed to study.";
             centerDescriptionLabel();
             checkBackground();
         }
@@ -25,7 +25,7 @@ namespace StudyBuddy
         private void practiceButton_MouseMove(object sender, MouseEventArgs e)
         {
             descriptionLabel.Visible = true;
-            descriptionLabel.Text = "Practice your saved flash cards to master\nthe topic.";
+            descriptionLabel.Text = "Practice your saved study quizzes to\nmaster a topic.";
             centerDescriptionLabel();
         }
 

@@ -90,8 +90,8 @@ namespace StudyBuddy.Forms.OptionsForm
             }
             else if (Properties.Settings.Default.currentUser == "" || Properties.Settings.Default.changeCurrentUser)
             {
-                Text = "Change username";
-                saveButton.Text = "Next";
+                Text = "Choose a username";
+                saveButton.Text = "Login";
                 universalLabel.Text = "Please enter a username:";
                 universalTextBox.Size = new Size(100, 20);
                 universalTextBox.Location = new Point(140, 6);

@@ -8,7 +8,7 @@
     <Setting Name="currentSelectedQuiz" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="availableQuizes" Type="System.String" Scope="User">
+    <Setting Name="availableQuizzes" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="editMode" Type="System.Boolean" Scope="User">
