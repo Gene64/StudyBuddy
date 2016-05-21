@@ -87,13 +87,13 @@ namespace StudyBuddy
 
         private void nextQuestionButton_Click(object sender, EventArgs e)
         {
-            if (currentIndex >= 1)
+            if (currentIndex > 0)
                 previousQuestionButton.Visible = true;
             xmlDoc.Load(currentQuizFile); // Loads the XML
-            xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question" + currentIndex).InnerText = questionTextBox.Text;
-            xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer" + currentIndex).InnerText = answerTextBox.Text;
             if (quizHasHints())
                 xmlDoc.SelectSingleNode("StudyBuddy/HintInfo/Hint" + currentIndex).InnerText = hintTextBox.Text;
+            xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question" + currentIndex).InnerText = questionTextBox.Text;
+            xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer" + currentIndex).InnerText = answerTextBox.Text;
             xmlDoc.Save(currentQuizFile); // Saves changes to the XML
 
             if (nextQuestionButton.Text == "Finish")
@@ -124,11 +124,12 @@ namespace StudyBuddy
             int currentMaxQuestions = int.Parse(xmlDoc.SelectSingleNode("StudyBuddy/TestInfo/NumberOfTestQuestions").InnerText);
             if (currentIndex == currentMaxQuestions)
             {
+                // TODO: Fix this so it saves. (For some reason it stoppped working when I implemented the hint option.
                 xmlDoc.Load(currentQuizFile); // Loads the XML
-                xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question" + currentIndex).InnerText = questionTextBox.Text;
-                xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer" + currentIndex).InnerText = answerTextBox.Text;
                 if (quizHasHints())
                     xmlDoc.SelectSingleNode("StudyBuddy/HintInfo/Hint" + currentIndex).InnerText = hintTextBox.Text;
+                xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question" + currentIndex).InnerText = questionTextBox.Text;
+                xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer" + currentIndex).InnerText = answerTextBox.Text;
                 xmlDoc.Save(currentQuizFile); // Saves changes to the XML
             }
             currentIndex--;
