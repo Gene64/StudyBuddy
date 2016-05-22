@@ -42,7 +42,7 @@ namespace StudyBuddy
             this.startStudyingButton.TabIndex = 1;
             this.startStudyingButton.Text = "Start Studying";
             this.startStudyingButton.UseVisualStyleBackColor = true;
-            this.startStudyingButton.Click += new System.EventHandler(this.topic1Button_Click);
+            this.startStudyingButton.Click += new System.EventHandler(this.startStudyingButton_Click);
             // 
             // quizSelectionComboBox
             // 

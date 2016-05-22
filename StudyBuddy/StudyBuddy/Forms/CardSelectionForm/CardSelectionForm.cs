@@ -43,7 +43,7 @@ namespace StudyBuddy
             {
                 Text = "High Score Viewer";
                 startStudyingButton.Text = "View High Score";
-                directionsLabel.Text = "Pick one of your quizzes from the box\nbelow to view the current high score!";
+                userType = "";
             }
             else
             {
@@ -51,9 +51,11 @@ namespace StudyBuddy
                 startStudyingButton.Text = "Start Studying";
                 userType = "study";
             }
-            MessageBox.Show(userType);
+
             if (userType != "")
                 directionsLabel.Text = "Pick one of your quizzes from the box\nbelow to begin " + userType + "ing!";
+            else
+                directionsLabel.Text = "Pick one of your quizzes from the box\nbelow to view the current high score!";
 
             string[] availableQuizDir = Directory.GetFiles(Properties.Settings.Default.QuizDirectory);
             
@@ -61,37 +63,38 @@ namespace StudyBuddy
                 quizSelectionComboBox.Items.Add(Path.GetFileNameWithoutExtension(availableQuizzes));
         }
 
-        private void topic1Button_Click(object sender, EventArgs e)
+        private void startStudyingButton_Click(object sender, EventArgs e)
         {
             if (quizSelectionComboBox.Text != "")
             {
                 Properties.Settings.Default.currentSelectedQuiz = quizSelectionComboBox.Text;
                 Properties.Settings.Default.Save();
-                Dispose();
                 if (userType == "study")
                 {
+                    Dispose();
                     StudyForm sf = new StudyForm();
                     sf.ShowDialog();
                 }
                 else if (userType == "edit")
                 {
+                    Dispose();
                     NewCardsForm ncf = new NewCardsForm();
                     ncf.ShowDialog();
                 }
-                else if (Properties.Settings.Default.highScoreViewer)
+                else if (userType == "")
                 {
                     if (quizSelectionComboBox.Text != "")
                     {
                         string currentQuiz = Properties.Settings.Default.QuizDirectory + @"\" + quizSelectionComboBox.Text + ".xml";
-                        xmlDoc.LoadXml(currentQuiz);
+                        xmlDoc.Load(currentQuiz);
                         if (xmlDoc.SelectSingleNode("StudyBuddy/TopScoreInfo/BestUser").InnerText == "")
-                            MessageBox.Show("There is current no high score for this study quiz.");
+                            MessageBox.Show("There is currently no high score for this study quiz.", "No High Score Available");
                         else
                         {
                             string highUser = xmlDoc.SelectSingleNode("StudyBuddy/TopScoreInfo/BestUser").InnerText;
                             string highScore = xmlDoc.SelectSingleNode("StudyBuddy/TopScoreInfo/BestScore").InnerText;
                             string highTime = xmlDoc.SelectSingleNode("StudyBuddy/TopScoreInfo/BestTime").InnerText;
-                            MessageBox.Show("Top User: " + highUser + "\nHigh Score: " + highScore + "\nTime: " + highTime);
+                            MessageBox.Show("Top User: " + highUser + "\nHigh Score: " + highScore  + "%" + "\nTime: " + highTime + " seconds", "High Score");
                         }
                     }
                 }
