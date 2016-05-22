@@ -22,6 +22,7 @@ namespace StudyBuddy
         int currentQuestionTimes; // Counts wrong answer for the current question
         double totalSeconds;
         double totalMinutes;
+        bool confirmed = false; // Confirm of closing while studying
 
         string currentQuizFile = Properties.Settings.Default.QuizDirectory + @"\" +Properties.Settings.Default.currentSelectedQuiz + ".xml";
 
@@ -97,10 +98,12 @@ namespace StudyBuddy
         {
             if (xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer" + currentIndex).InnerText != answerTextBox.Text)
             {
-                wrongAnswers++;
+                currentQuestionTimes++;
+                if (currentQuestionTimes < 1)
+                    wrongAnswers++;
+
                 if (quizHasHints() && Properties.Settings.Default.enableHintsCheckBox)
                 {
-                    currentQuestionTimes++;
                     if (currentQuestionTimes >= Properties.Settings.Default.hintTries)
                     {
                         hintLabel.Visible = true;
@@ -211,13 +214,20 @@ namespace StudyBuddy
 
         private void StudyForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            questionTimer.Stop();
-            DialogResult dr = MessageBox.Show("Are you sure you want to exit the study session while you are still working?", "Exit Study Session", MessageBoxButtons.YesNo);
-
-            if (dr == DialogResult.No)
+            if (totalQuestions > (rightAnswers + wrongAnswers + totalSkips) && confirmed == false)
             {
+                questionTimer.Stop();
                 e.Cancel = true;
-                questionTimer.Start();
+                DialogResult dr = MessageBox.Show("Are you sure you want to exit the study session while you are still working?", "Exit Study Session", MessageBoxButtons.YesNo);
+
+                if (dr == DialogResult.No)
+                    questionTimer.Start();
+                else if (dr == DialogResult.Yes)
+                {
+                    confirmed = true;
+                    Dispose();
+                }
+                    
             }
         }
     }
