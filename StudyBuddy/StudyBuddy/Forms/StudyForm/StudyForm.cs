@@ -136,6 +136,7 @@ namespace StudyBuddy
                 string timeResults = null;
 
                 // Set the format of the time results
+                questionTimer.Stop();
                 if (totalMinutes == 0 && totalSeconds > 0)
                     timeResults = " It took you " + totalSeconds + " seconds to complete this study quiz.";
                 else if (totalMinutes > 0 && totalSeconds == 0)
