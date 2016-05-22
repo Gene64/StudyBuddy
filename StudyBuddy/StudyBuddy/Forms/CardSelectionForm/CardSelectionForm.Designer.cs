@@ -81,6 +81,7 @@ namespace StudyBuddy
             this.Name = "CardSelectionForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Study Quiz Selection";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CardSelectionForm_FormClosing);
             this.Load += new System.EventHandler(this.CardSelectionForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

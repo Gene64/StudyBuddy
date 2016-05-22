@@ -51,7 +51,9 @@ namespace StudyBuddy
                 startStudyingButton.Text = "Start Studying";
                 userType = "study";
             }
-            directionsLabel.Text = "Pick one of your quizzes from the box\nbelow to begin " + userType + "ing!";
+            MessageBox.Show(userType);
+            if (userType != "")
+                directionsLabel.Text = "Pick one of your quizzes from the box\nbelow to begin " + userType + "ing!";
 
             string[] availableQuizDir = Directory.GetFiles(Properties.Settings.Default.QuizDirectory);
             
@@ -101,6 +103,12 @@ namespace StudyBuddy
             }
             else
                 MessageBox.Show("Please select a quiz to " + userType + ".", "No Quiz Selected");
+        }
+
+        private void CardSelectionForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.highScoreViewer = false;
+            Properties.Settings.Default.Save();
         }
     }
 }
