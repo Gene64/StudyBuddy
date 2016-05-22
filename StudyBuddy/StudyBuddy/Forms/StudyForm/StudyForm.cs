@@ -13,13 +13,13 @@ namespace StudyBuddy
         }
 
         XmlDocument xmlDoc = new XmlDocument();
-        int skipsLeft = Properties.Settings.Default.skipsLeft;
+        int skipsLeft = Properties.Settings.Default.skipsLeft; // Total skips that are available for the user to use
         int totalQuestions;
-        int totalSkips;
+        int totalSkips; // Total skips that were used
         int currentIndex = 1;
         int wrongAnswers;
         int rightAnswers;
-        int currentQuestionTimes;
+        int currentQuestionTimes; // Counts wrong answer for the current question
         double totalSeconds;
         double totalMinutes;
 
@@ -143,13 +143,17 @@ namespace StudyBuddy
                 MessageBox.Show("Congratulations, you have finished this study session! You got " + rightAnswers + " correct, " + wrongAnswers + " wrong, and skipped " + totalSkips + ". Your final score is a " + percentScore + "%." + timeResults, "Study Quiz Finished");
                 if (xmlDoc.SelectSingleNode("StudyBuddy/TopScoreInfo") != null)
                 {
-                    // TODO: Implement highest score in the xml
                     if (xmlDoc.SelectSingleNode("StudyBuddy/TopScoreInfo/BestUser").InnerText == "") // Checks if someone has played or not before.
                         writeBestUser(percentScore);
                     else
                     {
-                        if (int.Parse(xmlDoc.SelectSingleNode("StudyBuddy/TopScoreInfo/BestScore").InnerText) < percentScore)
+                        int currentBestScore = int.Parse(xmlDoc.SelectSingleNode("StudyBuddy/TopScoreInfo/BestScore").InnerText);
+                        int currentBestTime = int.Parse(xmlDoc.SelectSingleNode("StudyBuddy/TopScoreInfo/BestTime").InnerText);
+                        double totalSecondsTaken = (totalMinutes * 60) + totalSeconds;
+                        if (currentBestScore < percentScore) // Checks if score is better than current best score
                             writeBestUser(percentScore);
+                        else if (currentBestScore == percentScore && currentBestTime > totalSecondsTaken)
+                            writeBestUser(percentScore);// Checks if score is the same, then compare time
                     }
                     xmlDoc.Save(currentQuizFile);
                 }
@@ -165,7 +169,6 @@ namespace StudyBuddy
             xmlDoc.SelectSingleNode("StudyBuddy/TopScoreInfo/BestUser").InnerText = Properties.Settings.Default.currentUser;
             xmlDoc.SelectSingleNode("StudyBuddy/TopScoreInfo/BestScore").InnerText = percentScore.ToString();
             xmlDoc.SelectSingleNode("StudyBuddy/TopScoreInfo/BestTime").InnerText = ((totalMinutes * 60) + totalSeconds).ToString();
-            MessageBox.Show(percentScore.ToString());
             xmlDoc.Save(currentQuizFile);
         }
 
