@@ -63,6 +63,7 @@ namespace StudyBuddy
         private void StudyForm_Load(object sender, EventArgs e)
         {
             checkBackground();
+            Text = Properties.Settings.Default.currentSelectedQuiz;
             xmlDoc.Load(currentQuizFile); // Loads the XML
             totalQuestions = int.Parse(xmlDoc.SelectSingleNode("StudyBuddy/TestInfo/NumberOfTestQuestions").InnerText); // Gets the number of questions.
             questionLabel.Text = xmlDoc.SelectSingleNode("StudyBuddy/QuestionInfo/Question1").InnerText; // Sets the question to the first question.
@@ -136,7 +137,7 @@ namespace StudyBuddy
                 else if (totalMinutes > 0 && totalSeconds > 0)
                     timeResults = " It took you " + totalMinutes + " minutes and " + totalSeconds + " seconds to complete this study quiz.";
 
-                MessageBox.Show("Congratulations, you have finished this study session! You got " + rightAnswers + " correct, " + wrongAnswers + " wrong, and skipped " + totalSkips + ". Your final score is a " + percentScore + "%." + timeResults, "Study Quiz Finished");
+                MessageBox.Show("Congratulations, you have finished this study session! You got " + rightAnswers + " correct, " + wrongAnswers + " wrong, and skipped " + totalSkips + " questions. Your final score is a " + percentScore + "%." + timeResults, "Study Quiz Finished");
                 if (xmlDoc.SelectSingleNode("StudyBuddy/TopScoreInfo") != null)
                 {
                     if (xmlDoc.SelectSingleNode("StudyBuddy/TopScoreInfo/BestUser").InnerText == "") // Checks if someone has played or not before.

@@ -25,6 +25,7 @@ namespace StudyBuddy
                 newQuizDescriptionLabel.ForeColor = Color.White;
                 quizNameLabel.ForeColor = Color.White;
                 quizNameTextBox.BackColor = Color.Black;
+                quizNameTextBox.ForeColor = Color.White;
                 numberOfQuestionsLabel.ForeColor = Color.White;
                 hintCheckBox.ForeColor = Color.White;
             }
@@ -305,7 +306,7 @@ namespace StudyBuddy
                     xmlDoc.SelectSingleNode("StudyBuddy/TestInfo/TestName").InnerText = quizNameTextBox.Text;
                     xmlDoc.Save(currentQuizFile);
                 }
-                // TODO: Just make a new XML at this point, instead of doing surgery on the XML file.
+
                 if (xmlDoc.SelectSingleNode("StudyBuddy/TestInfo/NumberOfTestQuestions").InnerText != questionNumbersComboBox.Text || quizHasHints() && !hintCheckBox.Checked || !quizHasHints() && hintCheckBox.Checked)
                 {
                     // Get a copy of all of the questions/answers.

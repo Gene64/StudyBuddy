@@ -19,6 +19,7 @@ namespace StudyBuddy.Forms.OptionsForm
                 universalLabel.ForeColor = Color.White;
                 universalTextBox.BackColor = Color.Black;
                 universalTextBox.ForeColor = Color.White;
+                rememberUserCheckBox.ForeColor = Color.White;
             }
             else
             {

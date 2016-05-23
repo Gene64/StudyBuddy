@@ -82,7 +82,7 @@ namespace StudyBuddy
             // numberOfQuestionsLabel
             // 
             this.numberOfQuestionsLabel.AutoSize = true;
-            this.numberOfQuestionsLabel.BackColor = System.Drawing.Color.White;
+            this.numberOfQuestionsLabel.BackColor = System.Drawing.Color.Transparent;
             this.numberOfQuestionsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numberOfQuestionsLabel.Location = new System.Drawing.Point(79, 132);
             this.numberOfQuestionsLabel.Name = "numberOfQuestionsLabel";
