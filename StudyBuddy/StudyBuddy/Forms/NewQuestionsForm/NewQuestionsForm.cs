@@ -119,7 +119,7 @@ namespace StudyBuddy
             xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer" + currentIndex).InnerText = answerTextBox.Text;
             xmlDoc.Save(currentQuizFile); // Saves changes to the XML
             currentIndex--;
-            if (currentIndex== 1)
+            if (currentIndex == 1)
                 previousQuestionButton.Visible = false;
 
             if (nextQuestionButton.Text == "Finish")
