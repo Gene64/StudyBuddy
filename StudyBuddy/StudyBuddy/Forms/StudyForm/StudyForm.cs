@@ -107,8 +107,7 @@ namespace StudyBuddy
             else
             {
                 rightAnswers++;
-                if (quizHasHints() && Properties.Settings.Default.enableHintsCheckBox)
-                    currentQuestionTimes = 0;
+                currentQuestionTimes = 0;
                 nextQuestion();
             }
         }
