@@ -52,6 +52,8 @@ namespace StudyBuddy
             Properties.Settings.Default.enableHintsCheckBox = enableHintCheckBox.Checked;
             Properties.Settings.Default.nightMode = nightModeCheckBox.Checked;
             Properties.Settings.Default.skipEnabled = skipEnabledCheckBox.Checked;
+            if (Properties.Settings.Default.skipsLeft == 0)
+                Properties.Settings.Default.skipsLeft = 3; // 3 is the default amount of skips
             Properties.Settings.Default.Save();
             Dispose();
         }

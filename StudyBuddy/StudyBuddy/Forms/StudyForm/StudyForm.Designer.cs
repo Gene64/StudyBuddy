@@ -95,6 +95,7 @@ namespace StudyBuddy
             this.timerLabel.Size = new System.Drawing.Size(36, 16);
             this.timerLabel.TabIndex = 4;
             this.timerLabel.Text = "0:00";
+            this.timerLabel.Visible = false;
             // 
             // skipButton
             // 

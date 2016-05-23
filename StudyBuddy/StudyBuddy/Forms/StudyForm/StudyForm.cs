@@ -51,7 +51,7 @@ namespace StudyBuddy
             {
                 BackColor = Color.White;
                 currentQuestionLabel.ForeColor = Color.Black;
-                timerLabel.ForeColor = Color.White;
+                timerLabel.ForeColor = Color.Black;
                 questionLabel.ForeColor = Color.Black;
                 hintLabel.ForeColor = Color.Black;
                 answerTextBox.BackColor = Color.White;
@@ -62,11 +62,6 @@ namespace StudyBuddy
 
         private void StudyForm_Load(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.skipsLeft == 0)
-            {
-                Properties.Settings.Default.skipsLeft = 3;
-                Properties.Settings.Default.Save();
-            }
             checkBackground();
             xmlDoc.Load(currentQuizFile); // Loads the XML
             totalQuestions = int.Parse(xmlDoc.SelectSingleNode("StudyBuddy/TestInfo/NumberOfTestQuestions").InnerText); // Gets the number of questions.
@@ -79,12 +74,9 @@ namespace StudyBuddy
             if (Properties.Settings.Default.timerEnabled)
             {
                 questionTimer.Enabled = true;
-
                 if (Properties.Settings.Default.timerVisibilityEnabled)
                     timerLabel.Visible = true;
             }
-            else
-                timerLabel.Visible = false;
 
             if (Properties.Settings.Default.skipEnabled)
             {
@@ -99,7 +91,7 @@ namespace StudyBuddy
             if (xmlDoc.SelectSingleNode("StudyBuddy/AnswerInfo/Answer" + currentIndex).InnerText != answerTextBox.Text)
             {
                 currentQuestionTimes++;
-                if (currentQuestionTimes < 1)
+                if (currentQuestionTimes == 1)
                     wrongAnswers++;
 
                 if (quizHasHints() && Properties.Settings.Default.enableHintsCheckBox)
